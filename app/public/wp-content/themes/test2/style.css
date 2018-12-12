@@ -1,0 +1,383 @@
+/*
+Theme Name: Test
+Author: Nico
+Version: 1.0
+*/
+
+/* Main Content */
+
+body{
+  margin: 0px;
+}
+@media (min-width: 530px) {
+  
+  .page-banner {
+    padding: 10px 5px 60px 0;
+    margin: 20px 20px 10px 20px;
+    height: 350px;
+  }
+
+  .filler{
+    padding: 10px 5px 60px 0;
+    height: 50px;
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+/*Header*/
+.container_header {
+  z-index: 5;
+  padding: 0 16px;
+  position: relative;
+  height: 85px;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.container {
+  z-index: 5;
+  padding: 0 16px;
+  position: relative;
+  height: 100px;
+}
+
+.HFU_Logo_Header_Div{
+  height: 80px;
+  width: 15%;
+  margin-right: 40px;
+  display: inline-block;
+  float: left;
+}
+
+.HFU_Logo_Header{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.Referate_Header{
+  height: 80px;
+  width: 15%;
+  display: inline-block;
+  margin-left: 40px;
+  float: left;
+}
+
+.Referate_Header p{
+  display: inline-block;
+  margin-top: 10%;
+  font-size: 20pt;
+  margin-left: 25%;
+  color: white;
+}
+
+.Referate_Header i{
+  font-size: 20pt;
+  color: white;
+}
+
+.Header_Link_Area{
+  width: 40%;
+  height: 80px;
+  float: right;
+  display: inline-block;
+}
+
+.campi_header_link{
+  height: 80px;
+  width: 33%;
+  display: inline-block;
+  float: left;
+}
+
+.campi_header_link p{
+  display: inline-block;
+  margin-top: 13%;
+  font-size: 15pt;
+  margin-left: 35%;
+  color: white;
+}
+
+.campi_header_link i{
+  font-size: 20pt;
+  color: white;
+}
+
+.login_btn_area_header{
+  height: 80px;
+  width: 33%;
+  display: inline-block;
+  float: left;
+  color: white;
+}
+
+.login_button_header{
+  background-color: #89BA22;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20pt;
+  margin: 4px 2px;
+  margin-left: 17%;
+  margin-top: 5%;
+  cursor: pointer;
+}
+
+.sprach_auswahl{
+  height: 80px;
+  width: 32%;
+  display: inline-block;
+  float: left;
+}
+
+.sprach_auswahl p {
+  display: inline-block;
+  margin-top: 12%;
+  font-size: 20pt;
+  margin-left: 32%;
+  color: white;
+}
+
+
+.page-banner__bg-image {
+  /*opacity: .33;*/
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 600px;
+}
+
+.t-center {
+  /*text-align: center;*/
+  text-align: left;
+  padding: 30px;
+}
+
+.c-white {color: #FFF}
+
+@media (min-width: 530px) {
+  
+  .headline--medium {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 530px) {
+  
+  .btn--large {
+    font-size: 1.9rem;
+  }
+}
+
+.btn--large {
+  font-size: 1.3rem;
+  padding: 16px 34px;
+  border-radius: 7px;
+}
+
+h2{
+  font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.filter_sign_area{
+
+  font-size: 30px;
+  float: right;
+  width: 100px;
+  padding-top: 60px;
+  padding-right: 80px;
+}
+
+.filter_sign_area .filter_Name{
+  margin: 0;
+  display: inline;
+  font-size: 15px;
+}
+
+.Filter_Area_Headline{
+  display: inline;
+  font-size: 30px;
+  padding-left: 45%;
+  float: left;
+  padding-top: 30px;
+}
+
+.filter_area{
+  height: 100px;
+  background-color: #0F1E31;
+}
+
+@media (min-width: 530px) {
+.aktivity_area{
+  height: auto;
+  margin: auto;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  padding-left: 13%;
+  padding-right: 10%;
+}
+}
+
+.aktivity_area a{
+  color: white;
+}
+
+.activities{
+  height: 180px;
+  width: 250px;
+  background-color: red;
+  display: inline-block;
+  margin: 15px;
+}
+
+.activity_title{
+  font-size: 20px;
+  float: left;
+  margin: 30% 34%;
+}
+
+.call_to_action_area{
+  background-color: #0F1E31;
+  height: 250px;
+}
+
+.timetable_area{
+  height: 650px;
+}
+
+.call_to_action_text{
+  width: 45%;
+  height: auto;
+  float: left;
+  margin-left: 5%;
+  margin-top: auto;
+}
+
+.call_to_action_text h1{
+  font-size: 35pt;
+  color: white;
+}
+
+.call_to_action_text p{
+  color: white;
+  font-size: 17pt;
+}
+
+.call_to_action_button{
+
+}
+
+
+
+
+/* Footer */
+
+
+.site-footer {
+  background-color: #11171E;
+  height: 200px;
+}
+
+.site-footer p {
+  font-size: .9rem;
+}
+
+.site-footer .headline {
+  color: #666;
+  margin-bottom: .33rem;
+}
+
+.site-footer__link {
+  color: #999;
+  text-decoration: none;
+}
+
+.site-footer__link:hover {
+  color: #0D3B66;
+  text-decoration: underline;
+}
+
+.site-footer__inner {
+  border-top: 1px dotted #DEDEDE;
+  padding-top: 3.5rem;
+}
+
+.site-footer__col-one {
+  text-align: center;
+}
+
+@media (min-width: 960px) {
+
+  .site-footer__col-one {
+    text-align: left;
+    width: 33%;
+    float: left;
+    display: inline;
+  }
+}
+
+ .site-footer__col-two {
+  position: relative;
+  display: inline;
+  float: left;
+  margin-left: 30%;
+}
+.site-footer__col-three {
+  position: relative;
+  display: inline;
+  float: left;
+  margin-left: 10%;
+}
+
+.site-footer__col-four {
+  position: relative;
+  display: inline;
+  float: left;
+  margin-left: 10%;
+}
+
+@media (min-width: 960px) {
+
+  .site-footer__col-four {
+    padding-top: 0;
+    margin: 0;
+    clear: none;
+    text-align: left;
+    width: 25%;
+    float: right;
+  }
+}
+
+.nav-list ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.nav-list li {
+  list-style: none;
+  color: white;
+}
+
+.nav-list a {
+  list-style: none;
+}
+
+.logo{
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 310px;
+}
