@@ -16,6 +16,9 @@
   </div>
 </div>
 <div class = "filter_area">
+<?php
+get_Filters();
+?>
 </div>
 <div class = "aktivity_area">
 <?php
