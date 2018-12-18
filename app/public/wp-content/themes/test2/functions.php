@@ -38,7 +38,6 @@ function get_Filters(){
     <?php
     $test = get_post_field( "referate_tags", 21);
     print_r($test);
-    print_r($test);
 }
 
 ?>
