@@ -216,6 +216,13 @@ h2{
   background-color: #0F1E31;
 }
 
+.filter{
+  display: inline-block;
+  width: 10%;
+  height: 40px;
+  font-size: 17pt;
+}
+
 @media (min-width: 530px) {
 .aktivity_area{
   height: auto;

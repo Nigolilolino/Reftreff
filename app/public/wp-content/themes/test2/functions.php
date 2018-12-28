@@ -17,8 +17,9 @@ add_action("after_setup_theme", "reftreffFeatures");
 function get_activities(){
     /* Geht alle im "Referate" angelegten Dateien durch und erzeugt ein Div mit passendem Bild und Text.
     Dient zusätzlich auch als Link zur jeweiligen Referatseite*/ 
+
     $homepageReferate = new WP_Query(array(
-        "post_type" => "referate"
+        "post_type" => "referate",
     ));
 
     while($homepageReferate->have_posts()){
@@ -26,18 +27,38 @@ function get_activities(){
         
         <a href=" <?php the_permalink(); ?>"><div class = 'activities' style="background-image: url(<?php echo the_field("referat_titelbild") ?>);" ><strong class='activity_title'><?php the_title()?></strong></div></a>
     <?php }
-    /*echo $numberOfPages;
-    print_r($page_title);
-    */
 }
 
 function get_Filters(){
-    $field = get_field_object('referate_tags',[$post_id = 21]);
-    ?>
-    <p><?php echo $field['value'] ?></p>
-    <?php
-    $test = get_post_field( "referate_tags", 21);
-    print_r($test);
+    $field_key = "field_5c17e7be6b9ef";
+    $field = get_field_object($field_key);
+
+    if( $field )
+    {
+        
+        foreach( $field['choices'] as $key => $value )
+            {
+                echo '<input type="checkbox" class="filterCheckboxes" name= '.$value.' value='.$value.' onclick="refreshActivities()">';
+                echo '<div class="filter">' . $value . '</div>';
+            }
+        
+    }
 }
 
 ?>
+
+<script>
+    function refreshActivities(){
+        var checkboxes = document.getElementsByClassName("filterCheckboxes");
+        var checkboxValues = [];
+        console.log(checkboxes);
+
+        for(var i = 0; i < checkboxes.length; i++){
+            if(checkboxes[i].checked){
+                checkboxValues.push(checkboxes[i].value);
+            }
+        }
+        console.log(checkboxValues);
+
+    }
+</script>
