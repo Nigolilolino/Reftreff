@@ -22,7 +22,7 @@ get_Filters();
 </div>
 <div class = "aktivity_area">
 <?php
-get_activities();
+get_activities(0);
 ?>
 </div>
 <div class="call_to_action_area">
