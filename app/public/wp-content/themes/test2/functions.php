@@ -15,12 +15,16 @@ function reftreffFeatures(){
 }
 add_action("after_setup_theme", "reftreffFeatures");
 
+if($_POST['functionname'])
+   get_activities(stripslashes( $_POST['arguments'] ));
+
+
 function get_activities($array){
-    if($array == 0){
+    if($array == null){
     $args = array(
         'post_type' => 'referate',
     );
-
+    
     $homepageReferate = new WP_Query($args);
 
     while($homepageReferate->have_posts()){
@@ -29,14 +33,13 @@ function get_activities($array){
         <a href=" <?php the_permalink(); ?>"><div class = 'activities' style="background-image: url(<?php echo the_field("referat_titelbild") ?>);" ><strong class='activity_title'><?php the_title()?></strong></div></a>
     <?php }
     }else{
-        $args = $array;
+        $args = str_replace( '"','',$array );
     
-        $homepageReferate = new WP_Query($args);
-    
-        while($homepageReferate->have_posts()){
-            $homepageReferate->the_post();  ?>
+        $homepageReferate2 = new WP_Query($args);
+        while($homepageReferate2->have_posts()){
+            $homepageReferate2->the_post();  ?>
             
-            <a href=" <?php the_permalink(); ?>"><div class = 'activities' style="background-image: url(<?php echo the_field("referat_titelbild") ?>);" ><strong class='activity_title'><?php the_title()?></strong></div></a>
+            
         <?php }
         
     }
@@ -57,7 +60,7 @@ function get_Filters(){
 }
 ?>
 
-<script type="text/javascript">
+<script>
     function refreshActivities(){
         var checkboxes = document.getElementsByClassName("filterCheckboxes");
         var checkboxValues = [];
@@ -78,18 +81,26 @@ function get_Filters(){
                 args += "array('key' => 'referate_tags','value' => \'"+_values[i]+"\','compare' => 'LIKE'),"
             }
             args += "),);";
+            removeAvtivities();
             
-            $.ajax({
-                url: 'index.php',
-                type: 'post',
-                data: {data: args},
-                success: function(response){
+            jQuery.ajax({
+                type: "Post",
+                url: "index.php",
+                dataType: "script",
+                data: {functionname: "get_activities", arguments: args},
+
+                success: function(){
                     alert(args);
                 }
             });
-            
         };
 };
+
+function removeAvtivities(){
+    var activitieArea = document.getElementsByClassName("aktivity_area");
+    while(activitieArea[0].firstChild) 
+    activitieArea[0].removeChild(activitieArea[0].firstChild);
+}
 
 </script>
 
