@@ -38,8 +38,6 @@ function get_activities($array){
         $homepageReferate2 = new WP_Query($args);
         while($homepageReferate2->have_posts()){
             $homepageReferate2->the_post();  ?>
-            
-            
         <?php }
         
     }
@@ -58,9 +56,11 @@ function get_Filters(){
             };  
     };
 }
-?>
+?>;
 
 <script>
+
+//Funktionen für die Filter..........................................................
     function refreshActivities(){
         var checkboxes = document.getElementsByClassName("filterCheckboxes");
         var checkboxValues = [];
@@ -102,8 +102,55 @@ function removeAvtivities(){
     activitieArea[0].removeChild(activitieArea[0].firstChild);
 }
 
+//....................................................................................
+
+// Funktionen für das Dropdownmenü der Startseite....................................
+
+function fillDropdown() {
+    var dropdown = document.getElementsByClassName("dpCategories")[0];
+    //<a href="#">Link 1</a>
+    <?php 
+
+    $args = array(
+        'post_type' => 'referate'
+    );
+
+        $homepageReferate = new WP_Query($args);
+
+        while($homepageReferate->have_posts()){
+            
+            $homepageReferate->the_post(); ?>
+           
+            option = document.createElement('a');
+            option.innerHTML = "<?php the_title()?>";
+            option.setAttribute('href', '<?php the_permalink(); ?>');
+            dropdown.appendChild(option);
+
+            <?php
+
+        } 
+    
+    ?>
+}
+
+function myFunction() {
+  document.getElementById("dpMenue").classList.toggle("show");
+}
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+//............................................................................................
 </script>
 
-<?php 
-    
-?>

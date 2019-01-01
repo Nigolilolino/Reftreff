@@ -36,7 +36,6 @@ body{
 }
 
 .container {
-  z-index: 5;
   padding: 0 16px;
   position: relative;
   height: 100px;
@@ -63,17 +62,10 @@ body{
   float: left;
 }
 
-.Referate_Header p{
-  display: inline-block;
-  margin-top: 10%;
-  font-size: 20pt;
-  margin-left: 25%;
-  color: white;
-}
-
 .Referate_Header i{
   font-size: 20pt;
   color: white;
+  margin-left: 10px;
 }
 
 .Header_Link_Area{
@@ -83,6 +75,69 @@ body{
   display: inline-block;
 }
 
+/*Dropdown Menü*/
+
+.dropbtn {
+  display: inline-block;
+  margin-top: 10%;
+  font-size: 20pt;
+  margin-left: 25%;
+  background-color: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #0F1E31;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  width: 100%;
+  float: left;
+  left: 0px;
+  z-index: 10;
+  height: 100%;
+}
+
+.dpCategories {
+  display: inline-grid;
+  width: 35%;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 30pt;
+  height: auto;
+  color: #89BA22;
+}
+
+.dropdown-content p {
+
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 15pt;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.show {display:block;}
+
+/*Ende Dropdown Menü*/
 .campi_header_link{
   height: 80px;
   width: 33%;

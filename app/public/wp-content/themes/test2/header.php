@@ -2,11 +2,10 @@
 
 <html>
     <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <?php wp_head(); ?>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
-
-    <body>
+    <body onload="fillDropdown()">
     <header class="site-header">
     <div class="container_header">
 <!--<h1 class="school-logo-text float-left"><a href="<?php echo site_url();?>"></a></h1> -->
@@ -14,7 +13,17 @@
         <img class = "HFU_Logo_Header" src="<?php echo get_theme_file_uri("/images/HFU_Logo_klein.png") ?>">
       </div>
       <div class = "Referate_Header">
-        <p>Referate</p>
+      <div class="dropdown" onload="fillDropdown()">
+        <button onclick="myFunction()" class="dropbtn">Referate</button>
+        <div id="dpMenue" class="dropdown-content">
+          <div class="dpCategories">
+            <p>Sport</p>
+          </div>
+          <div class="dpCategories">
+            <p>Freizeit</p>
+          </div>
+        </div>
+      </div>
         <i class="fa fa-angle-down"></i>
       </div>
       <div class = "Header_Link_Area">

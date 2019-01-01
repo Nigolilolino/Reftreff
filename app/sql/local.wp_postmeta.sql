@@ -53,7 +53,7 @@ INSERT INTO `wp_postmeta` VALUES
 (55,24,"referat_datum","20181220"),
 (56,24,"_referat_datum","field_5c10f40cf8d78"),
 (57,37,"_edit_last","1"),
-(58,37,"_edit_lock","1546091291:1"),
+(58,37,"_edit_lock","1546167479:1"),
 (59,21,"referat_datum",""),
 (60,21,"_referat_datum","field_5c10f40cf8d78"),
 (61,21,"referat_datum_ende",""),
