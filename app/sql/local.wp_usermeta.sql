@@ -21,7 +21,7 @@ INSERT INTO `wp_usermeta` VALUES
 (18,1,"community-events-location","a:1:{s:2:\"ip\";s:12:\"192.168.95.0\";}"),
 (19,1,"wp_user-settings","libraryContent=browse&mfold=o"),
 (20,1,"wp_user-settings-time","1545070473"),
-(21,1,"session_tokens","a:2:{s:64:\"72ab4053dc079b2948dcdf4f614cf4751731b927719779d56ee1e73e8b631652\";a:4:{s:10:\"expiration\";i:1546087451;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\";s:5:\"login\";i:1545914651;}s:64:\"56d2bde5ce13c9a202ac60846b942e4afcf73013ccf7ce0fd3d5f769476e5dad\";a:4:{s:10:\"expiration\";i:1546254516;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\";s:5:\"login\";i:1546081716;}}"),
+(21,1,"session_tokens","a:1:{s:64:\"972a395433914e0c403d36badd8bb10caa287d9f797296db72575896fb998116\";a:4:{s:10:\"expiration\";i:1546687156;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\";s:5:\"login\";i:1546514356;}}"),
 (22,1,"closedpostboxes_referate","a:0:{}"),
 (23,1,"metaboxhidden_referate","a:1:{i:0;s:7:\"slugdiv\";}"),
 (24,1,"acf_user_settings","a:1:{s:15:\"show_field_keys\";s:1:\"1\";}");

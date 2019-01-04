@@ -20,7 +20,7 @@ if($_POST['functionname'])
 
 
 function get_activities($array){
-    if($array == null){
+    if($array == 0){
     $args = array(
         'post_type' => 'referate',
     );
@@ -33,12 +33,16 @@ function get_activities($array){
         <a href=" <?php the_permalink(); ?>"><div class = 'activities' style="background-image: url(<?php echo the_field("referat_titelbild") ?>);" ><strong class='activity_title'><?php the_title()?></strong></div></a>
     <?php }
     }else{
+        
         $args = str_replace( '"','',$array );
-    
+
+        echo "<script> alert('testBlub')</script>";
+
         $homepageReferate2 = new WP_Query($args);
         while($homepageReferate2->have_posts()){
             $homepageReferate2->the_post();  ?>
         <?php }
+        wp_reset_query();
         
     }
 }
@@ -56,7 +60,7 @@ function get_Filters(){
             };  
     };
 }
-?>;
+?>
 
 <script>
 
