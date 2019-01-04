@@ -493,11 +493,11 @@ h2{
 
 .headOfActivityPicture{
   background-color: blueviolet;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    position: relative;
-    left: 30%;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: relative;
+  left: 30%;
 }
 
 .headOfActivityInfo h3{
@@ -512,18 +512,81 @@ h2{
 }
 
 .activitySignInArea{
-
+  background-color: yellow;
+  height: auto;
 }
 
 .activityDateArea{
+  width: 49%;
+  display: inline-grid;
+  text-align: center;
+  height: auto;
+}
 
+.activityDate{
+  font-size: 22pt;
+  color: #89BA22;
+}
+
+.activityTime{
+  font-size: 85pt;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.activityDateArea button{
+  background-color: #89BA22;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 80%;
+  margin-right: 7%;
+  margin-left: 7%;
+  margin-bottom: 10%;
+  font-size: 30px;
 }
 
 .activityParticipantsArea{
-
+  width: 49%;
+  display: inline-grid;
+  text-align: center;
 }
 
 .singlePageHeadlines{
+  font-size: 25pt;
+}
+
+.participant{
+  
+}
+
+.participantPicture{
+  background-color: blueviolet;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  position: relative;
+  left: 30%;
+  display: inline-grid;
+  float: left;
+  margin-right: 20%;
+  margin-top: 3%;
+}
+
+.participantInfo{
+  display: inline-grid;
+}
+
+.participantName{
+  margin-block-end: 3px;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.participantEmail{
 
 }
 

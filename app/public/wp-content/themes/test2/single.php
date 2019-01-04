@@ -25,9 +25,40 @@ get_header();
     </div>
     <div class="activitySignInArea">
         <div class="activityDateArea">
+            <?php 
+                $date = get_field('referat_time_and_date', false);
+                $date = DateTime::createFromFormat('m. F Y H:i', $date);
+
+                $time = $date->format('H:i');
+                $date = $date->format('m. F Y');
+                echo "<p class='activityDate'>Monday, $date</p>";
+                echo "<p class='activityTime'>$time</p>";
+            ?>      
+            <button type="button">Teilnehmen</button>
         </div>
         <div class="activityParticipantsArea">
             <h3 class="singlePageHeadlines">Teilnehmer</h3>
+            <div class="participant">
+                <div class="participantPicture"></div>
+                <div class="participantInfo">
+                    <p class="participantName">Vorname Nachname</p>
+                    <p class="participantEmail">vorname.nachname@hs-furtwangen.de</p>
+                </div>
+            </div>
+            <div class="participant">
+                <div class="participantPicture"></div>
+                <div class="participantInfo">
+                    <p class="participantName">Vorname Nachname</p>
+                    <p class="participantEmail">vorname.nachname@hs-furtwangen.de</p>
+                </div>
+            </div>
+            <div class="participant">
+                <div class="participantPicture"></div>
+                <div class="participantInfo">
+                    <p class="participantName">Vorname Nachname</p>
+                    <p class="participantEmail">vorname.nachname@hs-furtwangen.de</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -37,6 +68,27 @@ get_header();
     </div>
     <div class="activityFolower">
         <h3 class="singlePageHeadlines">Follower</h3>
+        <div class="participant">
+                <div class="participantPicture"></div>
+                <div class="participantInfo">
+                    <p class="participantName">Vorname Nachname</p>
+                    <p class="participantEmail">vorname.nachname@hs-furtwangen.de</p>
+                </div>
+            </div>
+            <div class="participant">
+                <div class="participantPicture"></div>
+                <div class="participantInfo">
+                    <p class="participantName">Vorname Nachname</p>
+                    <p class="participantEmail">vorname.nachname@hs-furtwangen.de</p>
+                </div>
+            </div>
+            <div class="participant">
+                <div class="participantPicture"></div>
+                <div class="participantInfo">
+                    <p class="participantName">Vorname Nachname</p>
+                    <p class="participantEmail">vorname.nachname@hs-furtwangen.de</p>
+                </div>
+            </div>
     </div>
 </div>
 <div class="timetable_area">
