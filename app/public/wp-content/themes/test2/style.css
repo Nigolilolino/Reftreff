@@ -512,7 +512,7 @@ h2{
 }
 
 .activitySignInArea{
-  background-color: yellow;
+  background-color: #F5F4F0;
   height: auto;
 }
 
@@ -591,15 +591,38 @@ h2{
 }
 
 .activityNewsArea{
+  height: auto;
+  padding: 7%;
+  background-color: #F5F4F0;
+}
+
+.postDate{
+
+}
+
+.postContent{
 
 }
 
 .activityBlog{
+  width: 40%;
+  display: inline-grid;
+  text-align: center;
+  height: auto;
+}
+
+.activityBlog input{
+
+}
+
+.activityBlog button{
 
 }
 
 .activityFolower{
-
+  display: inline-grid;
+  width: 40%;
+  text-align: center;
 }
 
 .timetable_area{

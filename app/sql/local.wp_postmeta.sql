@@ -23,7 +23,7 @@ INSERT INTO `wp_postmeta` VALUES
 (25,22,"_edit_last","1"),
 (26,22,"_edit_lock","1546083580:1"),
 (27,23,"_edit_last","1"),
-(28,23,"_edit_lock","1546606423:1"),
+(28,23,"_edit_lock","1546696394:1"),
 (29,24,"_edit_last","1"),
 (30,24,"_edit_lock","1546088850:1"),
 (31,25,"_edit_last","1"),
