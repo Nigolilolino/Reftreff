@@ -4,6 +4,7 @@
     <head>
         <?php wp_head(); ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="http://www.test2.local/wp-content/themes/test2/js/script.js"></script>
     </head>
     <body onload="fillDropdown()">
     <header class="site-header">
@@ -13,7 +14,7 @@
         <img class = "HFU_Logo_Header" src="<?php echo get_theme_file_uri("/images/HFU_Logo_klein.png") ?>">
       </div>
       <div class = "Referate_Header">
-      <div class="dropdown" onload="fillDropdown()">
+      <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Referate</button>
         <div id="dpMenue" class="dropdown-content">
           <div class="dpCategories">
