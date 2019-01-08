@@ -22,9 +22,8 @@ get_Filters();
 </div>
 <div class = "aktivity_area">
 <div class="test">
-<p>Colors: <?php the_field('referate_tags',21); ?></p>
 <?php
-get_activities(0);
+get_activities("main");
 ?>
 </div>
 </div>
@@ -44,31 +43,3 @@ get_activities(0);
 get_footer();
 ?>
 
-<script>
-function fillDropdown() {
-    var dropdown = document.getElementsByClassName("dpCategories")[0];
-    //<a href="#">Link 1</a>
-    <?php 
-
-    $args = array(
-        'post_type' => 'referate'
-    );
-
-        $homepageReferate = new WP_Query($args);
-
-        while($homepageReferate->have_posts()){
-            
-            $homepageReferate->the_post(); ?>
-           
-            option = document.createElement('a');
-            option.innerHTML = "<?php the_title()?>";
-            option.setAttribute('href', '<?php the_permalink(); ?>');
-            dropdown.appendChild(option);
-
-            <?php
-
-        } 
-    
-    ?>
-}
-</script>

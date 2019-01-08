@@ -2,6 +2,9 @@
 get_header();
 ?>
 <div class="singleSidePreviwPicture">
+    <?php 
+    
+    ?>
 </div>
 <div class="singleSideOverviewArea">
     <div class="singleSideInfo">
@@ -33,7 +36,7 @@ get_header();
                 $date = $date->format('m. F Y');
                 echo "<p class='activityDate'>Monday, $date</p>";
                 echo "<p class='activityTime'>$time</p>";
-            ?>      
+            ?>
             <button type="button">Teilnehmen</button>
         </div>
         <div class="activityParticipantsArea">
@@ -121,7 +124,7 @@ get_header();
 <div class = "aktivity_area">
     <h3 class="singlePageHeadlines">Das Könnte Dich Auch Interessieren</h3>
 <?php
-get_activities(0);
+get_activities("sub");
 ?>
 </div>
 <?php

@@ -6,7 +6,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="http://www.test2.local/wp-content/themes/test2/js/script.js"></script>
     </head>
-    <body onload="fillDropdown()">
+    <body>
     <header class="site-header">
     <div class="container_header">
 <!--<h1 class="school-logo-text float-left"><a href="<?php echo site_url();?>"></a></h1> -->
@@ -19,9 +19,53 @@
         <div id="dpMenue" class="dropdown-content">
           <div class="dpCategories">
             <p>Sport</p>
+            <?php 
+              $args = array(
+                'numberposts'	=> -1,
+                'post_type'		=> 'referate',
+                'meta_query'	=> array(
+                  'relation'		=> 'OR',
+                  array(
+                    'key'		=> 'referate_tags',
+                    'value'		=> 'sport',
+                    'compare'	=> 'LIKE'
+                  ),
+                )
+              );
+              $homepageReferate = new WP_Query($args);
+
+              while($homepageReferate->have_posts()){
+                  $homepageReferate->the_post(); ?>
+                  <a href="<?php the_permalink();?>"><p><?php the_title();?></p></a>
+                <?php
+                wp_reset_postdata();
+              }
+            ?>
           </div>
           <div class="dpCategories">
             <p>Freizeit</p>
+            <?php 
+              $args = array(
+                'numberposts'	=> -1,
+                'post_type'		=> 'referate',
+                'meta_query'	=> array(
+                  'relation'		=> 'OR',
+                  array(
+                    'key'		=> 'referate_tags',
+                    'value'		=> 'freizeit',
+                    'compare'	=> 'LIKE'
+                  ),
+                )
+              );
+              $homepageReferate = new WP_Query($args);
+
+              while($homepageReferate->have_posts()){
+                  $homepageReferate->the_post(); ?>
+                  <a href="<?php the_permalink();?>"><p><?php the_title();?></p></a>
+                <?php
+                wp_reset_postdata();
+              }
+            ?>
           </div>
         </div>
       </div>

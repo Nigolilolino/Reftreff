@@ -19,19 +19,113 @@ if (isset($_POST['callFunc1'])) {
     queryNewActivities(stripslashes($_POST['callFunc1']));
 }
 
-function get_activities($array){
+function get_activities($mode){
+
+    if($mode == "main"){
         $args = array(
             'post_type'		=> 'referate',
         );
-    
-    $homepageReferate = new WP_Query($args);
-
-    while($homepageReferate->have_posts()){
-        $homepageReferate->the_post();  ?>
         
-        <a href=" <?php the_permalink(); ?>"><div class = 'activities' style="background-image: url(<?php echo the_field("referat_titelbild") ?>);" ><strong class='activity_title'><?php the_title()?></strong></div></a>
-    <?php 
-    wp_reset_postdata();
+        $homepageReferate = new WP_Query($args);
+
+        while($homepageReferate->have_posts()){
+            $homepageReferate->the_post();  ?>
+            
+            <a href=" <?php the_permalink(); ?>"><div class = 'activities' style="background-image: url(<?php echo the_field("referat_titelbild") ?>);" ><strong class='activity_title'><?php the_title()?></strong></div></a>
+        <?php 
+        wp_reset_postdata();
+        }
+    }else if($mode = "sub"){
+        $tags = get_field('referate_tags');
+        foreach($tags as $value){
+            if($value == "sport" || $value == "bewegung"){
+                $args = array(
+                    'numberposts'	=> -1,
+                    'post_type'		=> 'referate',
+                    'meta_query'	=> array(
+                      'relation'		=> 'OR',
+                      array(
+                        'key'		=> 'referate_tags',
+                        'value'		=> 'sport',
+                        'compare'	=> 'LIKE'
+                      ),
+                    )
+                  );
+                  $homepageReferate = new WP_Query($args);
+                  while($homepageReferate->have_posts()){
+                    $homepageReferate->the_post(); ?>
+                    <a href=" <?php the_permalink(); ?>"><div class = 'activities' style="background-image: url(<?php echo the_field("referat_titelbild") ?>);" ><strong class='activity_title'><?php the_title()?></strong></div></a>
+                  <?php
+                  wp_reset_postdata();
+                }
+                break;
+            }else if($value == "denken"){
+                $args = array(
+                    'numberposts'	=> -1,
+                    'post_type'		=> 'referate',
+                    'meta_query'	=> array(
+                      'relation'		=> 'OR',
+                      array(
+                        'key'		=> 'referate_tags',
+                        'value'		=> 'denken',
+                        'compare'	=> 'LIKE'
+                      ),
+                    )
+                  );
+                  $homepageReferate = new WP_Query($args);
+                  while($homepageReferate->have_posts()){
+                    $homepageReferate->the_post(); ?>
+                    <a href=" <?php the_permalink(); ?>"><div class = 'activities' style="background-image: url(<?php echo the_field("referat_titelbild") ?>);" ><strong class='activity_title'><?php the_title()?></strong></div></a>
+                  <?php
+                  wp_reset_postdata();
+                }
+                break;
+            }else if($value == "kreativ"){
+                $args = array(
+                    'numberposts'	=> -1,
+                    'post_type'		=> 'referate',
+                    'meta_query'	=> array(
+                      'relation'		=> 'OR',
+                      array(
+                        'key'		=> 'referate_tags',
+                        'value'		=> 'kreativ',
+                        'compare'	=> 'LIKE'
+                      ),
+                    )
+                  );
+                  $homepageReferate = new WP_Query($args);
+                  while($homepageReferate->have_posts()){
+                    $homepageReferate->the_post(); ?>
+                    <a href=" <?php the_permalink(); ?>"><div class = 'activities' style="background-image: url(<?php echo the_field("referat_titelbild") ?>);" ><strong class='activity_title'><?php the_title()?></strong></div></a>
+                  <?php
+                  wp_reset_postdata();
+                }
+                break;
+            }else if($value =="entspannen"){
+                $args = array(
+                    'numberposts'	=> -1,
+                    'post_type'		=> 'referate',
+                    'meta_query'	=> array(
+                      'relation'		=> 'OR',
+                      array(
+                        'key'		=> 'referate_tags',
+                        'value'		=> 'entspannen',
+                        'compare'	=> 'LIKE'
+                      ),
+                    )
+                  );
+                  $homepageReferate = new WP_Query($args);
+                  while($homepageReferate->have_posts()){
+                    $homepageReferate->the_post(); ?>
+                    <a href=" <?php the_permalink(); ?>"><div class = 'activities' style="background-image: url(<?php echo the_field("referat_titelbild") ?>);" ><strong class='activity_title'><?php the_title()?></strong></div></a>
+                  <?php
+                  wp_reset_postdata();
+                }
+                break;
+            }else{
+
+            }
+        }
     }
     
 }
