@@ -18,11 +18,11 @@ body{
   }
 
   .filler{
-    padding: 10px 5px 60px 0;
+    padding: 20px 15px 100px 0;
     height: 50px;
     position: relative;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 90px;
   }
 }
 
@@ -32,7 +32,7 @@ body{
   padding: 0 16px;
   position: relative;
   height: 85px;
-  background-color: rgba(0,0,0,0.4);
+  /*background-color: rgba(0,0,0,0.4);*/
 }
 
 .container {
@@ -45,6 +45,7 @@ body{
   height: 80px;
   width: 15%;
   margin-right: 40px;
+  margin-top: 20px;
   display: inline-block;
   float: left;
 }
@@ -78,9 +79,9 @@ body{
 /*Dropdown Menü*/
 
 .dropbtn {
+  font-family: 'Source Sans Pro', sans-serif;
   display: inline-block;
   margin-top: 10%;
-  font-size: 20pt;
   margin-left: 25%;
   background-color: transparent;
   color: white;
@@ -139,6 +140,7 @@ body{
 
 /*Ende Dropdown Menü*/
 .campi_header_link{
+  font-family: 'Source Sans Pro', sans-serif;
   height: 80px;
   width: 33%;
   display: inline-block;
@@ -148,7 +150,7 @@ body{
 .campi_header_link p{
   display: inline-block;
   margin-top: 13%;
-  font-size: 15pt;
+  font-size: 16pt;
   margin-left: 35%;
   color: white;
 }
@@ -167,21 +169,23 @@ body{
 }
 
 .login_button_header{
+  font-family: 'Source Sans Pro', sans-serif;
   background-color: #89BA22;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 6px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 20pt;
   margin: 4px 2px;
   margin-left: 17%;
-  margin-top: 5%;
+  margin-top: 6%;
   cursor: pointer;
 }
 
 .sprach_auswahl{
+  font-family: 'Source Sans Pro', sans-serif;
   height: 80px;
   width: 32%;
   display: inline-block;
@@ -190,15 +194,14 @@ body{
 
 .sprach_auswahl p {
   display: inline-block;
-  margin-top: 12%;
-  font-size: 20pt;
+  margin-top: 22px;
+  font-size: 16pt;
   margin-left: 32%;
   color: white;
 }
 
 
 .page-banner__bg-image {
-  /*opacity: .33;*/
   background-size: cover;
   position: absolute;
   top: 0;
@@ -237,7 +240,7 @@ body{
 }
 
 h2{
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
     margin-top: 0;
     margin-bottom: 1rem;
@@ -248,19 +251,25 @@ h2{
   font-size: 30px;
   float: right;
   width: 100px;
-  padding-top: 60px;
+  padding-top: 40px;
   padding-right: 80px;
 }
 
 .filter_sign_area .filter_Name{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
   margin: 0;
   display: inline;
   font-size: 15px;
 }
 
 .Filter_Area_Headline{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
   display: inline;
-  font-size: 30px;
+  font-size: 20px;
   padding-left: 45%;
   float: left;
   padding-top: 30px;
@@ -308,6 +317,7 @@ h2{
 }
 
 .call_to_action_area{
+  font-family: 'Source Sans Pro', sans-serif;
   background-color: #0F1E31;
   height: 250px;
 }
@@ -317,6 +327,7 @@ h2{
 }
 
 .call_to_action_text{
+  font-family: 'Source Sans Pro', sans-serif;
   width: 45%;
   height: auto;
   float: left;
@@ -325,11 +336,16 @@ h2{
 }
 
 .call_to_action_text h1{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 350;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   font-size: 37pt;
   color: white;
 }
 
 .call_to_action_text p{
+  font-family: 'Source Sans Pro', sans-serif;
   color: white;
   font-size: 17pt;
 }
