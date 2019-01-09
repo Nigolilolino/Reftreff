@@ -31,6 +31,7 @@ get_activities("main");
 <div class="call_to_action_text">
   <h1>Nichts Dabei?</h1>
   <p>Du hast dein Referat noch nicht gefunden und denkst das etwas fehlt? Dann gründe doch einfach ein neues Referat! Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
+  <button>Kontakt aufnehmen</button>
 </div>
 <div class="call_to_action_button">
 </div>

@@ -11,7 +11,7 @@
     <div class="container_header">
 <!--<h1 class="school-logo-text float-left"><a href="<?php echo site_url();?>"></a></h1> -->
       <div class = "HFU_Logo_Header_Div">
-        <img class = "HFU_Logo_Header" src="<?php echo get_theme_file_uri("/images/HFU_Logo_klein.png") ?>">
+        <a href="<?php echo site_url();?>"><img class = "HFU_Logo_Header" src="<?php echo get_theme_file_uri("/images/HFU_Logo_klein.png") ?>"></a>
       </div>
       <div class = "Referate_Header">
       <div class="dropdown">

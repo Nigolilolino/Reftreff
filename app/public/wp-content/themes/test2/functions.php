@@ -127,7 +127,6 @@ function get_activities($mode){
             }
         }
     }
-    
 }
 
 function get_Filters(){
