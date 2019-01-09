@@ -276,15 +276,28 @@ h2{
 }
 
 .filter_area{
-  height: 100px;
   background-color: #0F1E31;
+  padding: 2% 10% 2% 10%;
+  
 }
 
+.filterbox {
+  display: inline-block;
+  width: 20%;
+  padding: 0.2% 0% 0.2% 4%;
+}
 .filter{
   display: inline-block;
-  width: 10%;
   height: 40px;
+  color: white;
   font-size: 17pt;
+  padding-left: 15px;
+}
+
+
+.filterCheckboxes {
+  background-color: white;
+  cursor: pointer;
 }
 
 @media (min-width: 530px) {

@@ -22,9 +22,9 @@ get_header();
     <div class="headOfActivityInfo">
         <div class="headOfActivityPicture"> 
         </div>
-        <h3>Vorname Nachname</h3>
+        <h3><?php the_field("leiter_name")?></h3>
         <p>Referatsleiter</p>
-        <p>vorname.nachname@hs-furtwangen.de</p>
+        <p><?php the_field("leiter_email")?></p>
     </div>
     <div class="activitySignInArea">
         <div class="activityDateArea">
