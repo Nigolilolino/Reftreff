@@ -138,8 +138,9 @@ function get_Filters(){
     {
         foreach( $field['choices'] as $key => $value )
             {
-                echo '<div class="filterbox"><input type="checkbox" class="filterCheckboxes" name= '.$value.' value='.$value.' onclick="refreshActivities()">';
-                echo '<div class="filter">' . $value . '</div></div>';
+        
+                echo '<div class="filterbox"><input type="checkbox" class="filtercheckboxes" name= '.$value.' value='.$value.' onclick="refreshActivities()">';
+                echo '<label class="filter">' . $value . '</label></div>';
             };  
     };
 }

@@ -8,6 +8,7 @@ Version: 1.0
 
 body{
   margin: 0px;
+  font-family: 'Source Sans Pro', sans-serif; 
 }
 @media (min-width: 530px) {
   
@@ -241,9 +242,9 @@ body{
 
 h2{
   font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 300;
+    font-weight: 600;
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .filter_sign_area{
@@ -295,10 +296,24 @@ h2{
 }
 
 
-.filterCheckboxes {
-  background-color: white;
+.filterbox input {
   cursor: pointer;
+  height: 20px;
+  width: 20px;
 }
+
+.cta-button {
+  background-color: #0F1E31;
+  color: #89BA22;
+  border: 2px solid #89BA22;
+  font-size: 16px;
+  padding: 1% 8% 1% 8%;
+  cursor: pointer;
+  margin-top: -3%;
+  margin-left: 4%;
+}
+
+
 
 @media (min-width: 530px) {
 .aktivity_area{
@@ -332,7 +347,8 @@ h2{
 .call_to_action_area{
   font-family: 'Source Sans Pro', sans-serif;
   background-color: #0F1E31;
-  height: 250px;
+  height: 210px;
+  padding: 1% 0 1% 0;
 }
 
 .timetable_area{
@@ -341,17 +357,16 @@ h2{
 
 .call_to_action_text{
   font-family: 'Source Sans Pro', sans-serif;
-  width: 45%;
   height: auto;
   float: left;
   margin-left: 5%;
-  margin-top: auto;
+  margin-right: 5%;
+  
 }
 
 .call_to_action_text h1{
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 350;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 37pt;
   color: white;
@@ -360,28 +375,43 @@ h2{
 .call_to_action_text p{
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
-  font-size: 17pt;
+  font-size: 16pt;
+  margin-top: -1%;
+  width: 65%;
+  float: left;
 }
 
-.call_to_action_button{
-
-}
 
 /*................................... Footer ......................................................*/
 
 
 .site-footer {
   background-color: #11171E;
-  height: 200px;
+  height: 250px;
 }
 
 .site-footer p {
-  font-size: .9rem;
+  font-size: .15pt;
 }
 
 .site-footer .headline {
-  color: #666;
-  margin-bottom: .33rem;
+  color: #89BA22;
+  margin-bottom: 6%;
+  font-weight: 200;
+  font-size: 17pt;
+}
+
+.site-footer ul {
+  list-style-type: none;
+}
+.site-footer li {
+  text-decoration: none;
+  padding-bottom: 6px;
+}
+
+.site-footer li a{
+  text-decoration: none;
+  color: white;
 }
 
 .site-footer__link {

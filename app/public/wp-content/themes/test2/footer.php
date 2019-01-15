@@ -11,7 +11,7 @@
         </div>
 
           <div class="site-footer__col-two">
-            <h3 class="headline headline--small">Anschrift</h3>
+            <h3 class="headline headline--small">ANSCHRIFT</h3>
             <nav class="nav-list">
               <ul>
                 <li>AStA Furtwangen</li>
@@ -23,7 +23,7 @@
           </div> 
 
           <div class="site-footer__col-three">
-            <h3 class="headline headline--small">Kontakt</h3>
+            <h3 class="headline headline--small">KONTAKT</h3>
             <nav class="nav-list">
               <ul>
                 <li>Telefon: 07723 - 920 2302</li>
@@ -35,7 +35,7 @@
        
 
         <div class="site-footer__col-four">
-          <h3 class="headline headline--small">Websites</h3>
+          <h3 class="headline headline--small">WEBSITE</h3>
           <nav>
             <ul class="min-list social-icons-list group">
               <li><a href="#" class="social-color-facebook">HFU-Furtwangen</a></li>
