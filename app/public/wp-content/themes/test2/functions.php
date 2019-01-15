@@ -202,8 +202,10 @@ function getTimetableInput($date){
                 $test = get_field('referat_time_and_date', $p->ID);
                 $dateTime = substr($test,11);
             ?>
-                <p class=""><?php echo $dateTime ?></p>
-                <p><?php echo $p->post_title; ?></p>
+            <div class="timetableActivitiesTimeAndName">
+                <p class="timetableActivitiesTime"><?php echo $dateTime ?></p>
+                <p class="timetableActivitiesName"><?php echo $p->post_title; ?></p>
+            </div>
             <?php endforeach; ?>
     
     <?php endif;

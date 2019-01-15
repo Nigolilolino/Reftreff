@@ -73,7 +73,7 @@ get_header();
                 <div class="participantPicture"></div>
                 <div class="participantInfo">
                     <p class="participantName">Vorname Nachname</p>
-                    <p class="postDate">Sonntag,20:30 Uhr</p>
+                    <p class="postDate">Sonntag,21:22 Uhr</p>
                     <p class="postContent">Schade, aber ok....</p>
                 </div>
             </div>
@@ -81,6 +81,7 @@ get_header();
                 <div class="participantPicture"></div>
                 <div class="participantInfo">
                     <p class="participantName">Vorname Nachname</p>
+                    <p class="postDate">Sonntag,20:34 Uhr</p>
                     <p class="participantEmail">Hatte heute eh keine Lust XD</p>
                 </div>
             </div>
@@ -88,7 +89,8 @@ get_header();
                 <div class="participantPicture"></div>
                 <div class="participantInfo">
                     <p class="participantName">Vorname Nachname</p>
-                    <p class="participantEmail">Hey Leute, heute fällt das treffen aus.</p>
+                    <p class="postDate">Sonntag,20:30 Uhr</p>
+                    <p class="participantEmail">Hey Leute, morgen fällt das treffen aus.</p>
                 </div>
                 <input type="text" name="comment" value="">
                 <button type="button"></button>
@@ -125,7 +127,7 @@ get_header();
         <div id="monday" class="timetableDays">
             <div class="timetableDates">
             <?php $timestamp = strtotime("monday this week");
-                $date = date('F j, Y', $timestamp);
+                $date = date('d.m.Y', $timestamp);
             ?>
                 <p class="timetableDatesDay">Monntag</p>
                 <p class="timetableDatesDate"><?php echo $date ?></p>

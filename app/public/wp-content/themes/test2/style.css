@@ -556,7 +556,7 @@ h2{
   width: 100px;
   border-radius: 50%;
   position: relative;
-  left: 30%;
+  left: 28%;
 }
 
 .headOfActivityInfo h3{
@@ -682,40 +682,61 @@ h2{
   display: inline-grid;
   width: 40%;
   text-align: center;
+  margin-left: 10%;
 }
 
 .timetable_area{
-
+  text-align: center;
+  height: 450px;
 }
 
 .timetable{
   width: 95%;
-  height: 500px;
+  height: auto;
   margin-left: 2.5%;
-  background-color: blue;
 }
 
 .timetableDays{
   width: 19%;
-  height: auto;
-  background-color: red;
+  height: 350px;
   display: inline-block;
 }
 
 .timetableDates{
-
+  text-align: center;
 }
 
 .timetableDatesDay{
-
+  font-size: larger;
 }
 
 .timetableDatesDate{
-  
+  font-size: x-large;
+  font-weight: 700;
+  color: #89BA22;
 }
 
 .timetableActivities{
+  text-align: center;
+}
 
+.timetableActivitiesTimeAndName{
+  height: auto;
+  width: 100%;
+  text-align: left;
+  float: left;
+}
+
+.timetableActivitiesTime{
+  color: #89BA22;
+  display: inline-block;
+  margin-left: 24%;
+  font-weight: 700;
+}
+
+.timetableActivitiesName{
+  display: inline-block;
+  font-weight: 600;
 }
 
 /*................................................................................................... */
