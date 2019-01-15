@@ -30,13 +30,13 @@ get_header();
         <div class="activityDateArea">
             <?php 
                 $date = get_field('referat_time_and_date', false);
-                $date = DateTime::createFromFormat('F j, Y g:i a', $date);
+                $date = DateTime::createFromFormat('Y-m-d H:i', $date);
                 $time = $date->format('H:i');
                 $date = $date->format('j. F Y');
                 $timestamp = strtotime($date);
                 $day = date('l', $timestamp);
                 echo "<p class='activityDate'>$day, $date</p>";
-                echo "<p class='activityTime'>$time</p>";
+                echo "<p class='activityTime'>$time</p>"; 
             ?>
             <button type="button">Teilnehmen</button>
         </div>
@@ -124,38 +124,63 @@ get_header();
     <div class="timetable">
         <div id="monday" class="timetableDays">
             <div class="timetableDates">
+            <?php $timestamp = strtotime("monday this week");
+                $date = date('F j, Y', $timestamp);
+            ?>
                 <p class="timetableDatesDay">Monntag</p>
-                <p class="timetableDatesDate">19.11.2018</p>
+                <p class="timetableDatesDate"><?php echo $date ?></p>
             </div>
-            <div class="timetableActivities"></div>
+            <div class="timetableActivities">
+                <?php getTimetableInput($timestamp); ?>
+            </div>
         </div>
         <div id="tuesday" class="timetableDays">
             <div class="timetableDates">
-                <p class="timetableDatesDay">Monntag</p>
-                <p class="timetableDatesDate">19.11.2018</p>
+            <?php $timestamp = strtotime("tuesday this week");
+                $date = date('d.m.Y', $timestamp);
+            ?>
+                <p class="timetableDatesDay">Dienstag</p>
+                <p class="timetableDatesDate"><?php echo $date ?></p>
             </div>
-            <div class="timetableActivities"></div>
+            <div class="timetableActivities">
+            <?php getTimetableInput($timestamp); ?>
+            </div>
         </div>
         <div id="wednesday" class="timetableDays">
             <div class="timetableDates">
-                <p class="timetableDatesDay">Monntag</p>
-                <p class="timetableDatesDate">19.11.2018</p>
+            <?php $timestamp = strtotime("wednesday this week");
+                $date = date('d.m.Y', $timestamp);
+            ?>
+                <p class="timetableDatesDay">Mittwoch</p>
+                <p class="timetableDatesDate"><?php echo $date ?></p>
             </div>
-            <div class="timetableActivities"></div>
+            <div class="timetableActivities">
+            <?php getTimetableInput($timestamp); ?>
+            </div>
         </div>
         <div id="thursday" class="timetableDays">
             <div class="timetableDates">
-                <p class="timetableDatesDay">Monntag</p>
-                <p class="timetableDatesDate">19.11.2018</p>
+            <?php $timestamp = strtotime("thursday this week");
+                $date = date('d.m.Y', $timestamp);
+            ?>
+                <p class="timetableDatesDay">Donnerstag</p>
+                <p class="timetableDatesDate"><?php echo $date ?></p>
             </div>
-            <div class="timetableActivities"></div>
+            <div class="timetableActivities">
+            <?php getTimetableInput($timestamp); ?>
+            </div>
         </div>
         <div id="friday" class="timetableDays">
             <div class="timetableDates">
-                <p class="timetableDatesDay">Monntag</p>
-                <p class="timetableDatesDate">19.11.2018</p>
+            <?php $timestamp = strtotime("friday this week");
+                $date = date('d.m.Y', $timestamp);
+            ?>
+                <p class="timetableDatesDay">Freitag</p>
+                <p class="timetableDatesDate"><?php echo $date ?></p>
             </div>
-            <div class="timetableActivities"></div>
+            <div class="timetableActivities">
+            <?php getTimetableInput($timestamp); ?>
+            </div>
         </div>
     </div>
 </div>

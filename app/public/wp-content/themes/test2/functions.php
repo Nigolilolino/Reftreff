@@ -138,7 +138,6 @@ function get_Filters(){
     {
         foreach( $field['choices'] as $key => $value )
             {
-        
                 echo '<div class="filterbox"><input type="checkbox" class="filtercheckboxes" name= '.$value.' value='.$value.' onclick="refreshActivities()">';
                 echo '<label class="filter">' . $value . '</label></div>';
             };  
@@ -169,6 +168,45 @@ function queryNewActivities($args){
     wp_reset_postdata();
     
     
+}
+
+function getTimetableInput($date){
+    $time_now = strtotime("monday this week");
+
+    $dayBefore = strtotime('0 hours 2 seconds', $date);
+    $dayAfter = strtotime('23 hours 59 seconds', $date);
+    $dayBeforeInString = date('Y-m-d H:i:s', $dayBefore);
+    $dayAfterInString = date('Y-m-d H:i:s', $dayAfter);
+
+    print_r($date_next_weekz);
+
+    $posts = get_posts(array(
+        'posts_per_page'	=> -1,
+        'post_type'			=> 'referate',
+        'meta_query' 		=> array(
+            array(
+                'key'			=> 'referat_time_and_date',
+                'compare'		=> 'BETWEEN',
+                'value'			=> array($dayBeforeInString, $dayAfterInString),
+                'type'			=> 'DATETIME'
+            )
+        ),
+        'order'				=> 'ASC',
+        'orderby'			=> 'meta_value',
+        'meta_key'			=> 'referat_time_and_date',
+        'meta_type'			=> 'DATETIME'
+    ));
+    
+    if( $posts ): ?>
+            <?php foreach( $posts as $p ):
+                $test = get_field('referat_time_and_date', $p->ID);
+                $dateTime = substr($test,11);
+            ?>
+                <p class=""><?php echo $dateTime ?></p>
+                <p><?php echo $p->post_title; ?></p>
+            <?php endforeach; ?>
+    
+    <?php endif;
 }
 ?>
 
