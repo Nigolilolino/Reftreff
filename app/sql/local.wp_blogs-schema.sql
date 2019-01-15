@@ -1,0 +1,20 @@
+/*!40101 SET NAMES binary*/;
+/*!40014 SET FOREIGN_KEY_CHECKS=0*/;
+
+CREATE TABLE `wp_blogs` (
+  `blog_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `site_id` bigint(20) NOT NULL DEFAULT '0',
+  `domain` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `path` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `registered` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `last_updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `public` tinyint(2) NOT NULL DEFAULT '1',
+  `archived` tinyint(2) NOT NULL DEFAULT '0',
+  `mature` tinyint(2) NOT NULL DEFAULT '0',
+  `spam` tinyint(2) NOT NULL DEFAULT '0',
+  `deleted` tinyint(2) NOT NULL DEFAULT '0',
+  `lang_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`blog_id`),
+  KEY `domain` (`domain`(50),`path`(5)),
+  KEY `lang_id` (`lang_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;

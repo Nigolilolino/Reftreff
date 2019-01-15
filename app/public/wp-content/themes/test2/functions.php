@@ -15,11 +15,12 @@ function reftreffFeatures(){
 }
 add_action("after_setup_theme", "reftreffFeatures");
 
-if (isset($_POST['callFunc1'])) {
+/*if (isset($_POST['callFunc1'])) {
     queryNewActivities(stripslashes($_POST['callFunc1']));
-}
+}*/
 
 function get_activities($mode){
+    wp_reset_query();
 
     if($mode == "main"){
         $args = array(
@@ -156,21 +157,16 @@ function queryNewActivities($args){
             ),
         ),
     );
-
+    $links = array();
     $homepageReferate = new WP_Query($args);
 
     while($homepageReferate->have_posts()){
         $homepageReferate->the_post();
-        ?>
-        <script>
-            var area = document.getElementsByClassName("aktivity_area")[0];
-            var textnode = document.createTextNode("Water"); 
-            area.appendChild(textnode);
-        </script>
-        <?php
+        array_push($links, the_permalink() );
     }
+    echo json_encode($links);
     wp_reset_postdata();
-    echo json_encode($args);
+    
     
 }
 ?>

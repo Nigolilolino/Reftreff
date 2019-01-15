@@ -121,6 +121,43 @@ get_header();
 </div>
 <div class="timetable_area">
     <h3 class="singlePageHeadlines">Wochenkalender</h3>
+    <div class="timetable">
+        <div id="monday" class="timetableDays">
+            <div class="timetableDates">
+                <p class="timetableDatesDay">Monntag</p>
+                <p class="timetableDatesDate">19.11.2018</p>
+            </div>
+            <div class="timetableActivities"></div>
+        </div>
+        <div id="tuesday" class="timetableDays">
+            <div class="timetableDates">
+                <p class="timetableDatesDay">Monntag</p>
+                <p class="timetableDatesDate">19.11.2018</p>
+            </div>
+            <div class="timetableActivities"></div>
+        </div>
+        <div id="wednesday" class="timetableDays">
+            <div class="timetableDates">
+                <p class="timetableDatesDay">Monntag</p>
+                <p class="timetableDatesDate">19.11.2018</p>
+            </div>
+            <div class="timetableActivities"></div>
+        </div>
+        <div id="thursday" class="timetableDays">
+            <div class="timetableDates">
+                <p class="timetableDatesDay">Monntag</p>
+                <p class="timetableDatesDate">19.11.2018</p>
+            </div>
+            <div class="timetableActivities"></div>
+        </div>
+        <div id="friday" class="timetableDays">
+            <div class="timetableDates">
+                <p class="timetableDatesDay">Monntag</p>
+                <p class="timetableDatesDate">19.11.2018</p>
+            </div>
+            <div class="timetableActivities"></div>
+        </div>
+    </div>
 </div>
 <div class = "aktivity_area">
     <h3 class="singlePageHeadlines">Das Könnte Dich Auch Interessieren</h3>

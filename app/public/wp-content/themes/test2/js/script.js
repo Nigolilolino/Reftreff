@@ -27,16 +27,13 @@ function prepareArguments(_values){
         while (area.firstChild) {
             area.removeChild(area.firstChild);
         }
-        
             //$( ".activities" ).replaceWith( "<div class='activities'></div>" );
-
             $.ajax({
             url: 'index.php',
             type: 'post',
             data: { "callFunc1": args},
             success: function(response) { alert(response); }
         });
-                    
             //$(".aktivity_area").load("index.php .aktivity_area");
             /*
             jQuery.ajax({

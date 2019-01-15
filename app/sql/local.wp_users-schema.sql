@@ -12,6 +12,8 @@ CREATE TABLE `wp_users` (
   `user_activation_key` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
   `user_status` int(11) NOT NULL DEFAULT '0',
   `display_name` varchar(250) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `spam` tinyint(2) NOT NULL DEFAULT '0',
+  `deleted` tinyint(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`),
   KEY `user_login_key` (`user_login`),
   KEY `user_nicename` (`user_nicename`),

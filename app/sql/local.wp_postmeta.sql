@@ -25,7 +25,7 @@ INSERT INTO `wp_postmeta` VALUES
 (27,23,"_edit_last","1"),
 (28,23,"_edit_lock","1546956319:1"),
 (29,24,"_edit_last","1"),
-(30,24,"_edit_lock","1547026801:1"),
+(30,24,"_edit_lock","1547377985:1"),
 (31,25,"_edit_last","1"),
 (32,25,"_edit_lock","1545139456:1"),
 (33,21,"referat_titelbild","27"),
@@ -65,7 +65,7 @@ INSERT INTO `wp_postmeta` VALUES
 (67,24,"_referat_datum_ende","field_5c10f619c4a53"),
 (68,24,"referate_tags","a:4:{i:0;s:12:\"unterhaltung\";i:1;s:6:\"indoor\";i:2;s:10:\"entspannen\";i:3;s:8:\"freizeit\";}"),
 (69,24,"_referate_tags","field_5c17e7be6b9ef"),
-(70,24,"_","field_5c17e8ea6b9f0"),
+(70,24,"_","field_5c34bffa0ce80"),
 (71,23,"referat_datum","20190110"),
 (72,23,"_referat_datum","field_5c10f40cf8d78"),
 (73,23,"referat_datum_ende","20190111"),
@@ -98,4 +98,8 @@ INSERT INTO `wp_postmeta` VALUES
 (100,21,"referat_time_and_date","2019-01-24 15:00:00"),
 (101,21,"_referat_time_and_date","field_5c2f4766fd266"),
 (102,46,"_edit_last","1"),
-(103,46,"_edit_lock","1547035643:1");
+(103,46,"_edit_lock","1547041409:1"),
+(104,24,"leiter_name","Soein Dude"),
+(105,24,"_leiter_name","field_5c35e2ecce3c2"),
+(106,24,"leiter_email","soein.dude@hs-furtwangen.de"),
+(107,24,"_leiter_email","field_5c35e3a4c34bd");

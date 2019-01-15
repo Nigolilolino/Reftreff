@@ -658,4 +658,34 @@ h2{
 
 }
 
+.timetable{
+  width: 95%;
+  height: 500px;
+  margin-left: 2.5%;
+  background-color: blue;
+}
+
+.timetableDays{
+  width: 19%;
+  height: auto;
+  background-color: red;
+  display: inline-block;
+}
+
+.timetableDates{
+
+}
+
+.timetableDatesDay{
+
+}
+
+.timetableDatesDate{
+  
+}
+
+.timetableActivities{
+
+}
+
 /*................................................................................................... */
