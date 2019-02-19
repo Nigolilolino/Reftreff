@@ -47,6 +47,13 @@
       </div>
 
     </div> 
+    <div class="ddi-area">
+      <ul class="ddi-area-list">
+        <li><a href="#" class="ddi-area-links"></a>Downloads|</li>
+        <li><a href="#" class="ddi-area-links"></a>Datenschutzerklärung|</li>
+        <li><a href="./blog/infoSites/impressum/" class="ddi-area-links">Impressum</a></li>
+      </ul>
+    </div>
   </footer>
 
     <?php wp_footer(); ?>

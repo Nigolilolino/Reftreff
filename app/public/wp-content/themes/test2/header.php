@@ -55,6 +55,11 @@
                     'value'		=> 'freizeit',
                     'compare'	=> 'LIKE'
                   ),
+                  array(
+                    'key'		=> 'referate_tags',
+                    'value'		=> 'unterhaltung',
+                    'compare'	=> 'LIKE'
+                  ),
                 )
               );
               $homepageReferate = new WP_Query($args);

@@ -93,7 +93,7 @@ body{
 }
 
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
+  
 }
 
 .dropdown {
@@ -499,7 +499,23 @@ h2{
   right: 0;
   width: 310px;
 }
-/*................................................................................................. */
+
+.ddi-area{
+  background-color: green;
+  height: 43px;
+  margin-top: 5%;
+}
+
+.ddi-area-list{
+  display: inline-flex;
+  float: right;
+  margin-right: 4%;
+}
+
+.ddi-area-links{
+
+}
+/*.................................................................................................. */
 
 
 /*......................................... SinglePages(Referate).................................... */
@@ -671,7 +687,9 @@ h2{
 }
 
 .activityBlog input{
-
+  margin-top: 20px;
+  width: 50%;
+  margin-left: 31%;
 }
 
 .activityBlog button{
@@ -739,4 +757,90 @@ h2{
   font-weight: 600;
 }
 
+.page-banner__bg-image_ref{
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 450px;
+}
 /*................................................................................................... */
+/*........................................Impressum...................................................*/
+
+.disclaimer{
+
+}
+
+.impressum{
+
+}
+
+.impressumLogo{
+  height: 150px;
+  width: 300px;
+}
+
+.impressumAdress{
+
+}
+
+.impressumCommunication{
+
+}
+
+.impressumContactPerson{
+
+}
+
+.impressumContactPersonName{
+
+}
+
+.impressumContactPersonEmail{
+
+}
+
+/*..........................................Landingpage...............................................*/
+
+.landingpage_headline{
+  text-align: center;
+  font-size: 20pt;
+  background-color: #11171E;
+  color: white;
+}
+
+.landingpage_headline h1{
+  margin: 0;
+  background-color: #11171E;
+}
+
+.landingpage_headline h3{
+
+}
+
+.landingpage_wrapper{
+  background-color: #11171E;
+  }
+  
+  .campi_area{
+    height: 100%;
+    width: 33%;
+    display: inline-block;
+    background-color: #11171E;
+  }
+  
+  .campi_name{
+    text-align: center;
+    margin-top: 80%;
+    color: white;
+    
+  }
+
+  .campi_name h3{
+    font-size: 30pt;
+  }
+  
+  /*....................................................................................................*/
+  

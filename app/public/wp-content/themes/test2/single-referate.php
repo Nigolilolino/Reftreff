@@ -1,6 +1,12 @@
 <?php 
 get_header();
 ?>
+<div class="page-banner">
+  <div class="page-banner__bg-image_ref" style="background-image: url(<?php echo the_field("header_referate") ?>);"></div>
+    <div class="page-banner__content container t-center c-white">
+    </div>
+  <div>  
+</div>
 <div class="singleSidePreviwPicture">
     <?php 
     
@@ -73,7 +79,7 @@ get_header();
                 <div class="participantPicture"></div>
                 <div class="participantInfo">
                     <p class="participantName">Vorname Nachname</p>
-                    <p class="postDate">Sonntag,21:22 Uhr</p>
+                    <p class="postDate">Sonntag, 21:22 Uhr</p>
                     <p class="postContent">Schade, aber ok....</p>
                 </div>
             </div>
@@ -81,7 +87,7 @@ get_header();
                 <div class="participantPicture"></div>
                 <div class="participantInfo">
                     <p class="participantName">Vorname Nachname</p>
-                    <p class="postDate">Sonntag,20:34 Uhr</p>
+                    <p class="postDate">Sonntag, 20:34 Uhr</p>
                     <p class="participantEmail">Hatte heute eh keine Lust XD</p>
                 </div>
             </div>
@@ -89,11 +95,11 @@ get_header();
                 <div class="participantPicture"></div>
                 <div class="participantInfo">
                     <p class="participantName">Vorname Nachname</p>
-                    <p class="postDate">Sonntag,20:30 Uhr</p>
+                    <p class="postDate">Sonntag, 20:30 Uhr</p>
                     <p class="participantEmail">Hey Leute, morgen fällt das treffen aus.</p>
                 </div>
                 <input type="text" name="comment" value="">
-                <button type="button"></button>
+                <button type="button">send</button>
             </div>
     </div>
     <div class="activityFolower">
