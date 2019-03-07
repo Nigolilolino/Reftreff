@@ -17,11 +17,10 @@ INSERT INTO `wp_usermeta` VALUES
 (13,1,"wp_user_level","10"),
 (14,1,"dismissed_wp_pointers","wp496_privacy"),
 (15,1,"show_welcome_panel","1"),
-(17,1,"wp_dashboard_quick_press_last_post_id","74"),
+(17,1,"wp_dashboard_quick_press_last_post_id","121"),
 (18,1,"community-events-location","a:1:{s:2:\"ip\";s:12:\"192.168.95.0\";}"),
 (19,1,"wp_user-settings","libraryContent=browse&mfold=o"),
 (20,1,"wp_user-settings-time","1545070473"),
-(21,1,"session_tokens","a:1:{s:64:\"c8917b780c6738811808c1f95335aa9cab4ade443485294b0b1b9cd857077ec3\";a:4:{s:10:\"expiration\";i:1550490590;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\";s:5:\"login\";i:1550317790;}}"),
 (22,1,"closedpostboxes_referate","a:0:{}"),
 (23,1,"metaboxhidden_referate","a:1:{i:0;s:7:\"slugdiv\";}"),
 (24,1,"acf_user_settings","a:1:{s:15:\"show_field_keys\";s:1:\"1\";}"),
@@ -30,4 +29,5 @@ INSERT INTO `wp_usermeta` VALUES
 (27,1,"meta-box-order_referate","a:4:{s:15:\"acf_after_title\";s:0:\"\";s:4:\"side\";s:9:\"submitdiv\";s:6:\"normal\";s:115:\"acf-group_5c35df3eb2319,acf-group_5c10f3fc48c00,acf-group_5c103b83cf9d2,acf-group_5c17e7b776e2d,postexcerpt,slugdiv\";s:8:\"advanced\";s:0:\"\";}"),
 (28,1,"screen_layout_referate","2"),
 (29,1,"closedpostboxes_infosites","a:0:{}"),
-(30,1,"metaboxhidden_infosites","a:6:{i:0;s:23:\"acf-group_5c35df3eb2319\";i:1;s:23:\"acf-group_5c10f3fc48c00\";i:2;s:23:\"acf-group_5c103b83cf9d2\";i:3;s:23:\"acf-group_5c17e7b776e2d\";i:4;s:11:\"postexcerpt\";i:5;s:7:\"slugdiv\";}");
+(30,1,"metaboxhidden_infosites","a:6:{i:0;s:23:\"acf-group_5c35df3eb2319\";i:1;s:23:\"acf-group_5c10f3fc48c00\";i:2;s:23:\"acf-group_5c103b83cf9d2\";i:3;s:23:\"acf-group_5c17e7b776e2d\";i:4;s:11:\"postexcerpt\";i:5;s:7:\"slugdiv\";}"),
+(31,1,"session_tokens","a:1:{s:64:\"c2dc47a2f454f7c56fd7ea17fa6ebe1a955d474436823917b816c454ebed503d\";a:4:{s:10:\"expiration\";i:1552136966;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36\";s:5:\"login\";i:1551964166;}}");

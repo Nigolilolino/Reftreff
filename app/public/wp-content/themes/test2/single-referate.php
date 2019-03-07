@@ -25,13 +25,34 @@ get_header();
         ?>
         <button type="button">Referat folgen</button>
     </div>
-    <div class="headOfActivityInfo">
-        <div class="headOfActivityPicture"> 
+
+    <div class ="headOfActivityAndDownloadArea">
+        <div class="headOfActivityInfo">
+            <div class="headOfActivityPicture"> 
+            </div>
+            <h3><?php the_field("leiter_name")?></h3>
+            <p>Referatsleiter</p>
+            <p><?php the_field("leiter_email")?></p>
+            <hr>
         </div>
-        <h3><?php the_field("leiter_name")?></h3>
-        <p>Referatsleiter</p>
-        <p><?php the_field("leiter_email")?></p>
+
+        <div class="singleSideDownloadArea">
+            <h2>Downloads</h2>
+            <?php 
+            for($i=1; $i < 4; $i++){
+                if( have_rows('downloads' . $i) ):
+                    while ( have_rows('downloads' . $i) ) : the_row();
+                        ?> <a href="<?php the_sub_field('download_link'); ?>" target="blank"><p class="downloads_label"><?php the_sub_field('download_label'); ?> </p></a> <?php
+                    endwhile;
+                else :
+                    ?> <p class="default-value"> Für dieses Referat sind keine Dateien vorhanden. </p> <?php
+                    break;
+                endif;
+            }
+            ?>
+        </div>
     </div>
+
     <div class="activitySignInArea">
         <div class="activityDateArea">
             <?php 
@@ -43,6 +64,9 @@ get_header();
                 $day = date('l', $timestamp);
                 echo "<p class='activityDate'>$day, $date</p>";
                 echo "<p class='activityTime'>$time</p>"; 
+            ?>
+            <p><?php the_field('strase_und_hausnummer'); ?></p>
+            <p><?php the_field('raumnummer') ?></p> <?php
             ?>
             <button type="button">Teilnehmen</button>
         </div>

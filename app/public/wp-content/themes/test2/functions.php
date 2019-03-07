@@ -170,45 +170,74 @@ function queryNewActivities($args){
     
 }
 
+function updateTimes(){
+  $posts = get_posts(array(
+    'post_type'			=> 'referate',
+    'posts_per_page'	=> -1
+  ));
+
+  if($posts): ?>
+    <?php foreach( $posts as $p ):
+        $id = $p->ID;
+        $timeNow = new DateTime();
+        $timestringNow = $timeNow->format('Y-m-d H:i');
+        $oldTimeActivity = get_field('referat_time_and_date', $id);
+        $dateTimeActivity = datetime::createfromformat('Y-m-d H:i',$oldTimeActivity);
+        $dateObjectActivity = new DateTime($oldTimeActivity);
+
+        if($dateObjectActivity < $timeNow){
+          $dateObjectActivity->add(new DateInterval('P7D'));
+          $timestringActivity = $dateObjectActivity->format('Y-m-d H:i'); 
+          update_field("referat_time_and_date", $timestringActivity, $id);
+        }
+        
+    ?>
+    
+    <?php endforeach; ?>
+  
+  <?php endif;
+  wp_reset_postdata();
+}
+
 function getTimetableInput($date){
-    $time_now = strtotime("monday this week");
+  $time_now = strtotime("monday this week");
 
-    $dayBefore = strtotime('0 hours 2 seconds', $date);
-    $dayAfter = strtotime('23 hours 59 seconds', $date);
-    $dayBeforeInString = date('Y-m-d H:i:s', $dayBefore);
-    $dayAfterInString = date('Y-m-d H:i:s', $dayAfter);
+  $dayBefore = strtotime('0 hours 2 seconds', $date);
+  $dayAfter = strtotime('23 hours 59 seconds', $date);
+  $dayBeforeInString = date('Y-m-d H:i:s', $dayBefore);
+  $dayAfterInString = date('Y-m-d H:i:s', $dayAfter);
 
-    print_r($date_next_weekz);
+  print_r($date_next_weekz);
 
-    $posts = get_posts(array(
-        'posts_per_page'	=> -1,
-        'post_type'			=> 'referate',
-        'meta_query' 		=> array(
-            array(
-                'key'			=> 'referat_time_and_date',
-                'compare'		=> 'BETWEEN',
-                'value'			=> array($dayBeforeInString, $dayAfterInString),
-                'type'			=> 'DATETIME'
-            )
-        ),
-        'order'				=> 'ASC',
-        'orderby'			=> 'meta_value',
-        'meta_key'			=> 'referat_time_and_date',
-        'meta_type'			=> 'DATETIME'
-    ));
-    
-    if( $posts ): ?>
-            <?php foreach( $posts as $p ):
-                $test = get_field('referat_time_and_date', $p->ID);
-                $dateTime = substr($test,11);
-            ?>
-            <div class="timetableActivitiesTimeAndName">
-                <p class="timetableActivitiesTime"><?php echo $dateTime ?></p>
-                <p class="timetableActivitiesName"><?php echo $p->post_title; ?></p>
-            </div>
-            <?php endforeach; ?>
-    
-    <?php endif;
+  $posts = get_posts(array(
+      'posts_per_page'	=> -1,
+      'post_type'			=> 'referate',
+      'meta_query' 		=> array(
+          array(
+              'key'			=> 'referat_time_and_date',
+              'compare'		=> 'BETWEEN',
+              'value'			=> array($dayBeforeInString, $dayAfterInString),
+              'type'			=> 'DATETIME'
+          )
+      ),
+      'order'				=> 'ASC',
+      'orderby'			=> 'meta_value',
+      'meta_key'			=> 'referat_time_and_date',
+      'meta_type'			=> 'DATETIME'
+  ));
+  
+  if( $posts ): ?>
+          <?php foreach( $posts as $p ):
+              $date = get_field('referat_time_and_date', $p->ID);
+              $dateTime = substr($date,11);
+          ?>
+          <div class="timetableActivitiesTimeAndName">
+              <p class="timetableActivitiesTime"><?php echo $dateTime ?></p>
+              <p class="timetableActivitiesName"><?php echo $p->post_title; ?></p>
+          </div>
+          <?php endforeach; ?>
+  
+  <?php endif;
 }
 ?>
 
