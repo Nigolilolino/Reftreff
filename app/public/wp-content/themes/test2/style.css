@@ -160,13 +160,17 @@ body{
   font-size: 20pt;
   color: white;
 }
-
+/*
 .login_btn_area_header{
   height: 80px;
   width: 33%;
   display: inline-block;
   float: left;
   color: white;
+}
+
+.login_button_user_avatar{
+
 }
 
 .login_button_header{
@@ -184,7 +188,35 @@ body{
   margin-top: 6%;
   cursor: pointer;
 }
+*/
 
+.login_btn_area_header{
+  height: 80px;
+  width: 33%;
+  display: inline-block;
+  float: left;
+  color: white;
+}
+
+.login_button_user_avatar{
+  display: inline-block;
+}
+
+.login_button_header{
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #89BA22;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20pt;
+  /* margin: 4px 2px; */
+  /* margin-left: 22%; */
+  /* margin-top: 6%; */
+  cursor: pointer;
+}
 .sprach_auswahl{
   font-family: 'Source Sans Pro', sans-serif;
   height: 80px;

@@ -82,9 +82,18 @@
         <p>Campi</p>
             <i class="fas fa-map-marked-alt"></i>
         </div>
+        <?php 
+        if(is_user_logged_in()){ ?>
           <div class = "login_btn_area_header">
-            <button type="button" class="login_button_header">Login</button>
+            <div class ="login_button_user_avatar"><?php echo get_avatar(get_current_user_id(), 40) ?></div>
+            <a href="<?php echo wp_logout_url(); ?>"><button type="button" class="login_button_header">Log Out</button></a>
           </div>
+        <?php }else{ ?>
+          <div class = "login_btn_area_header">
+            <a href="<?php echo wp_login_url() ?>"><button type="button" class="login_button_header">Log In</button></a>
+          </div>
+        <?php }
+        ?>
         <div class="sprach_auswahl">
             <p>DE/EN</p>
         </div>

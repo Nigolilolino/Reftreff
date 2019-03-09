@@ -15,6 +15,42 @@ function reftreffFeatures(){
 }
 add_action("after_setup_theme", "reftreffFeatures");
 
+//Weitereitung und Darstellung von und für Subscriber
+
+add_action("admin_init", "rediredtingSubscribersToFrontend");
+
+function rediredtingSubscribersToFrontend(){
+  $currentUser = wp_get_current_user();
+  
+  if(count($currentUser->roles) == 1 AND $currentUser->roles[0] == "subscriber"){
+    wp_redirect(site_url("/"));
+    exit;
+  }
+}
+
+add_action("wp_loaded", "blockAdminBarForSubs");
+
+function blockAdminBarForSubs(){
+  $currentUser = wp_get_current_user();
+  
+  if(count($currentUser->roles) == 1 AND $currentUser->roles[0] == "subscriber"){
+    show_admin_bar(false);
+  }
+}
+
+//Änderung des Log In Screens
+add_filter("login_headerurl", "newHeaderURL");
+
+function newHeaderURL(){
+  return esc_url(site_url("/"));
+}
+
+add_action("login_enqueue_scripts", "newLoginPageCSS");
+
+function newLoginPageCSS(){
+  wp_enqueue_style("reftreffMainStyles", get_stylesheet_uri());
+}
+
 /*if (isset($_POST['callFunc1'])) {
     queryNewActivities(stripslashes($_POST['callFunc1']));
 }*/
@@ -170,6 +206,7 @@ function queryNewActivities($args){
     
 }
 
+//.....................................Funktionen des Kalenders................................
 function updateTimes(){
   $posts = get_posts(array(
     'post_type'			=> 'referate',
@@ -239,5 +276,7 @@ function getTimetableInput($date){
   
   <?php endif;
 }
+//.....................................Ende Kalender-Funktionen...............................
 ?>
+
 
