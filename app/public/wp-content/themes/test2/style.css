@@ -581,7 +581,7 @@ h2{
   font-weight: 100;
 }
 
-.singleSideInfo button{
+.singleSideInfo button[data-exists="no"]{
   background-color: #11171E;
   border: none;
   color: white;
@@ -593,8 +593,16 @@ h2{
   font-size: 30px;
 }
 
-.headOfActivityAndDownloadArea{
+.singleSideInfo button[data-exists="yes"]{
+  background-color: rgb(247, 224, 22);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
   display: inline-block;
+  width: 80%;
+  font-size: 30px;
 }
 
 .headOfActivityInfo{

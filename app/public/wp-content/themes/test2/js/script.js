@@ -63,7 +63,6 @@ function myFunction() {
   document.getElementById("dpMenue").classList.toggle("show");
 }
 
-
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -79,3 +78,64 @@ window.onclick = function(event) {
 
 //............................................................................................
 
+class FollowActivityButton{
+    constructor(){
+        this.events();
+    }
+
+    events(){
+        $("#activityFollowBtn").on("click", this.clickDispatcher.bind(this));
+    }
+
+    clickDispatcher(e){
+        var currentFollowButton = $(e.target).closest("#activityFollowBtn");
+
+        if(currentFollowButton.attr("data-exists") == "yes"){
+            this.defollowActivity(currentFollowButton);
+        }else{
+            this.followActivity(currentFollowButton);
+        }
+    }
+
+    followActivity(_currentFollowButton){
+        $.ajax({
+            beforeSend: (xhr) => {
+                xhr.setRequestHeader("X-WP-Nonce", reftreffData.nonce)
+            },
+            url: "http://test2.local/wp-json/reftreff/v1/manageFollow",
+            type: "POST",
+            data: {"activityId": _currentFollowButton.data("activity"), "followerId": _currentFollowButton.data("userid")},
+            success: (response) => {
+                _currentFollowButton.attr("data-exists", "yes");
+                _currentFollowButton.attr("data-follow", response);
+                console.log(response);
+            },
+            error:(response) => {
+                console.log(response);
+            }
+        });
+    }
+
+    defollowActivity(_currentFollowButton){
+        $.ajax({
+            beforeSend: (xhr) => {
+                xhr.setRequestHeader("X-WP-Nonce", reftreffData.nonce)
+            },
+            url: "http://test2.local/wp-json/reftreff/v1/manageFollow",
+            data: {"following": _currentFollowButton.attr("data-follow")},
+            type: "DELETE",
+            success: (response) => {
+                _currentFollowButton.attr("data-exists", "no");
+                _currentFollowButton.attr("data-follow","");
+                console.log(response);
+            },
+            error:(response) => {
+                console.log(response);
+            }
+        });
+    }
+
+
+}
+
+var test = new FollowActivityButton();

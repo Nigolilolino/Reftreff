@@ -1,11 +1,18 @@
 
 <?php 
 
+require get_theme_file_path("/inc/following-route.php");
+
 function reftreff_files() {
     wp_enqueue_script("MainJS", get_theme_file_uri("/js/scripts-bundled.js"), NULL, "1.0", true);
     wp_enqueue_style("customGoogleFonds", "//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i");
     wp_enqueue_style("font_awesome", "//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
     wp_enqueue_style("reftreffMainStyles", get_stylesheet_uri());
+    wp_enqueue_script( "script", get_template_directory_uri() . '/js/script.js', array ( 'jquery' ), 1.1, true);
+    wp_localize_script("MainJS", "reftreffData", array(
+      "root_url" => get_site_url(),
+      "nonce" => wp_create_nonce("wp_rest")
+    ));
 }
 
 add_action("wp_enqueue_scripts","reftreff_files");
@@ -50,6 +57,8 @@ add_action("login_enqueue_scripts", "newLoginPageCSS");
 function newLoginPageCSS(){
   wp_enqueue_style("reftreffMainStyles", get_stylesheet_uri());
 }
+
+//....................................................................................
 
 /*if (isset($_POST['callFunc1'])) {
     queryNewActivities(stripslashes($_POST['callFunc1']));
@@ -217,21 +226,19 @@ function updateTimes(){
     <?php foreach( $posts as $p ):
         $id = $p->ID;
         $timeNow = new DateTime();
-        $timestringNow = $timeNow->format('Y-m-d H:i');
         $oldTimeActivity = get_field('referat_time_and_date', $id);
-        $dateTimeActivity = datetime::createfromformat('Y-m-d H:i',$oldTimeActivity);
         $dateObjectActivity = new DateTime($oldTimeActivity);
-
-        if($dateObjectActivity < $timeNow){
+        $dateNextSunday = $dateObjectActivity->modify('next sunday');
+        $dateObjectActivity = new DateTime($oldTimeActivity);
+        $dateNextSunday->format('Y-m-d H:i');
+        
+        if($dateNextSunday < $timeNow){
           $dateObjectActivity->add(new DateInterval('P7D'));
           $timestringActivity = $dateObjectActivity->format('Y-m-d H:i'); 
           update_field("referat_time_and_date", $timestringActivity, $id);
         }
-        
     ?>
-    
     <?php endforeach; ?>
-  
   <?php endif;
   wp_reset_postdata();
 }
@@ -277,6 +284,8 @@ function getTimetableInput($date){
   <?php endif;
 }
 //.....................................Ende Kalender-Funktionen...............................
+
+
 ?>
 
 

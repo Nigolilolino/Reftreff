@@ -8,9 +8,7 @@ get_header();
   <div>  
 </div>
 <div class="singleSidePreviwPicture">
-    <?php 
-    
-    ?>
+   
 </div>
 <div class="singleSideOverviewArea">
     <div class="singleSideInfo">
@@ -23,7 +21,32 @@ get_header();
             <?php
             }
         ?>
-        <button type="button">Referat folgen</button>
+
+        <?php
+
+        $followingStatus = "no";
+
+        if(is_user_logged_in()){
+            
+            $followingQuery = new WP_Query(array(
+                "author" => get_current_user_id(),
+                "post_type" => "follower",
+                "meta_query" => array(
+                    array(
+                        "key" => "followed_activity_id",
+                        "compare" => "=",
+                        "value" => get_the_ID()
+                    )
+                )
+            ));
+    
+            if($followingQuery->found_posts){
+                $followingStatus = "yes";
+            }
+        }
+
+        ?>
+        <button id="activityFollowBtn" type="button" data-userId="<?php echo get_current_user_id(); ?>" data-follow="<?php echo $followingQuery->posts[0]->ID; ?>" data-activity= <?php the_ID(); ?> data-exists= <?php echo $followingStatus ?>>Referat folgen</button>
     </div>
 
     <div class ="headOfActivityAndDownloadArea">

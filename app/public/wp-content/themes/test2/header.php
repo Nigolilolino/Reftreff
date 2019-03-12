@@ -5,7 +5,8 @@
         <?php wp_head(); ?>
         <?php updateTimes(); ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="http://www.test2.local/wp-content/themes/test2/js/script.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
     <header class="site-header">

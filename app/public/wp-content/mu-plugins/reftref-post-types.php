@@ -4,6 +4,7 @@ add_action("init", "reftref_post_types");
 
 function reftref_post_types(){
     register_post_type("referate", array(
+        "show_in_rest" => true,
         "supports"=> array("title","excerpt"),
         "rewrite"=> array("slug"=> "referate"),
         "has_archive" => true,
@@ -45,6 +46,21 @@ function reftref_post_types(){
             "edit_item" => "Campus bearbeiten",
             "all_items" => "Alle Campi",
             "singular_name" => "Campi"
+        )
+    ));
+
+    register_post_type("follower", array(
+
+        "supports"=> array("title"),
+        "public" => false,
+        "show_ui" => true,
+        "menu_icon" => "dashicons-admin-users",
+        "labels" => array(
+            "name" => "Follower",
+            "add_new_item" => "Neuen Follower erstellen",
+            "edit_item" => "Follower bearbeiten",
+            "all_items" => "Alle Follower",
+            "singular_name" => "Follower"
         )
     ));
 }
