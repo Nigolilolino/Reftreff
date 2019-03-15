@@ -5,7 +5,7 @@ add_action("init", "reftref_post_types");
 function reftref_post_types(){
     register_post_type("referate", array(
         "show_in_rest" => true,
-        "supports"=> array("title","excerpt"),
+        "supports"=> array("title","excerpt",'comments'),
         "rewrite"=> array("slug"=> "referate"),
         "has_archive" => true,
         "public" => true,
@@ -54,13 +54,28 @@ function reftref_post_types(){
         "supports"=> array("title"),
         "public" => false,
         "show_ui" => true,
-        "menu_icon" => "dashicons-admin-users",
+        "menu_icon" => "dashicons-groups",
         "labels" => array(
             "name" => "Follower",
             "add_new_item" => "Neuen Follower erstellen",
             "edit_item" => "Follower bearbeiten",
             "all_items" => "Alle Follower",
             "singular_name" => "Follower"
+        )
+    ));
+
+    register_post_type("news", array(
+        "show_in_rest" => true,
+        "supports"=> array("title", "editor"),
+        "public" => false,
+        "show_ui" => true,
+        "menu_icon" => "dashicons-groups",
+        "labels" => array(
+            "name" => "News",
+            "add_new_item" => "Neue News erstellen",
+            "edit_item" => "News bearbeiten",
+            "all_items" => "Alle News",
+            "singular_name" => "News"
         )
     ));
 }

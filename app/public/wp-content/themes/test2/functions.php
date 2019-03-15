@@ -58,6 +58,8 @@ function newLoginPageCSS(){
   wp_enqueue_style("reftreffMainStyles", get_stylesheet_uri());
 }
 
+add_theme_support("html5", array("comment-list", "comment-form"));
+
 //....................................................................................
 
 /*if (isset($_POST['callFunc1'])) {

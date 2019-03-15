@@ -138,4 +138,23 @@ class FollowActivityButton{
 
 }
 
-var test = new FollowActivityButton();
+var FAB = new FollowActivityButton();
+
+//..............................................................................................
+
+class Comments{
+    constructor(){
+        this.events();
+    }
+    events(){
+        $(".commentDeleteBtn").on("click", this.deletComment.bind(this));
+    }
+
+    deletComment(e){
+        var currentDeleteButton = $(e.target).closest(".commentDeleteBtn");
+        console.log(currentDeleteButton.attr("data-commentId"));
+    }
+
+}
+
+var com = new Comments();

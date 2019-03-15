@@ -830,6 +830,58 @@ h2{
   max-height: 450px;
 }
 /*................................................................................................... */
+
+
+.avatar{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  position: relative;
+  left: 30%;
+  display: inline-grid;
+  float: left;
+  margin-right: 20%;
+  margin-top: 3%;
+}
+
+.comment{
+  
+}
+
+.comment-respond{
+  display: inline-block;
+  float: left;
+}
+
+.comment-form{
+
+}
+
+.comment-reply-title{
+
+}
+
+.form-submit{
+
+}
+
+.submit{
+
+}
+
+#comment_post_ID{
+
+}
+
+#comment_parent{
+
+}
+
+#_wp_unfiltered_html_comment_disabled{
+
+}
+
+
 /*........................................Impressum...................................................*/
 
 .disclaimer{

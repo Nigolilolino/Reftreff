@@ -36,7 +36,6 @@ function createFollow($data){
             return wp_insert_post(array(
                 "post_type" => "follower",
                 "post_status" => "publish",
-                "post_title" => "test",
                 "meta_input" => array(
                     "followed_activity_id" => $activity,
                     "follower_id" => $user

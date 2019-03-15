@@ -2,4 +2,5 @@
 /*!40014 SET FOREIGN_KEY_CHECKS=0*/;
 /*!40103 SET TIME_ZONE='+00:00' */;
 INSERT INTO `wp_comments` VALUES
-(1,1,"A WordPress Commenter","wapuu@wordpress.example","https://wordpress.org/","","2018-12-03 16:52:07","2018-12-03 16:52:07","Hi, this is a comment.\nTo get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.\nCommenter avatars come from <a href=\"https://gravatar.com\">Gravatar</a>.",0,"1","","",0,0);
+(16,55,"Nico","nico.klein@hs-furtwangen.de","","127.0.0.1","2019-03-15 14:59:25","2019-03-15 14:59:25","Morgen fällt aus",0,"1","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36","",0,1),
+(17,55,"DerTester","tester@test.de","","127.0.0.1","2019-03-15 15:00:30","2019-03-15 15:00:30","Schade",0,"1","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36","",0,2);

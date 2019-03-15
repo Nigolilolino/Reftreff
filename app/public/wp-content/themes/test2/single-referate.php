@@ -122,33 +122,11 @@ get_header();
 <div class="activityNewsArea">
     <div class="activityBlog">
         <h3 class="singlePageHeadlines">Aktuelles</h3>
-        <div class="participant">
-                <div class="participantPicture"></div>
-                <div class="participantInfo">
-                    <p class="participantName">Vorname Nachname</p>
-                    <p class="postDate">Sonntag, 21:22 Uhr</p>
-                    <p class="postContent">Schade, aber ok....</p>
-                </div>
-            </div>
-            <div class="participant">
-                <div class="participantPicture"></div>
-                <div class="participantInfo">
-                    <p class="participantName">Vorname Nachname</p>
-                    <p class="postDate">Sonntag, 20:34 Uhr</p>
-                    <p class="participantEmail">Hatte heute eh keine Lust XD</p>
-                </div>
-            </div>
-            <div class="participant">
-                <div class="participantPicture"></div>
-                <div class="participantInfo">
-                    <p class="participantName">Vorname Nachname</p>
-                    <p class="postDate">Sonntag, 20:30 Uhr</p>
-                    <p class="participantEmail">Hey Leute, morgen fällt das treffen aus.</p>
-                </div>
-                <input type="text" name="comment" value="">
-                <button type="button">send</button>
-            </div>
-    </div>
+        
+               <?php comments_template(); ?>
+                <!--<input type="text" name="comment" value="">
+                <button type="button">send</button> -->
+            
     <div class="activityFolower">
         <h3 class="singlePageHeadlines">Follower</h3>
         <div class="participant">
