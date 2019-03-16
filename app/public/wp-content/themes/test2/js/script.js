@@ -152,7 +152,25 @@ class Comments{
 
     deletComment(e){
         var currentDeleteButton = $(e.target).closest(".commentDeleteBtn");
-        console.log(currentDeleteButton.attr("data-commentId"));
+        var test = currentDeleteButton[0].dataset.commentid;
+
+        $.ajax({
+            beforeSend: (xhr) => {
+                xhr.setRequestHeader("X-WP-Nonce", reftreffData.nonce)
+            },
+            url: "http://test2.local/wp-json/reftreff/v1/manageComments",
+            data: {"commentId": test},
+            type: "DELETE",
+            success: (response) => {
+                
+                $(currentDeleteButton).closest(".participant")[0].remove();
+                console.log(response);
+            },
+            error:(response) => {
+                console.log("fail")
+                console.log(response);
+            }
+        });
     }
 
 }

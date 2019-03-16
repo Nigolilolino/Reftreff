@@ -129,27 +129,36 @@ get_header();
             
     <div class="activityFolower">
         <h3 class="singlePageHeadlines">Follower</h3>
-        <div class="participant">
-                <div class="participantPicture"></div>
-                <div class="participantInfo">
-                    <p class="participantName">Vorname Nachname</p>
-                    <p class="participantEmail">vorname.nachname@hs-furtwangen.de</p>
-                </div>
-            </div>
-            <div class="participant">
-                <div class="participantPicture"></div>
-                <div class="participantInfo">
-                    <p class="participantName">Vorname Nachname</p>
-                    <p class="participantEmail">vorname.nachname@hs-furtwangen.de</p>
-                </div>
-            </div>
-            <div class="participant">
-                <div class="participantPicture"></div>
-                <div class="participantInfo">
-                    <p class="participantName">Vorname Nachname</p>
-                    <p class="participantEmail">vorname.nachname@hs-furtwangen.de</p>
-                </div>
-            </div>
+
+            <?php $args = array(
+            'post_type'		=> 'follower',
+            'numberposts'	=> -1,
+            'meta_query'	=> array(
+                'relation'		=> 'OR',
+                array(
+                    'key'		=> 'followed_activity_id',
+                    'value'		=> get_the_ID(),
+                    'compare'	=> '='
+                    ),
+                )
+            );
+            
+            $followerQuery = new WP_Query($args);
+                  while($followerQuery->have_posts()){
+                    $followerQuery->the_post(); 
+                    $follower = get_userdata(get_field("follower_id"));
+                    ?>
+                   <div class="participant">
+                        <div class="participantPicture"><?php echo get_avatar($follower->ID) ?></div>
+                        <div class="participantInfo">
+                            <p class="participantName"><?php echo $follower->user_login ?></p>
+                            <p class="participantEmail"><?php echo $follower->user_email ?></p>
+                        </div>
+                    </div>
+                  <?php
+                  wp_reset_postdata();
+                }
+            ?>
     </div>
 </div>
 <div class="timetable_area">

@@ -702,7 +702,6 @@ h2{
 }
 
 .participantPicture{
-  background-color: blueviolet;
   height: 60px;
   width: 60px;
   border-radius: 50%;
@@ -764,6 +763,7 @@ h2{
   width: 40%;
   text-align: center;
   margin-left: 10%;
+  max-height: 400px;
 }
 
 .timetable_area{

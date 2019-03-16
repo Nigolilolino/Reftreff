@@ -55,13 +55,15 @@
     $GLOBALS['comment'] = $comment;
     ?>
         <div class="participant">
-            <div class="participantPicture"></div>
-            <div class="participantInfo">
-                <p class="participantName"><?php comment_author(); ?></p>
-                <p class="postDate"><?php echo(date('l', strtotime(get_comment_date()))); ?>, <?php comment_time(); ?></p>
-                <p class="participantEmail"><?php comment_text(); ?></p>
-            </div>
-            <span class="commentDeleteBtn" data-commentId="<?php echo(get_comment_ID()); ?>"><i class="fa fa-trash-alt" data-commentId="<?php echo(get_comment_ID()); ?>"></i></span>
+          <div class="participantPicture">
+            <?php echo get_avatar($comment -> user_id); ?>
+          </div>
+          <div class="participantInfo">
+              <p class="participantName"><?php comment_author(); ?></p>
+              <p class="postDate"><?php echo(date('l', strtotime(get_comment_date()))); ?>, <?php comment_time(); ?></p>
+              <p class="participantEmail"><?php comment_text(); ?></p>
+          </div>
+          <span class="commentDeleteBtn" data-commentId="<?php echo(get_comment_ID()); ?>"><i class="fa fa-trash-alt" data-commentId="<?php echo(get_comment_ID()); ?>"></i></span>
         </div>
     <?php
 }
