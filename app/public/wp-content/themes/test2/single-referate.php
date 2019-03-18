@@ -79,43 +79,79 @@ get_header();
     <div class="activitySignInArea">
         <div class="activityDateArea">
             <?php 
+                $tage = array("Monday" => "Montag", "Tuesday" => "Dienstag","Wednesday" => "Mittwoch","Thursday" => "Donnerstag","Friday" => "Freitag", "Saturday" => "Samstag","Sunday" => "Sonntag");
+                $Monate = array("January" => "Januar", "February" => "Februar", "March" => "März", "April" => "April", "May" => "Mai", "June" => "Juni", "July" => "Juli", "August" => "August", "September" => "September", "October" => "Oktober", "November" => "November", "December" => "Dezember");
                 $date = get_field('referat_time_and_date', false);
                 $date = DateTime::createFromFormat('Y-m-d H:i', $date);
                 $time = $date->format('H:i');
                 $date = $date->format('j. F Y');
                 $timestamp = strtotime($date);
                 $day = date('l', $timestamp);
-                echo "<p class='activityDate'>$day, $date</p>";
+                echo "<p class='activityDate'>$tage[$day], $date</p>";
                 echo "<p class='activityTime'>$time</p>"; 
             ?>
             <p><?php the_field('strase_und_hausnummer'); ?></p>
             <p><?php the_field('raumnummer') ?></p> <?php
             ?>
-            <button type="button">Teilnehmen</button>
+
+            <?php
+
+            $participationStatus = "no";
+
+            if(is_user_logged_in()){
+                
+                $participationQuery = new WP_Query(array(
+                    "author" => get_current_user_id(),
+                    "post_type" => "participants",
+                    "meta_query" => array(
+                        array(
+                            "key" => "participated_activity_id",
+                            "compare" => "=",
+                            "value" => get_the_ID()
+                        )
+                    )
+                ));
+
+                if($participationQuery->found_posts){
+                    $participationStatus = "yes";
+                }
+            }
+
+            ?>
+
+            <button id="participationBtn" type="button" data-userId="<?php echo get_current_user_id(); ?>" data-participation="<?php echo $participationQuery->posts[0]->ID; ?>" data-activity= <?php the_ID(); ?> data-exists= <?php echo $participationStatus ?>>Teilnehmen</button>
         </div>
         <div class="activityParticipantsArea">
             <h3 class="singlePageHeadlines">Teilnehmer</h3>
-            <div class="participant">
-                <div class="participantPicture"></div>
-                <div class="participantInfo">
-                    <p class="participantName">Vorname Nachname</p>
-                    <p class="participantEmail">vorname.nachname@hs-furtwangen.de</p>
-                </div>
-            </div>
-            <div class="participant">
-                <div class="participantPicture"></div>
-                <div class="participantInfo">
-                    <p class="participantName">Vorname Nachname</p>
-                    <p class="participantEmail">vorname.nachname@hs-furtwangen.de</p>
-                </div>
-            </div>
-            <div class="participant">
-                <div class="participantPicture"></div>
-                <div class="participantInfo">
-                    <p class="participantName">Vorname Nachname</p>
-                    <p class="participantEmail">vorname.nachname@hs-furtwangen.de</p>
-                </div>
-            </div>
+            <?php $args = array(
+            'post_type'		=> 'participants',
+            'numberposts'	=> -1,
+            'meta_query'	=> array(
+                'relation'		=> 'OR',
+                array(
+                    'key'		=> 'participated_activity_id',
+                    'value'		=> get_the_ID(),
+                    'compare'	=> '='
+                    ),
+                )
+            );
+            
+            $participantsQuery = new WP_Query($args);
+                  while($participantsQuery->have_posts()){
+                    $participantsQuery->the_post(); 
+                    $participant = get_userdata(get_field("participant_id"));
+                    ?>
+                   <div class="participant">
+                        <div class="participantPicture"><?php echo get_avatar($participant->ID) ?></div>
+                        <div class="participantInfo">
+                            <p class="participantName"><?php echo $participant->user_login ?></p>
+                            <p class="participantEmail"><?php echo $participant->user_email ?></p>
+                        </div>
+                    </div>
+                  <?php
+                  wp_reset_postdata();
+                }
+            ?>
         </div>
     </div>
 </div>

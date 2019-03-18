@@ -687,6 +687,30 @@ h2{
   font-size: 30px;
 }
 
+.activityDateArea button[data-exists="no"]{
+  background-color: #11171E;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 80%;
+  font-size: 30px;
+}
+
+.activityDateArea button[data-exists="yes"]{
+  background-color: rgb(247, 224, 22);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 80%;
+  font-size: 30px;
+}
+
 .activityParticipantsArea{
   width: 49%;
   display: inline-grid;

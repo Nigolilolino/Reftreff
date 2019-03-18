@@ -78,6 +78,21 @@ function reftref_post_types(){
             "singular_name" => "News"
         )
     ));
+
+    register_post_type("participants", array(
+
+        "supports"=> array("title"),
+        "public" => false,
+        "show_ui" => true,
+        "menu_icon" => "dashicons-groups",
+        "labels" => array(
+            "name" => "Participants",
+            "add_new_item" => "Neuen Participant erstellen",
+            "edit_item" => "Participant bearbeiten",
+            "all_items" => "Alle Participants",
+            "singular_name" => "Participant"
+        )
+    ));
 }
 
 ?>

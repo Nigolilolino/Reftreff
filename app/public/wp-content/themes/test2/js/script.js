@@ -78,6 +78,7 @@ window.onclick = function(event) {
 
 //............................................................................................
 
+//...........................................Follow Funktionen................................
 class FollowActivityButton{
     constructor(){
         this.events();
@@ -142,6 +143,7 @@ var FAB = new FollowActivityButton();
 
 //..............................................................................................
 
+//....................................Kommentarfunktion.........................................
 class Comments{
     constructor(){
         this.events();
@@ -172,7 +174,71 @@ class Comments{
             }
         });
     }
-
 }
 
 var com = new Comments();
+
+//..............................................................................................
+
+class ParticipateInActivityButton{
+    constructor(){
+        this.events();
+    }
+
+    events(){
+        $("#participationBtn").on("click", this.clickDispatcher.bind(this));
+    }
+
+    clickDispatcher(e){
+        var currentParticipationButton = $(e.target).closest("#participationBtn");
+
+        if(currentParticipationButton.attr("data-exists") == "yes"){
+            this.defollowActivity(currentParticipationButton);
+        }else{
+            this.followActivity(currentParticipationButton);
+        }
+    }
+
+    followActivity(_currentParticipationButton){
+        $.ajax({
+            beforeSend: (xhr) => {
+                xhr.setRequestHeader("X-WP-Nonce", reftreffData.nonce)
+            },
+            url: "http://test2.local/wp-json/reftreff/v1/manageParticipation",
+            type: "POST",
+            data: {"activityId": _currentParticipationButton.data("activity"), "participantId": _currentParticipationButton.data("userid")},
+            success: (response) => {
+                _currentParticipationButton.attr("data-exists", "yes");
+                _currentParticipationButton.attr("data-participation", response);
+                console.log(response);
+            },
+            error:(response) => {
+                console.log(response);
+            }
+        });
+      
+    }
+
+    defollowActivity(_currentFollowButton){
+        $.ajax({
+            beforeSend: (xhr) => {
+                xhr.setRequestHeader("X-WP-Nonce", reftreffData.nonce)
+            },
+            url: "http://test2.local/wp-json/reftreff/v1/manageParticipation",
+            data: {"participating": _currentFollowButton.attr("data-participation")},
+            type: "DELETE",
+            success: (response) => {
+                _currentFollowButton.attr("data-exists", "no");
+                _currentFollowButton.attr("data-participation","");
+                console.log(response);
+            },
+            error:(response) => {
+                console.log(response);
+            }
+        });
+    }
+
+
+}
+
+var PAB = new ParticipateInActivityButton();
