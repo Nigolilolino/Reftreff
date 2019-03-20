@@ -27,7 +27,7 @@ body{
   }
 }
 
-/*Header*/
+/*.......................................................Header.....................................*/
 .container_header {
   z-index: 5;
   padding: 0 16px;
@@ -76,8 +76,9 @@ body{
   float: right;
   display: inline-block;
 }
+/*...................................................................................................*/
 
-/*Dropdown Menü*/
+/*.................................................Dropdown Menü.....................................*/
 
 .dropbtn {
   font-family: 'Source Sans Pro', sans-serif;
@@ -139,7 +140,7 @@ body{
 
 .show {display:block;}
 
-/*Ende Dropdown Menü*/
+/*..............................................Ende Dropdown Menü................................*/
 .campi_header_link{
   font-family: 'Source Sans Pro', sans-serif;
   height: 80px;
@@ -855,7 +856,7 @@ h2{
 }
 /*................................................................................................... */
 
-
+/*..................................Referate-Seite...................................................*/
 .avatar{
   height: 60px;
   width: 60px;
@@ -983,3 +984,88 @@ h2{
   
   /*....................................................................................................*/
   
+  /*......................................Userpage....................................................*/
+
+.userpageBannerContent{
+  width: 70%;
+}
+
+.userpageBannerGreetingWrapper{
+  display: inline-block;
+  width: 60%;
+}
+
+.userpageBannerGreeting{
+  display: inline-block;
+}
+
+.userpageBannerGreetingAddition{
+  display: inline-block;
+}
+
+.userpageBannerIconWrapper{
+  display: inline-block;
+  width: 20%;
+}
+
+.userpageBannerAvatarDiv{
+  display: inline-block;
+  height: 110px;
+  width: 110px;
+}
+
+.userpageBannerAvatarDiv img{
+  height: 110px;
+  width: 110px;
+
+}
+
+.userpageBannerLogoutBtn{
+  margin-left: 35%;
+}
+
+.userpageNewsAndFollowArea{
+  background-color: #F5F4F0;
+  height: 300px;
+  align-content: center;
+  text-align: center;
+}
+
+.userpageNewsArea{
+  width: 45%;
+  display: inline-grid;
+  align-content: center;
+}
+
+.userpageNewsAreaHeadline{
+  
+}
+
+.userpageNewsAreaContentArea{
+
+}
+
+.userpageNewsAreaContent{
+
+}
+
+.userpageFollowerArea{
+  width: 45%;
+  display: inline-grid;
+  align-content: center;
+}
+
+.userpageFollowerAreaHeadline{
+
+}
+
+.userpageFollowerAreaContentArea{
+
+}
+
+.activitiesUserpages{
+  height: 80px;
+  width: 150px;
+  display: inline-block;
+  margin: 15px;
+}

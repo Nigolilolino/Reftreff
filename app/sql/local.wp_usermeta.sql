@@ -44,7 +44,6 @@ INSERT INTO `wp_usermeta` VALUES
 (43,2,"wp_capabilities","a:1:{s:10:\"subscriber\";b:1;}"),
 (44,2,"wp_user_level","0"),
 (45,2,"default_password_nag",""),
-(46,2,"session_tokens","a:1:{s:64:\"a2b98291240f8b68b51eafa2377cfa38414e3218bb2d56d7b7f8f7e8bafb806f\";a:4:{s:10:\"expiration\";i:1553083837;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36\";s:5:\"login\";i:1552911037;}}"),
 (47,1,"closedpostboxes_follower","a:0:{}"),
 (48,1,"metaboxhidden_follower","a:1:{i:0;s:7:\"slugdiv\";}"),
 (49,3,"nickname","NeuerUser"),
@@ -62,4 +61,5 @@ INSERT INTO `wp_usermeta` VALUES
 (61,3,"wp_user_level","0"),
 (62,3,"default_password_nag",""),
 (63,1,"wp_user_avatar","27"),
-(65,1,"session_tokens","a:1:{s:64:\"68485bf0317dad02509a69bd6657d0656314b6748548b986da8673b5ef1db8ff\";a:4:{s:10:\"expiration\";i:1553085653;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36\";s:5:\"login\";i:1552912853;}}");
+(65,1,"session_tokens","a:1:{s:64:\"63ec8da537bfd16d7215de804704f652aded28a88577762839b26af100ff1f89\";a:4:{s:10:\"expiration\";i:1553165749;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36\";s:5:\"login\";i:1552992949;}}"),
+(67,2,"session_tokens","a:2:{s:64:\"a9feb752fb215950513b735603c822f637c24c8bdca8555b287d117445066d4e\";a:4:{s:10:\"expiration\";i:1553268632;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36\";s:5:\"login\";i:1553095832;}s:64:\"09641898b29a9fd2ff0f4d2450754fcfe6ce5a3f8c6be3ed81164e4610fa0254\";a:4:{s:10:\"expiration\";i:1553270702;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36\";s:5:\"login\";i:1553097902;}}");

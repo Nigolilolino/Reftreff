@@ -64,9 +64,6 @@ add_theme_support("html5", array("comment-list", "comment-form"));
 
 //....................................................................................
 
-/*if (isset($_POST['callFunc1'])) {
-    queryNewActivities(stripslashes($_POST['callFunc1']));
-}*/
 
 function get_activities($mode){
     wp_reset_query();
@@ -179,6 +176,30 @@ function get_activities($mode){
     }
 }
 
+function getFollowedActivities(){
+
+  $follows = get_posts(array(
+    'posts_per_page' => -1,
+    'post_type' => 'follower',
+    'meta_query' =>array(
+      array(
+        'key' => 'follower_id',
+        'compare' => "=",
+        'value' => get_current_user_id()
+      )
+    ),
+  ));
+
+  foreach($follows as $f){
+    $followedActivityID = get_field("followed_activity_id", $f->ID);
+    $test = get_field("leiter_name", $followedActivityID);
+    ?>
+    <a href=" <?php the_permalink($followedActivityID); ?>"><div class = 'activitiesUserpages' style="background-image: url(<?php echo the_field("referat_titelbild", $followedActivityID) ?>);" ><strong class='activity_title'><?php echo get_the_title($followedActivityID)?></strong></div></a>
+    <?php
+  }
+
+}
+
 function get_Filters(){
     $field_key = "field_5c17e7be6b9ef";
     $field = get_field_object($field_key);
@@ -247,15 +268,107 @@ function updateTimes(){
   wp_reset_postdata();
 }
 
-function getTimetableInput($date){
-  $time_now = strtotime("monday this week");
+function createTimetable(){
+  ?>
+  <div id="monday" class="timetableDays">
+            <div class="timetableDates">
+            <?php $timestamp = strtotime("monday this week");
+                $date = date('d.m.Y', $timestamp);
+            ?>
+                <p class="timetableDatesDay">Monntag</p>
+                <p class="timetableDatesDate"><?php echo $date ?></p>
+            </div>
+            <div class="timetableActivities">
+                <?php
+                if(get_the_ID() == 122){
+                  getTimetableInputForTheUserpage($timestamp);
+                }else{
+                  getTimetableInputAllActivities($timestamp);
+                } 
+                ?>
+            </div>
+        </div>
+        <div id="tuesday" class="timetableDays">
+            <div class="timetableDates">
+            <?php $timestamp = strtotime("tuesday this week");
+                $date = date('d.m.Y', $timestamp);
+            ?>
+                <p class="timetableDatesDay">Dienstag</p>
+                <p class="timetableDatesDate"><?php echo $date ?></p>
+            </div>
+            <div class="timetableActivities">
+            <?php
+                if(get_the_ID() == 122){
+                  getTimetableInputForTheUserpage($timestamp);
+                }else{
+                  getTimetableInputAllActivities($timestamp);
+                } 
+                ?>
+            </div>
+        </div>
+        <div id="wednesday" class="timetableDays">
+            <div class="timetableDates">
+            <?php $timestamp = strtotime("wednesday this week");
+                $date = date('d.m.Y', $timestamp);
+            ?>
+                <p class="timetableDatesDay">Mittwoch</p>
+                <p class="timetableDatesDate"><?php echo $date ?></p>
+            </div>
+            <div class="timetableActivities">
+            <?php
+                if(get_the_ID() == 122){
+                  getTimetableInputForTheUserpage($timestamp);
+                }else{
+                  getTimetableInputAllActivities($timestamp);
+                } 
+                ?>
+            </div>
+        </div>
+        <div id="thursday" class="timetableDays">
+            <div class="timetableDates">
+            <?php $timestamp = strtotime("thursday this week");
+                $date = date('d.m.Y', $timestamp);
+            ?>
+                <p class="timetableDatesDay">Donnerstag</p>
+                <p class="timetableDatesDate"><?php echo $date ?></p>
+            </div>
+            <div class="timetableActivities">
+            <?php
+                if(get_the_ID() == 122){
+                  getTimetableInputForTheUserpage($timestamp);
+                }else{
+                  getTimetableInputAllActivities($timestamp);
+                } 
+                ?>
+            </div>
+        </div>
+        <div id="friday" class="timetableDays">
+            <div class="timetableDates">
+            <?php $timestamp = strtotime("friday this week");
+                $date = date('d.m.Y', $timestamp);
+            ?>
+                <p class="timetableDatesDay">Freitag</p>
+                <p class="timetableDatesDate"><?php echo $date ?></p>
+            </div>
+            <div class="timetableActivities">
+            <?php
+                if(get_the_ID() == 122){
+                  getTimetableInputForTheUserpage($timestamp);
+                }else{
+                  getTimetableInputAllActivities($timestamp);
+                } 
+                ?>
+            </div>
+        </div>
+        <?php
+}
 
+//Kalender allgemein
+function getTimetableInputAllActivities($date){
   $dayBefore = strtotime('0 hours 2 seconds', $date);
   $dayAfter = strtotime('23 hours 59 seconds', $date);
   $dayBeforeInString = date('Y-m-d H:i:s', $dayBefore);
   $dayAfterInString = date('Y-m-d H:i:s', $dayAfter);
-
-  print_r($date_next_weekz);
 
   $posts = get_posts(array(
       'posts_per_page'	=> -1,
@@ -287,6 +400,66 @@ function getTimetableInput($date){
   
   <?php endif;
 }
+
+//Kalender cunstomized für user
+
+function getTimetableInputForTheUserpage($date){
+  $dayBefore = strtotime('0 hours 2 seconds', $date);
+  $dayAfter = strtotime('23 hours 59 seconds', $date);
+  $dayBeforeInString = date('Y-m-d H:i:s', $dayBefore);
+  $dayAfterInString = date('Y-m-d H:i:s', $dayAfter);
+
+  $posts = get_posts(array(
+      'posts_per_page'	=> -1,
+      'post_type'			=> 'referate',
+      'meta_query' 		=> array(
+          array(
+              'key'			=> 'referat_time_and_date',
+              'compare'		=> 'BETWEEN',
+              'value'			=> array($dayBeforeInString, $dayAfterInString),
+              'type'			=> 'DATETIME'
+          )
+      ),
+      'order'				=> 'ASC',
+      'orderby'			=> 'meta_value',
+      'meta_key'			=> 'referat_time_and_date',
+      'meta_type'			=> 'DATETIME'
+  ));
+  
+  if( $posts ): ?>
+          <?php foreach( $posts as $p ):
+            $test = get_posts(array(
+              'posts_per_page' => -1,
+              'post_type' => 'follower',
+              'meta_query' =>array(
+                array(
+                  'key' => 'follower_id',
+                  'compare' => "=",
+                  'value' => get_current_user_id()
+                )
+              ),
+            ));
+            
+            foreach($test as $t){
+              $followedActivityID = get_field("followed_activity_id", $t->ID);
+              
+              if($followedActivityID == $p->ID){
+                
+                $date = get_field('referat_time_and_date', $p->ID);
+                $dateTime = substr($date,11);
+                ?>
+                <div class="timetableActivitiesTimeAndName">
+                    <p class="timetableActivitiesTime"><?php echo $dateTime ?></p>
+                    <p class="timetableActivitiesName"><?php echo $p->post_title; ?></p>
+                </div>
+                <?php
+              }
+            }
+            ?>
+          <?php endforeach; ?>
+  <?php endif;
+}
+
 //.....................................Ende Kalender-Funktionen...............................
 
 

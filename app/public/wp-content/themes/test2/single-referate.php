@@ -92,14 +92,10 @@ get_header();
             ?>
             <p><?php the_field('strase_und_hausnummer'); ?></p>
             <p><?php the_field('raumnummer') ?></p> <?php
-            ?>
-
-            <?php
 
             $participationStatus = "no";
 
             if(is_user_logged_in()){
-                
                 $participationQuery = new WP_Query(array(
                     "author" => get_current_user_id(),
                     "post_type" => "participants",
@@ -116,7 +112,6 @@ get_header();
                     $participationStatus = "yes";
                 }
             }
-
             ?>
 
             <button id="participationBtn" type="button" data-userId="<?php echo get_current_user_id(); ?>" data-participation="<?php echo $participationQuery->posts[0]->ID; ?>" data-activity= <?php the_ID(); ?> data-exists= <?php echo $participationStatus ?>>Teilnehmen</button>
@@ -155,14 +150,11 @@ get_header();
         </div>
     </div>
 </div>
+
 <div class="activityNewsArea">
     <div class="activityBlog">
         <h3 class="singlePageHeadlines">Aktuelles</h3>
-        
-               <?php comments_template(); ?>
-                <!--<input type="text" name="comment" value="">
-                <button type="button">send</button> -->
-            
+        <?php comments_template(); ?>       
     <div class="activityFolower">
         <h3 class="singlePageHeadlines">Follower</h3>
 
@@ -197,77 +189,19 @@ get_header();
             ?>
     </div>
 </div>
+
 <div class="timetable_area">
     <h3 class="singlePageHeadlines">Wochenkalender</h3>
-    <div class="timetable">
-        <div id="monday" class="timetableDays">
-            <div class="timetableDates">
-            <?php $timestamp = strtotime("monday this week");
-                $date = date('d.m.Y', $timestamp);
-            ?>
-                <p class="timetableDatesDay">Monntag</p>
-                <p class="timetableDatesDate"><?php echo $date ?></p>
-            </div>
-            <div class="timetableActivities">
-                <?php getTimetableInput($timestamp); ?>
-            </div>
-        </div>
-        <div id="tuesday" class="timetableDays">
-            <div class="timetableDates">
-            <?php $timestamp = strtotime("tuesday this week");
-                $date = date('d.m.Y', $timestamp);
-            ?>
-                <p class="timetableDatesDay">Dienstag</p>
-                <p class="timetableDatesDate"><?php echo $date ?></p>
-            </div>
-            <div class="timetableActivities">
-            <?php getTimetableInput($timestamp); ?>
-            </div>
-        </div>
-        <div id="wednesday" class="timetableDays">
-            <div class="timetableDates">
-            <?php $timestamp = strtotime("wednesday this week");
-                $date = date('d.m.Y', $timestamp);
-            ?>
-                <p class="timetableDatesDay">Mittwoch</p>
-                <p class="timetableDatesDate"><?php echo $date ?></p>
-            </div>
-            <div class="timetableActivities">
-            <?php getTimetableInput($timestamp); ?>
-            </div>
-        </div>
-        <div id="thursday" class="timetableDays">
-            <div class="timetableDates">
-            <?php $timestamp = strtotime("thursday this week");
-                $date = date('d.m.Y', $timestamp);
-            ?>
-                <p class="timetableDatesDay">Donnerstag</p>
-                <p class="timetableDatesDate"><?php echo $date ?></p>
-            </div>
-            <div class="timetableActivities">
-            <?php getTimetableInput($timestamp); ?>
-            </div>
-        </div>
-        <div id="friday" class="timetableDays">
-            <div class="timetableDates">
-            <?php $timestamp = strtotime("friday this week");
-                $date = date('d.m.Y', $timestamp);
-            ?>
-                <p class="timetableDatesDay">Freitag</p>
-                <p class="timetableDatesDate"><?php echo $date ?></p>
-            </div>
-            <div class="timetableActivities">
-            <?php getTimetableInput($timestamp); ?>
-            </div>
-        </div>
-    </div>
+    <?php createTimetable(); ?>
 </div>
+
 <div class = "aktivity_area">
     <h3 class="singlePageHeadlines">Das Könnte Dich Auch Interessieren</h3>
 <?php
 get_activities("sub");
 ?>
 </div>
+
 <?php
 get_footer();
 ?>
