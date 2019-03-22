@@ -1,19 +1,37 @@
 
 //Funktionen für die Filter..........................................................
-    function refreshActivities(){
-        var checkboxes = document.getElementsByClassName("filterCheckboxes");
-        var checkboxValues = [];
-        console.log("tada");
-        
-        for(var i = 0; i < checkboxes.length; i++){
-            if(checkboxes[i].checked){
-                checkboxValues.push(checkboxes[i].value);
-            }
+
+function refreshActivities(){
+    var checkboxes = document.getElementsByClassName("filtercheckboxes");
+    var checkboxValues = [];
+    
+    for(var i = 0; i < checkboxes.length; i++){
+        if(checkboxes[i].checked){
+            checkboxValues.push(checkboxes[i].value);
         }
-        prepareArguments(checkboxValues);
+    }
+    var jsonString = JSON.stringify(checkboxValues);
+
+    $.ajax({
+        beforeSend: (xhr) => {
+            xhr.setRequestHeader("X-WP-Nonce", reftreffData.nonce)
+        },
+        url: "http://test2.local/wp-json/reftreff/v1/manageFilter",
+        type: "POST",
+        data: {"checkboxValues": jsonString},
+        success: (response) => {
+            alert("erfolgreich");
+            console.log(response);
+        },
+        error:(response) => {
+            alert("fail");
+            console.log(response);
+        }
+    });
+
 
 };
-
+/*
 function prepareArguments(_values){
     var args = "array('numberposts' => -1, 'post_type' => 'referate','meta_query'	=> array('relation'	=> 'AND',"
             
@@ -47,7 +65,7 @@ function prepareArguments(_values){
                 }
             });
         };
-*/
+
 function removeAvtivities(){
     var activitieArea = document.getElementsByClassName("aktivity_area");
     while(activitieArea[0].firstChild) 
@@ -56,6 +74,7 @@ function removeAvtivities(){
 
 //....................................................................................
 }
+*/
 // Funktionen für das Dropdownmenü der Startseite....................................
 
 
@@ -242,3 +261,5 @@ class ParticipateInActivityButton{
 }
 
 var PAB = new ParticipateInActivityButton();
+
+//.................................................................................................

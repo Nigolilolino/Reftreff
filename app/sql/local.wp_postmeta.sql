@@ -500,8 +500,6 @@ INSERT INTO `wp_postmeta` VALUES
 (621,165,"_edit_lock","1553096672:1"),
 (622,166,"_edit_lock","1552944637:1"),
 (623,166,"_edit_last","1"),
-(629,171,"participated_activity_id","55"),
-(630,171,"participant_id","1"),
 (631,172,"participated_activity_id","55"),
 (632,172,"participant_id","2"),
 (633,173,"participated_activity_id","55"),
@@ -512,8 +510,6 @@ INSERT INTO `wp_postmeta` VALUES
 (640,176,"follower_id","1"),
 (641,177,"followed_activity_id","21"),
 (642,177,"follower_id","1"),
-(643,178,"followed_activity_id","53"),
-(644,178,"follower_id","1"),
 (645,179,"followed_activity_id","20"),
 (646,179,"follower_id","2"),
 (647,180,"followed_activity_id","22"),
@@ -521,4 +517,8 @@ INSERT INTO `wp_postmeta` VALUES
 (649,181,"followed_activity_id","50"),
 (650,181,"follower_id","2"),
 (651,182,"followed_activity_id","50"),
-(652,182,"follower_id","1");
+(652,182,"follower_id","1"),
+(653,183,"followed_activity_id","55"),
+(654,183,"follower_id","1"),
+(655,184,"participated_activity_id","55"),
+(656,184,"participant_id","1");

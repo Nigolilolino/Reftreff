@@ -5,7 +5,7 @@ add_action("init", "reftref_post_types");
 function reftref_post_types(){
     register_post_type("referate", array(
         "show_in_rest" => true,
-        "supports"=> array("title","excerpt",'comments'),
+        "supports"=> array("title","excerpt",'comments', 'thumbnail'),
         "rewrite"=> array("slug"=> "referate"),
         "has_archive" => true,
         "public" => true,

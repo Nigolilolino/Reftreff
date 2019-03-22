@@ -4,6 +4,7 @@
 require get_theme_file_path("/inc/following-route.php");
 require get_theme_file_path("/inc/comments-route.php");
 require get_theme_file_path("/inc/participant-route.php");
+require get_theme_file_path("/inc/filter-route.php");
 
 function reftreff_files() {
     wp_enqueue_script("MainJS", get_theme_file_uri("/js/scripts-bundled.js"), NULL, "1.0", true);
