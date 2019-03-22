@@ -32,6 +32,33 @@ get_header();
     <div class="userpageNewsArea">
         <p class="userpageNewsAreaHeadline">News</p>
         <div class="userpageNewsAreaContentArea">
+
+            <?php $argsFollower = array(
+                'post_type'		=> 'follower',
+                'numberposts'	=> -1,
+                'meta_query'	=> array(
+                    'relation'		=> 'OR',
+                    array(
+                        'key'		=> 'follower_id',
+                        'value'		=> get_current_user_id(),
+                        'compare'	=> '='
+                        ),
+                    )
+                );
+
+                $homepageReferate = new WP_Query($argsFollower);
+                while($homepageReferate->have_posts()){
+                    $homepageReferate->the_post();
+                    $activityId = get_field("followed_activity_id",get_the_id( ));
+                    $argsComments = array('post_id' => $activityId, 'number' => 1);
+                    $comments = get_comments( $argsComments );
+                    foreach($comments as $comment){
+                        echo $comment->comment_content . '<br />';
+                    }
+                }
+                  
+            ?>
+
             <div class="userpageNewsAreaContent">
                 <p>Heute fällt Musik leider aus, bis nächste Woche</p>
             </div>
