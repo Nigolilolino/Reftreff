@@ -276,7 +276,7 @@ function createTimetable(){
             <?php $timestamp = strtotime("monday this week");
                 $date = date('d.m.Y', $timestamp);
             ?>
-                <p class="timetableDatesDay">Monntag</p>
+                <p class="timetableDatesDay">MONTAG</p>
                 <p class="timetableDatesDate"><?php echo $date ?></p>
             </div>
             <div class="timetableActivities">
@@ -294,7 +294,7 @@ function createTimetable(){
             <?php $timestamp = strtotime("tuesday this week");
                 $date = date('d.m.Y', $timestamp);
             ?>
-                <p class="timetableDatesDay">Dienstag</p>
+                <p class="timetableDatesDay">DIENSTAG</p>
                 <p class="timetableDatesDate"><?php echo $date ?></p>
             </div>
             <div class="timetableActivities">
@@ -312,7 +312,7 @@ function createTimetable(){
             <?php $timestamp = strtotime("wednesday this week");
                 $date = date('d.m.Y', $timestamp);
             ?>
-                <p class="timetableDatesDay">Mittwoch</p>
+                <p class="timetableDatesDay">MITTWOCH</p>
                 <p class="timetableDatesDate"><?php echo $date ?></p>
             </div>
             <div class="timetableActivities">
@@ -330,7 +330,7 @@ function createTimetable(){
             <?php $timestamp = strtotime("thursday this week");
                 $date = date('d.m.Y', $timestamp);
             ?>
-                <p class="timetableDatesDay">Donnerstag</p>
+                <p class="timetableDatesDay">DONNERSTAG</p>
                 <p class="timetableDatesDate"><?php echo $date ?></p>
             </div>
             <div class="timetableActivities">
@@ -348,7 +348,7 @@ function createTimetable(){
             <?php $timestamp = strtotime("friday this week");
                 $date = date('d.m.Y', $timestamp);
             ?>
-                <p class="timetableDatesDay">Freitag</p>
+                <p class="timetableDatesDay">FREITAG</p>
                 <p class="timetableDatesDate"><?php echo $date ?></p>
             </div>
             <div class="timetableActivities">
