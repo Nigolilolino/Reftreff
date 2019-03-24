@@ -13,9 +13,9 @@ get_header();
         <div class="userpageBannerGreetingWrapper">
             <?php $participant = wp_get_current_user(); ?>
             <h1 class="userpageBannerGreeting">Hallo <?php echo $participant->user_login ?></h1>
-            <p class="userpageBannerGreetingAddition">Lorem ipsum dolor sit amet, 
+            <!--<p class="userpageBannerGreetingAddition">Lorem ipsum dolor sit amet, 
                 consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore 
-                et dolore magna aliquyam</p>
+                et dolore magna aliquyam</p>-->
         </div>
     </div>
   </div> 
@@ -33,7 +33,9 @@ get_header();
         <p class="userpageNewsAreaHeadline">News</p>
         <div class="userpageNewsAreaContentArea">
 
-            <?php $argsFollower = array(
+            <?php 
+            $post__in = array();
+            $argsFollower = array(
                 'post_type'		=> 'follower',
                 'numberposts'	=> -1,
                 'meta_query'	=> array(
@@ -45,29 +47,32 @@ get_header();
                         ),
                     )
                 );
-
+                
                 $homepageReferate = new WP_Query($argsFollower);
                 while($homepageReferate->have_posts()){
                     $homepageReferate->the_post();
-                    $activityId = get_field("followed_activity_id",get_the_id( ));
-                    $argsComments = array('post_id' => $activityId, 'number' => 1);
-                    $comments = get_comments( $argsComments );
-                    foreach($comments as $comment){
-                        echo $comment->comment_content . '<br />';
-                    }
+                    array_push($post__in, get_field("followed_activity_id", get_the_ID()));
+                    wp_reset_postdata();
                 }
-                  
+                    $argsComments = array('orderby' => array('comment_date') ,'number' => 3, "order" => "DESC", 'post__in' => $post__in);
+                    $comments = get_comments( $argsComments );
+                   
+                    foreach($comments as $comment){
+                        $activityId = $comment->comment_post_ID;
+                        $authorId = $comment->user_id; 
+                        ?>
+                        <div class="participant">
+                            <div class="participantPicture">
+                                <?php echo get_avatar($authorId); ?>
+                            </div>
+                            <div class="participantInfo">
+                                <p class="participantName"><?php comment_author(); ?> in <?php echo get_the_title($activityId);?></p>
+                                <p class="postDate"><?php echo(date('l', strtotime(get_comment_date()))); ?>, <?php comment_time(); ?></p>
+                                <p class="participantEmail"><?php comment_text(); ?></p>
+                            </div>
+                        </div> <?php
+                    }
             ?>
-
-            <div class="userpageNewsAreaContent">
-                <p>Heute fällt Musik leider aus, bis nächste Woche</p>
-            </div>
-            <div class="userpageNewsAreaContent">
-                <p>Schwimmen wird aus morgen verschoben</p>
-            </div>
-            <div class="userpageNewsAreaContent">
-                <p>Anime fängt heut eine Stunde später an</p>
-            </div>
         </div>
     </div>
     <div class="userpageFollowerArea">

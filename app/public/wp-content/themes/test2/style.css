@@ -1026,7 +1026,7 @@ h2{
 
 .userpageNewsAndFollowArea{
   background-color: #F5F4F0;
-  height: 300px;
+  height: auto;
   align-content: center;
   text-align: center;
 }
@@ -1035,6 +1035,7 @@ h2{
   width: 45%;
   display: inline-grid;
   align-content: center;
+  height: auto;
 }
 
 .userpageNewsAreaHeadline{
@@ -1042,7 +1043,7 @@ h2{
 }
 
 .userpageNewsAreaContentArea{
-
+  height: auto;
 }
 
 .userpageNewsAreaContent{
