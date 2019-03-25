@@ -198,7 +198,7 @@ class Comments{
 var com = new Comments();
 
 //..............................................................................................
-
+//.....................................Teilnahme an Aktivitäten...................................
 class ParticipateInActivityButton{
     constructor(){
         this.events();
@@ -256,8 +256,6 @@ class ParticipateInActivityButton{
             }
         });
     }
-
-
 }
 
 var PAB = new ParticipateInActivityButton();

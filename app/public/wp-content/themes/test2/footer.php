@@ -5,8 +5,7 @@
       <div class="group">
 
         <div class="site-footer__col-one">
-         <!-- <h1 class="school-logo-text school-logo-text--alt-color"><a href="<?php echo site_url();?>"><strong>Fictional</strong> University</a></h1>
--->
+        
         <div ></div>
         </div>
 

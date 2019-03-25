@@ -1,8 +1,41 @@
 <?php 
 get_header();
 ?>
+<?php 
+    $followedActivities = array();
+    $argsFollower = array(
+        'post_type'		=> 'follower',
+        'numberposts'	=> -1,
+        'meta_query'	=> array(
+            'relation'		=> 'OR',
+            array(
+                'key'		=> 'follower_id',
+                'value'		=> get_current_user_id(),
+                'compare'	=> '='
+                ),
+            )
+        );
+        
+        $userActivities = new WP_Query($argsFollower);
+        while($userActivities->have_posts()){
+            $userActivities->the_post();
+            array_push($followedActivities, get_field("followed_activity_id", get_the_ID()));
+            wp_reset_postdata();
+        }
+?>
+
 <div class="page-banner">
-  <div class="page-banner__bg-image_ref" style="background-image: url(<?php echo get_theme_file_uri("/images/dummy.png") ?>);">
+<?php 
+if(count($followedActivities) == 0){
+    $randomeActivityHeaderUrl = get_theme_file_uri("/images/dummy.png");
+}else{
+    $randomeNumber = array_rand ($followedActivities, 1);
+    $randomeActivity = $followedActivities[$randomeNumber];
+    $randomeActivityHeaderUrl = get_field("header_referate", $randomeActivity);
+}
+
+?>
+  <div class="page-banner__bg-image_ref" style="background-image: url(<?php echo $randomeActivityHeaderUrl?>);">
   </div>
   <div class="page-banner__content container t-center c-white">
     <div class ="userpageBannerContent">
@@ -33,30 +66,13 @@ get_header();
         <p class="userpageNewsAreaHeadline">News</p>
         <div class="userpageNewsAreaContentArea">
 
-            <?php 
-            $post__in = array();
-            $argsFollower = array(
-                'post_type'		=> 'follower',
-                'numberposts'	=> -1,
-                'meta_query'	=> array(
-                    'relation'		=> 'OR',
-                    array(
-                        'key'		=> 'follower_id',
-                        'value'		=> get_current_user_id(),
-                        'compare'	=> '='
-                        ),
-                    )
-                );
-                
-                $homepageReferate = new WP_Query($argsFollower);
-                while($homepageReferate->have_posts()){
-                    $homepageReferate->the_post();
-                    array_push($post__in, get_field("followed_activity_id", get_the_ID()));
-                    wp_reset_postdata();
-                }
-                    $argsComments = array('orderby' => array('comment_date') ,'number' => 3, "order" => "DESC", 'post__in' => $post__in);
+            <?php
+                if(count($followedActivities) == 0){
+                    ?> <p>Momentan sind keine News vorhanden.</p> <?php
+                }else{
+                    $argsComments = array('orderby' => array('comment_date') ,'number' => 3, "order" => "DESC", 'post__in' => $followedActivities);
                     $comments = get_comments( $argsComments );
-                   
+                    
                     foreach($comments as $comment){
                         $activityId = $comment->comment_post_ID;
                         $authorId = $comment->user_id; 
@@ -72,6 +88,7 @@ get_header();
                             </div>
                         </div> <?php
                     }
+                }
             ?>
         </div>
     </div>

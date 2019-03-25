@@ -191,14 +191,17 @@ function getFollowedActivities(){
     ),
   ));
 
-  foreach($follows as $f){
-    $followedActivityID = get_field("followed_activity_id", $f->ID);
-    $test = get_field("leiter_name", $followedActivityID);
-    ?>
-    <a href=" <?php the_permalink($followedActivityID); ?>"><div class = 'activitiesUserpages' style="background-image: url(<?php echo the_field("referat_titelbild", $followedActivityID) ?>);" ><strong class='activity_title'><?php echo get_the_title($followedActivityID)?></strong></div></a>
-    <?php
+  if(count($follows) == 0){
+    ?> <p>Noch folgst du keinem Referat</p> <?php
+  }else{
+    foreach($follows as $f){
+      $followedActivityID = get_field("followed_activity_id", $f->ID);
+      $test = get_field("leiter_name", $followedActivityID);
+      ?>
+      <a href=" <?php the_permalink($followedActivityID); ?>"><div class = 'activitiesUserpages' style="background-image: url(<?php echo the_field("referat_titelbild", $followedActivityID) ?>);" ><strong class='activity_title'><?php echo get_the_title($followedActivityID)?></strong></div></a>
+      <?php
+    }
   }
-
 }
 
 function get_Filters(){
