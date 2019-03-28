@@ -37,7 +37,7 @@ get_activities("main");
         </div>
     </div>
 <div class="timetable_area">
-    <h3 class="singlePageHeadlines">Wochenkalender</h3>
+    <h3 class="singlePageHeadlines">WOCHENKALENDER</h3>
     <div class="timetable">
     <?php createTimetable() ?>
     </div>

@@ -51,14 +51,12 @@ get_header();
 
     <div class ="headOfActivityAndDownloadArea">
         <div class="headOfActivityInfo">
-            <div class="headOfActivityPicture"> 
-            </div>
+            <div class="headOfActivityPicture"></div>
             <h3><?php the_field("leiter_name")?></h3>
             <p>Referatsleiter</p>
             <p><?php the_field("leiter_email")?></p>
             <hr>
         </div>
-
         <div class="singleSideDownloadArea">
             <h2>Downloads</h2>
             <?php 
@@ -75,6 +73,8 @@ get_header();
             ?>
         </div>
     </div>
+    </div>
+
 
     <div class="activitySignInArea">
         <div class="activityDateArea">
@@ -149,7 +149,6 @@ get_header();
             ?>
         </div>
     </div>
-</div>
 
 <div class="activityNewsArea">
     <div class="activityBlog">

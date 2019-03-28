@@ -67,7 +67,8 @@ body{
 .Referate_Header i{
   font-size: 20pt;
   color: white;
-  margin-left: 10px;
+  margin-left: 14px;
+  margin-top: 2%;
 }
 
 .Header_Link_Area{
@@ -82,13 +83,13 @@ body{
 
 .dropbtn {
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
   display: inline-block;
   margin-top: 10%;
   margin-left: 25%;
   background-color: transparent;
   color: white;
   padding: 16px;
-  font-size: 16px;
   border: none;
   cursor: pointer;
 }
@@ -152,8 +153,8 @@ body{
 
 .campi_header_link p{
   display: inline-block;
-  margin-top: 13%;
-  font-size: 16pt;
+  margin-top: 10%;
+  font-size: 20px;
   margin-left: 35%;
   color: white;
 }
@@ -209,11 +210,13 @@ body{
   background-color: #89BA22;
   border: none;
   color: white;
-  padding: 5px 20px;
+  padding: 4px 22px;
+  margin-top: 1.4vw;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20pt;
+  font-size: 18px;
+  border-radius: 5%;
   /* margin: 4px 2px; */
   /* margin-left: 22%; */
   /* margin-top: 6%; */
@@ -300,11 +303,10 @@ h2{
 
 .Filter_Area_Headline{
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.9px;
+  font-weight: 400;
   text-transform: uppercase;
   display: inline;
-  font-size: 2vw;
+  font-size: 1.85vw;
   padding-left: 45%;
   float: left;
   padding-top: 30px;
@@ -643,6 +645,12 @@ h2{
 }
 
 .singleSideDownloadArea{
+  text-align: left;
+  border: 1px solid #999;
+  padding: 10px;
+  margin-top: 3vw;
+  width: 250px;
+  float: right;
 
 }
 
@@ -731,7 +739,7 @@ h2{
 }
 
 .singlePageHeadlines{
-  font-size: 25pt;
+  font-size: 1.85vw;
   font-weight: 400;
 }
 
@@ -856,13 +864,14 @@ h2{
   height: auto;
   width: 100%;
   text-align: left;
+  margin-left: 4.8vw;
   float: left;
 }
 
 .timetableActivitiesTime{
   color: #89BA22;
   display: inline-block;
-  margin-left: 24%;
+  padding-right: 1.2vw;
   font-weight: 700;
 }
 

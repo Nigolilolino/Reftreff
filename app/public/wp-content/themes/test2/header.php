@@ -94,7 +94,7 @@
               </div>
             <?php }else{ ?>
               <div class = "login_btn_area_header">
-                <a href="<?php echo wp_login_url() ?>"><button type="button" class="login_button_header">Log In</button></a>
+                <a href="<?php echo wp_login_url() ?>"><button type="button" class="login_button_header">Login</button></a>
               </div>
             <?php }
             ?>
