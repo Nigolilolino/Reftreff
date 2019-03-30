@@ -1,5 +1,5 @@
-<?php if ( have_comments() ) : ?>
-      <?php
+<?php 
+if ( have_comments() ) : 
 
       $activity = get_the_ID();
       $comments = wp_count_comments( $activity );
@@ -16,10 +16,10 @@
           'reverse_top_level' => true,                // display latest comment first
           'reverse_children'  => null
         ) );
-      ?>
-  <?php endif; ?>
+      
+   endif; 
 
-  <?php
+  
   $comments_args = array(
             // change the title of send button
             'label_submit' => __( 'Posten' ),
@@ -39,7 +39,8 @@
     //Check if user is logged in and has the authority to write comments ---> show or hide writing area
     if(is_user_logged_in()){
       $user = wp_get_current_user();
-      if(in_array( 'administrator', (array) $user->roles )){
+      $permission = array("administrator","leiter" ,"subscriber");
+      if(count(array_intersect($permission, $user->roles)) > 0){
         comment_form($comments_args, $post->ID);
       }else{
         ?> </div> <?php
@@ -52,6 +53,7 @@
   
   //Generates the html comments elements
   function my_comments_callback( $comment, $args, $depth ) {
+    $user = wp_get_current_user();
     $GLOBALS['comment'] = $comment;
     ?>
         <div class="participant">
@@ -63,7 +65,11 @@
               <p class="postDate"><?php echo(date('l', strtotime(get_comment_date()))); ?>, <?php comment_time(); ?></p>
               <p class="participantEmail"><?php comment_text(); ?></p>
           </div>
-          <span class="commentDeleteBtn" data-commentId="<?php echo(get_comment_ID()); ?>"><i class="fa fa-trash-alt" data-commentId="<?php echo(get_comment_ID()); ?>"></i></span>
+          <?php 
+          $permission = array("administrator","leiter" ,"subscriber");     
+          if($comment -> user_id == $user->ID || count(array_intersect($permission, $user->roles)) > 0){
+            ?><span class="commentDeleteBtn" data-commentId="<?php echo(get_comment_ID()); ?>"><i class="fa fa-trash-alt" data-commentId="<?php echo(get_comment_ID()); ?>"></i></span><?php
+          }?>
         </div>
     <?php
 }

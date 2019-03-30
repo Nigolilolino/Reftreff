@@ -14,7 +14,8 @@ function deleteComment($data){
 
     if(is_user_logged_in()){
         $user = wp_get_current_user();
-        if(in_array( 'administrator', (array) $user->roles )){
+        $permission = array("administrator","leiter" ,"subscriber");
+        if(count(array_intersect($permission, $user->roles)) > 0){
             wp_delete_comment($commentId, true);
             return "deleting complete";
         }else{

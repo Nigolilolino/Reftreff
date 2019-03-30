@@ -401,6 +401,12 @@ This would output:
 
 == Changelog ==
 
+= 2.2.2 =
+* Fix: Broken avatars on comments section.
+
+= 2.2.1 =
+* Fix: get_avatar_url filter is defined.
+
 = 2.2.0 =
 * Fix: Fatel Error "Cannot use string offset as an array" resolved in PHP7.2.
 

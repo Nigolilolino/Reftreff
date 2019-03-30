@@ -16,11 +16,101 @@ class WP_User_Avatar_Functions {
    */
   public function __construct() {
     add_filter('get_avatar', array($this, 'wpua_get_avatar_filter'), 10, 5);
-  // Filter to display WP User Avatar at Buddypress
-  add_filter('bp_core_fetch_avatar', array($this, 'wpua_bp_core_fetch_avatar_filter'), 10, 5);
-  // Filter to display WP User Avatar by URL at Buddypress
-  add_filter('bp_core_fetch_avatar_url', array($this, 'wpua_bp_core_fetch_avatar_url_filter'), 10, 5);
+
+    add_filter( 'get_avatar_url', array($this,'wpua_get_avatar_url'), 10, 3 );
+
+    // Filter to display WP User Avatar at Buddypress
+    add_filter('bp_core_fetch_avatar', array($this, 'wpua_bp_core_fetch_avatar_filter'), 10, 5);
+    // Filter to display WP User Avatar by URL at Buddypress
+    add_filter('bp_core_fetch_avatar_url', array($this, 'wpua_bp_core_fetch_avatar_url_filter'), 10, 5);
   
+  }
+
+
+
+    function wpua_get_avatar_url($url, $id_or_email, $args){
+
+
+    global $wpua_disable_gravatar;
+
+    $user_id=null;
+    if(is_object($id_or_email)){
+       if(!empty($id_or_email->comment_author_email)) {
+          $user_id = $id_or_email->user_id;
+        }
+
+    }else{
+      if ( is_email( $id_or_email ) ) {
+        $user = get_user_by( 'email', $id_or_email );
+        if($user){
+          $user_id = $user->ID;
+        }
+      } else {
+        $user_id = $id_or_email;
+      }
+    }
+     
+    // First checking custom avatar.
+    if( has_wp_user_avatar( $user_id ) ) {
+
+      $url = $this->get_wp_user_avatar_src( $user_id );
+
+    } else if( $wpua_disable_gravatar ) {
+
+      $url = $this->wpua_get_default_avatar_url($url, $id_or_email, $args);
+    
+    } else {
+      $has_valid_url = $this->wpua_has_gravatar($id_or_email);
+      if(!$has_valid_url){
+        $url = $this->wpua_get_default_avatar_url($url, $id_or_email, $args);
+      }
+    
+    }
+    /**
+     * Filter get_avatar_url filter
+     * @since 4.1.9
+     * @param string $url
+     * @param int|string $id_or_email
+     * @param array $args
+     */
+    return apply_filters( 'wpua_get_avatar_filter_url', $url, $id_or_email);
+
+
+  }
+
+
+  function wpua_get_default_avatar_url($url, $id_or_email, $args){
+
+        global $avatar_default, $mustache_admin, $mustache_avatar, $mustache_medium, $mustache_original, $mustache_thumbnail, $post, $wpua_avatar_default, $wpua_disable_gravatar, $wpua_functions;
+        
+        $default_image_details = array();
+
+        $size = !empty($args['size'])?$args['size']:96;
+        
+        // Show custom Default Avatar
+        if(!empty($wpua_avatar_default) && $wpua_functions->wpua_attachment_is_image($wpua_avatar_default)) {
+          // Get image
+          $wpua_avatar_default_image = $wpua_functions->wpua_get_attachment_image_src($wpua_avatar_default, array($size,$size));
+          // Image src
+          $url = $wpua_avatar_default_image[0];
+          // Add dimensions if numeric size        
+        } else {
+          // Get mustache image based on numeric size comparison
+          if($size > get_option('medium_size_w')) {
+            $url = $mustache_original;
+          } elseif($size <= get_option('medium_size_w') && $size > get_option('thumbnail_size_w')) {
+            $url = $mustache_medium;
+          } elseif($size <= get_option('thumbnail_size_w') && $size > 96) {
+            $url = $mustache_thumbnail;
+          } elseif($size <= 96 && $size > 32) {
+            $url = $mustache_avatar;
+          } elseif($size <= 32) {
+            $url = $mustache_admin;
+          }
+          // Add dimensions if numeric size
+        }
+
+        return $url;
   }
   
   /**
