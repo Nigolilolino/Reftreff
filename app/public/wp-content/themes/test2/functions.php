@@ -63,6 +63,24 @@ function newLoginPageCSS(){
 
 add_theme_support("html5", array("comment-list", "comment-form"));
 
+add_action("admin_init", "removeMenuPages");
+
+function removeMenuPages(){
+  global $user_ID;
+
+  if(current_user_can("leiter")){
+    remove_menu_page('edit.php'); //Posts
+    remove_menu_page('edit-comments.php'); // Comments
+    remove_menu_page('edit.php?post_type=infosites');
+    remove_menu_page('edit.php?post_type=campi');
+    remove_menu_page('edit.php?post_type=follower');
+    remove_menu_page('edit.php?post_type=news');
+    remove_menu_page('edit.php?post_type=participants');
+    remove_menu_page('tools.php'); // Tools
+
+  }
+}
+
 //....................................................................................
 
 

@@ -261,3 +261,43 @@ class ParticipateInActivityButton{
 var PAB = new ParticipateInActivityButton();
 
 //.................................................................................................
+
+//..................................Avatar Upload Funktionen.......................................
+
+class AvatarUploader{
+    constructor(){
+        this.events();
+    }
+
+    events(){
+        $("#uploadBtn").on("click", this.clickDispatcher.bind(this));
+        $("#overlay").on("click", this.clickDispatcher.bind(this));
+    }
+
+    clickDispatcher(e){
+        var uploadButton = $(e.target).closest("#uploadBtn");
+        var overlay = $(e.target).closest("#overlay");
+        if(uploadButton.attr("data-active") == "false"){
+            this.showUploadDiv(uploadButton);
+        }else{
+            this.removeUploadDiv(uploadButton);
+        }
+    }
+
+    showUploadDiv(_uploadButton){
+        $("#overlay").css({ 'display' : 'block'});
+        $("#avatarUpload").css({ 'display' : 'block'});
+        _uploadButton.attr("data-active", "true");
+        $("#overlay").on("click", this.removeUploadDiv.bind(this));
+    }
+
+    removeUploadDiv(){
+        //ändert das data Attribute nicht
+        $("#overlay").css({ 'display' : 'none'});
+        $("#avatarUpload").css({ 'display' : 'none'});
+        $('#uploadBtn').attr('data-active', "false");
+    }
+}
+
+var AU = new AvatarUploader();
+

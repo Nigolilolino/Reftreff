@@ -49,12 +49,17 @@ get_header();
         <button id="activityFollowBtn" type="button" data-userId="<?php echo get_current_user_id(); ?>" data-follow="<?php echo $followingQuery->posts[0]->ID; ?>" data-activity= <?php the_ID(); ?> data-exists= <?php echo $followingStatus ?>>Referat folgen</button>
     </div>
 
+    <?php 
+        $activityLeaderId = get_the_author_id();
+        $activityLeader = get_userdata($activityLeaderId);
+    ?>
+
     <div class ="headOfActivityAndDownloadArea">
         <div class="headOfActivityInfo">
-            <div class="headOfActivityPicture"></div>
-            <h3><?php the_field("leiter_name")?></h3>
+            <div class="headOfActivityPicture"><?php echo get_avatar($activityLeaderId); ?></div>
+            <h3><?php echo $activityLeader->user_login?></h3>
             <p>Referatsleiter</p>
-            <p><?php the_field("leiter_email")?></p>
+            <p><?php echo $activityLeader->user_email; ?></p>
             <hr>
         </div>
         <div class="singleSideDownloadArea">
