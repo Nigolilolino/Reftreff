@@ -147,7 +147,11 @@ class FollowActivityButton{
             success: (response) => {
                 _currentFollowButton.attr("data-exists", "no");
                 _currentFollowButton.attr("data-follow","");
-                console.log(response);
+                
+                if($("#participationBtn").data("exists") == "yes"){
+                    PAB.stopParticipatingInActivity($("#participationBtn"));
+                }
+
             },
             error:(response) => {
                 console.log(response);
@@ -212,43 +216,47 @@ class ParticipateInActivityButton{
         var currentParticipationButton = $(e.target).closest("#participationBtn");
 
         if(currentParticipationButton.attr("data-exists") == "yes"){
-            this.defollowActivity(currentParticipationButton);
+            this.stopParticipatingInActivity(currentParticipationButton);
         }else{
-            this.followActivity(currentParticipationButton);
+            this.participateInActivity(currentParticipationButton);
         }
     }
 
-    followActivity(_currentParticipationButton){
-        $.ajax({
-            beforeSend: (xhr) => {
-                xhr.setRequestHeader("X-WP-Nonce", reftreffData.nonce)
-            },
-            url: "http://test2.local/wp-json/reftreff/v1/manageParticipation",
-            type: "POST",
-            data: {"activityId": _currentParticipationButton.data("activity"), "participantId": _currentParticipationButton.data("userid")},
-            success: (response) => {
-                _currentParticipationButton.attr("data-exists", "yes");
-                _currentParticipationButton.attr("data-participation", response);
-                console.log(response);
-            },
-            error:(response) => {
-                console.log(response);
-            }
-        });
-      
+    participateInActivity(_currentParticipationButton){
+
+        if($("#activityFollowBtn").data("exists") == "no"){
+            alert("Du musst einer Aktivität erst Folgen, bevor du daran Teilnehmen kannst.");
+        }else{
+            $.ajax({
+                beforeSend: (xhr) => {
+                    xhr.setRequestHeader("X-WP-Nonce", reftreffData.nonce)
+                },
+                url: "http://test2.local/wp-json/reftreff/v1/manageParticipation",
+                type: "POST",
+                data: {"activityId": _currentParticipationButton.data("activity"), "participantId": _currentParticipationButton.data("userid")},
+                success: (response) => {
+                    _currentParticipationButton.attr("data-exists", "yes");
+                    _currentParticipationButton.attr("data-participation", response);
+                    console.log(response);
+                },
+                error:(response) => {
+                    console.log(response);
+                }
+            });
+        }
     }
 
-    defollowActivity(_currentFollowButton){
+    stopParticipatingInActivity(_currentParticipationButton){
         $.ajax({
             beforeSend: (xhr) => {
                 xhr.setRequestHeader("X-WP-Nonce", reftreffData.nonce)
             },
             url: "http://test2.local/wp-json/reftreff/v1/manageParticipation",
-            data: {"participating": _currentFollowButton.attr("data-participation")},
+            data: {"participating": _currentParticipationButton.attr("data-participation")},
             type: "DELETE",
             success: (response) => {
-                _currentFollowButton.attr("data-exists", "no");
-                _currentFollowButton.attr("data-participation","");
+                _currentParticipationButton.attr("data-exists", "no");
+                _currentParticipationButton.attr("data-participation","");
                 console.log(response);
             },
             error:(response) => {
