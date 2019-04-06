@@ -55,12 +55,17 @@ if ( have_comments() ) :
   function my_comments_callback( $comment, $args, $depth ) {
     $user = wp_get_current_user();
     $GLOBALS['comment'] = $comment;
-    ?>
-        <div class="participant">
+    $activityLeaderId = get_the_author_id();
+    ?>  
+        <?php if(intval($comment->user_id) == $activityLeaderId){
+          ?> <div class="participant highlightedComment"> <?php
+        } else{
+          ?> <div class="participant"> <?php
+        }?>
           <div class="participantPicture">
             <?php echo get_avatar($comment -> user_id); ?>
           </div>
-          <div class="participantInfo">
+           <div class="participantInfo">
               <p class="participantName"><?php comment_author(); ?></p>
               <p class="postDate"><?php echo(date('l', strtotime(get_comment_date()))); ?>, <?php comment_time(); ?></p>
               <p class="participantEmail"><?php comment_text(); ?></p>

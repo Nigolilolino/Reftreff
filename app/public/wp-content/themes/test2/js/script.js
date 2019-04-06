@@ -279,12 +279,11 @@ class AvatarUploader{
 
     events(){
         $("#uploadBtn").on("click", this.clickDispatcher.bind(this));
-        $("#overlay").on("click", this.clickDispatcher.bind(this));
+        $("#overlayAvatarUpload").on("click", this.clickDispatcher.bind(this));
     }
 
     clickDispatcher(e){
         var uploadButton = $(e.target).closest("#uploadBtn");
-        var overlay = $(e.target).closest("#overlay");
         if(uploadButton.attr("data-active") == "false"){
             this.showUploadDiv(uploadButton);
         }else{
@@ -293,19 +292,55 @@ class AvatarUploader{
     }
 
     showUploadDiv(_uploadButton){
-        $("#overlay").css({ 'display' : 'block'});
+        $("#overlayAvatarUpload").css({ 'display' : 'block'});
         $("#avatarUpload").css({ 'display' : 'block'});
         _uploadButton.attr("data-active", "true");
-        $("#overlay").on("click", this.removeUploadDiv.bind(this));
+        $("#overlayAvatarUpload").on("click", this.removeUploadDiv.bind(this));
     }
 
     removeUploadDiv(){
-        //ändert das data Attribute nicht
-        $("#overlay").css({ 'display' : 'none'});
+        $("#overlayAvatarUpload").css({ 'display' : 'none'});
         $("#avatarUpload").css({ 'display' : 'none'});
         $('#uploadBtn').attr('data-active', "false");
     }
 }
 
 var AU = new AvatarUploader();
+//...................................................................................................
+//..................................Ortsbeschreibungsoverlay.........................................
+
+class Ortsbeschreibungsoverlay{
+    constructor(){
+        this.events();
+    }
+
+    events(){
+        $("#locationPopupActivator").on("click", this.clickDispatcher.bind(this));
+        $("#overlayLocationWindow").on("click", this.clickDispatcher.bind(this));
+    }
+
+    clickDispatcher(e){
+        var locationPopupActivator = $(e.target).closest("#locationPopupActivator");
+        if(locationPopupActivator.attr("data-active") == "false"){
+            this.showLocationPopup(locationPopupActivator);
+        }else{
+            this.removeLocationPopup(locationPopupActivator);
+        }
+    }
+
+    showLocationPopup(_locationPopupActivator){
+        $("#overlayLocationWindow").css({ 'display' : 'block'});
+        $("#locationWindow").css({ 'display' : 'block'});
+        _locationPopupActivator.attr("data-active", "true");
+        $("#overlayLocationWindow").on("click", this.removeUploadDiv.bind(this));
+    }
+
+    removeLocationPopup(){
+        $("#overlayLocationWindow").css({ 'display' : 'none'});
+        $("#locationWindow").css({ 'display' : 'none'});
+        $('#locationPopupActivator').attr('data-active', "false");
+    }
+}
+
+var ObO = new Ortsbeschreibungsoverlay();
 

@@ -80,6 +80,19 @@ get_header();
     </div>
     </div>
 
+<div id="overlayLocationWindow" class="overlay"></div>
+<div id="locationWindow" class="locationWindow">
+    <div class="locationMapArea"></div>
+    <div class="locationInfoArea">
+            <p class="locationBuilding"><?php the_field('raumnummer') ?></p>
+            <P class="locationStreet"><?php the_field('strase_und_hausnummer'); ?></p>
+            <p class="locationCity"><?php the_field('stadt'); ?></p>
+            <p class="locationDescription">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+            sed diam voluptua. At vero eos et accusam et
+            </p>
+    </div>
+</div>
 
     <div class="activitySignInArea">
         <div class="activityDateArea">
@@ -95,7 +108,7 @@ get_header();
                 echo "<p class='activityDate'>$tage[$day], $date</p>";
                 echo "<p class='activityTime'>$time</p>"; 
             ?>
-            <p><?php the_field('strase_und_hausnummer'); ?></p>
+            <p id="locationPopupActivator" data-active="false"><?php the_field('strase_und_hausnummer'); ?></p>
             <p><?php the_field('raumnummer') ?></p> <?php
 
             $participationStatus = "no";

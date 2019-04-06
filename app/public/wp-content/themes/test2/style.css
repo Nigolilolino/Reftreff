@@ -670,6 +670,48 @@ h2{
 
 }
 
+/*Orstebeschreibungs Popup*/
+
+.locationWindow{
+  display: none;
+  width: 45%;
+  height: auto;
+  background-color: blue;
+  margin-left: 30%;
+  z-index: 3;
+  position: absolute;
+}
+
+.locationMapArea{
+  background-color: green;
+  height: 300px;
+  width: 250px;
+  float: left;
+  margin: 7%;
+}
+
+.locationInfoArea{
+  background-color: red;
+  height: 30%;
+  width: 42%;
+  margin-left: 50%;
+  margin-top: 12%;
+}
+
+.locationBuilding{
+
+}
+
+.locationStreet{
+
+}
+
+.locationDescription{
+
+}
+
+/*........................*/
+
 .activitySignInArea{
   background-color: #F5F4F0;
   height: auto;
@@ -750,6 +792,10 @@ h2{
 
 .participant{
   
+}
+
+.highlightedComment{
+  background-color: rgba(255, 0, 0, 0.4);
 }
 
 .participantPicture{

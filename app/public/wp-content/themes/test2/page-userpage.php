@@ -23,7 +23,7 @@ get_header();
             wp_reset_postdata();
         }
 ?>
-<div id="overlay" class="overlay"></div>
+<div id="overlayAvatarUpload" class="overlay"></div>
 <div id="avatarUpload" class="avatarUpload">
     <?php echo do_shortcode("[avatar_upload]"); ?>
 </div>
