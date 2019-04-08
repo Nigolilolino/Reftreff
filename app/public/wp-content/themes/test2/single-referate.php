@@ -57,13 +57,18 @@ get_header();
     <div class ="headOfActivityAndDownloadArea">
         <div class="headOfActivityInfo">
             <div class="headOfActivityPicture"><?php echo get_avatar($activityLeaderId); ?></div>
+            <div class="headOfActivityid">
             <h3><?php echo $activityLeader->user_login?></h3>
             <p>Referatsleiter</p>
             <p><?php echo $activityLeader->user_email; ?></p>
-            <hr>
+            </div>
+            
+    
         </div>
+        
         <div class="singleSideDownloadArea">
-            <h2>Downloads</h2>
+        <hr>
+            <h4>DOWNLOADS</h4>
             <?php 
             for($i=1; $i < 4; $i++){
                 if( have_rows('downloads' . $i) ):
