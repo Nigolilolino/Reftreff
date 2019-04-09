@@ -241,6 +241,7 @@ class ParticipateInActivityButton{
                 },
                 error:(response) => {
                     console.log(response);
+                    alert(response["responseText"]);
                 }
             });
         }

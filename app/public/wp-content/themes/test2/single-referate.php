@@ -92,10 +92,7 @@ get_header();
             <p class="locationBuilding"><?php the_field('raumnummer') ?></p>
             <P class="locationStreet"><?php the_field('strase_und_hausnummer'); ?></p>
             <p class="locationCity"><?php the_field('stadt'); ?></p>
-            <p class="locationDescription">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-            sed diam voluptua. At vero eos et accusam et
-            </p>
+            <p class="locationDescription"><?php the_field("zusatzliche_angaben") ?></p>
     </div>
 </div>
 

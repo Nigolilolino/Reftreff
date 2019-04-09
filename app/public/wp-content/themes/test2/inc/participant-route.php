@@ -20,7 +20,23 @@ function createParticipation($data){
         $activity = sanitize_text_field($data["activityId"]);
         $user = sanitize_text_field($data["participantId"]);
 
-        $followingQuery = new WP_Query(array(
+        $allParticipantsQuery = new WP_Query(array(
+            "post_type" => "participants",
+            "meta_query" => array(
+                array(
+                    "key" => "participated_activity_id",
+                    "compare" => "=",
+                    "value" => $activity
+                )
+            )
+        ));
+
+        $amountParticipants = intval(get_field("maximale_teilnehmer_anzahl", $activity));
+        if($amountParticipants != 0 && intval($allParticipantsQuery->found_posts) >= $amountParticipants){
+            die("Die maximale Teilnehmeranzhal ist bereits erreicht");
+        }
+
+        $currentUserFollowsQuery = new WP_Query(array(
             "author" => get_current_user_id(),
             "post_type" => "participants",
             "meta_query" => array(
@@ -32,7 +48,7 @@ function createParticipation($data){
             )
         ));
 
-        if($followingQuery->found_posts == 0 AND get_post_type($activity) == "referate"){
+        if($currentUserFollowsQuery->found_posts == 0 AND get_post_type($activity) == "referate"){
             return wp_insert_post(array(
                 "post_type" => "participants",
                 "post_status" => "publish",
