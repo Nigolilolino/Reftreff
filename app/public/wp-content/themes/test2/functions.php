@@ -484,6 +484,50 @@ function getTimetableInputForTheUserpage($date){
 
 //.....................................Ende Kalender-Funktionen...............................
 
+//....................Sollte Zentral für alle Aktivities genutzt werden...............................
+
+function getAllActivities($mode){
+
+if($mode == "sport"){
+  $args = array(
+    'numberposts'	=> -1,
+    'post_type'		=> 'referate',
+    'meta_query'	=> array(
+      'relation'		=> 'OR',
+      array(
+        'key'		=> 'primary_tag',
+        'value'		=> 'sport',
+        'compare'	=> '='
+      ),
+    )
+  );
+}else if($mode == "freizeit"){
+  $args = array(
+    'numberposts'	=> -1,
+    'post_type'		=> 'referate',
+    'meta_query'	=> array(
+      'relation'		=> 'OR',
+      array(
+        'key'		=> 'primary_tag',
+        'value'		=> 'freizeit',
+        'compare'	=> '='
+      ),
+    )
+  );
+}
+
+  $allAktivities = new WP_Query($args);
+
+  while($allAktivities->have_posts()){
+      $allAktivities->the_post();  
+      ?>
+      <a href=" <?php the_permalink(); ?>"><div class = 'activities' style="background-image: url(<?php echo the_field("referat_titelbild") ?>);" ><strong class='activity_title'><?php the_title()?></strong></div></a>
+      <?php
+  
+  wp_reset_postdata();
+  }
+
+}
 
 ?>
 

@@ -18,7 +18,7 @@
 
           <div class = "Referate_Header">
             <div class="dropdown">
-              <button onclick="myFunction()" class="dropbtn">Referate</button>
+              <button onclick="myFunction()" class="activityBtn">Referate</button>
               <div id="dpMenue" class="dropdown-content">
                 <div class="dpCategories">
                   <p>Sport</p>

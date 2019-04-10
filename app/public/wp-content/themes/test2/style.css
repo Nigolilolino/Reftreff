@@ -81,7 +81,7 @@ body{
 
 /*.................................................Dropdown Menü.....................................*/
 
-.dropbtn {
+.activityBtn {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
   display: inline-block;
@@ -1222,3 +1222,54 @@ z-index: 2;
 #submit{
   display: none;
 }
+/*.................................................................................................*/
+/*...............................Activities Overview Page..........................................*/
+.pageBannerActivityOverview{
+  padding: 10px 5px 60px 0;
+  margin: 20px 20px 10px 20px;
+  height: 100px;
+}
+
+.pageBannerImageActivityOverview{
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 310px;
+  max-height: 600px;
+}
+
+.pageContent{
+  height: auto;
+  width: 100%;
+}
+
+.pageActivities{
+  width: 90%;
+  height: auto;
+  margin-left: 5%;
+  text-align: center;
+}
+
+.pageActivitiesSports{
+  width: 90%;
+  height: auto;
+  margin-left: 5%;
+}
+
+.pageActivitiesSportsHeadline{
+
+}
+
+.pageActivitiesFreetime{
+  width: 90%;
+  height: auto;
+  margin-left: 5%;
+}
+
+.pageActivitiesFreetimeHeadline{
+
+}
+/*.................................................................................................*/
