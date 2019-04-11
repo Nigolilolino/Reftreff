@@ -2,14 +2,12 @@
 get_header();
 ?>
 <div class="page-banner">
-  <div class="page-banner__bg-image_ref" style="background-image: url(<?php echo the_field("header_referate") ?>);"></div>
+    <div class="page-banner__bg-image_ref" style="background-image: url(<?php echo the_field("header_referate") ?>);">
+    </div>
     <div class="page-banner__content container t-center c-white">
     </div>
-  <div>  
-</div>
-<div class="singleSidePreviwPicture">
-   
-</div>
+</div>  
+
 <div class="singleSideOverviewArea">
     <div class="singleSideInfo">
         <?php 
@@ -56,18 +54,17 @@ get_header();
 
     <div class ="headOfActivityAndDownloadArea">
         <div class="headOfActivityInfo">
-            <div class="headOfActivityPicture"><?php echo get_avatar($activityLeaderId); ?></div>
-            <div class="headOfActivityid">
-            <h3><?php echo $activityLeader->user_login?></h3>
-            <p>Referatsleiter</p>
-            <p><?php echo $activityLeader->user_email; ?></p>
+            <div class="headOfActivityPicture">
+                <?php echo get_avatar($activityLeaderId); ?>
             </div>
-            
-    
+            <div class="headOfActivityid">
+                <h3><?php echo $activityLeader->user_login?></h3>
+                <p>Referatsleiter</p>
+                <p><?php echo $activityLeader->user_email; ?></p>
+            </div>
         </div>
         
         <div class="singleSideDownloadArea">
-        <hr>
             <h4>DOWNLOADS</h4>
             <?php 
             for($i=1; $i < 4; $i++){
@@ -83,19 +80,22 @@ get_header();
             ?>
         </div>
     </div>
-    </div>
+</div>
 
-<div id="overlayLocationWindow" class="overlay"></div>
+<div id="overlayLocationWindow" class="overlay">
+</div>
 <div id="locationWindow" class="locationWindow">
-    <div class="locationMapArea"></div>
+    <div class="locationMapArea">
+    </div>
     <div class="locationInfoArea">
-            <p class="locationBuilding"><?php the_field('raumnummer') ?></p>
-            <P class="locationStreet"><?php the_field('strase_und_hausnummer'); ?></p>
-            <p class="locationCity"><?php the_field('stadt'); ?></p>
-            <p class="locationDescription"><?php the_field("zusatzliche_angaben") ?></p>
+        <p class="locationBuilding"><?php the_field('raumnummer') ?></p>
+        <P class="locationStreet"><?php the_field('strase_und_hausnummer'); ?></p>
+        <p class="locationCity"><?php the_field('stadt'); ?></p>
+        <p class="locationDescription"><?php the_field("zusatzliche_angaben") ?></p>
     </div>
 </div>
 
+<div class="secondSection">
     <div class="activitySignInArea">
         <div class="activityDateArea">
             <?php 
@@ -169,6 +169,7 @@ get_header();
             ?>
         </div>
     </div>
+</div>
 
 <div class="activityNewsArea">
     <div class="activityBlog">
@@ -196,7 +197,9 @@ get_header();
                     $follower = get_userdata(get_field("follower_id"));
                     ?>
                    <div class="participant">
-                        <div class="participantPicture"><?php echo get_avatar($follower->ID) ?></div>
+                        <div class="participantPicture">
+                            <?php echo get_avatar($follower->ID) ?>
+                        </div>
                         <div class="participantInfo">
                             <p class="participantName"><?php echo $follower->user_login ?></p>
                             <p class="participantEmail"><?php echo $follower->user_email ?></p>
