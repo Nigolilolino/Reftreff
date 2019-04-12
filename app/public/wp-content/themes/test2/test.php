@@ -1,15 +1,8 @@
 <?php 
 get_header();
 ?>
-<div class="page-banner">
-    <div class="page-banner__bg-image_ref" style="background-image: url(<?php echo the_field("header_referate") ?>);">
-    </div>
-    <div class="page-banner__content container t-center c-white">
-    </div> 
-</div>
 
 <div class="singleSideOverviewArea">
-    
     <div class="singleSideInfo">
         <?php 
             while(have_posts()) {
@@ -52,7 +45,7 @@ get_header();
         $activityLeaderId = get_the_author_id();
         $activityLeader = get_userdata($activityLeaderId);
     ?>
-    
+
     <div class ="headOfActivityAndDownloadArea">
         <div class="headOfActivityInfo">
             <div class="headOfActivityPicture">
@@ -64,6 +57,7 @@ get_header();
                 <p><?php echo $activityLeader->user_email; ?></p>
             </div>
         </div>
+        
         <div class="singleSideDownloadArea">
         <hr>
             <h4>DOWNLOADS</h4>
@@ -111,7 +105,6 @@ get_header();
             echo "<p class='activityDate'>$tage[$day], $date</p>";
             echo "<p class='activityTime'>$time</p>"; 
         ?>
-
         <p id="locationPopupActivator" data-active="false"><?php the_field('strase_und_hausnummer'); ?></p>
         <p><?php the_field('raumnummer') ?></p> <?php
 
@@ -140,20 +133,20 @@ get_header();
     </div>
     <div class="activityParticipantsArea">
         <h3 class="singlePageHeadlines">Teilnehmer</h3>
-            <?php $args = array(
-            'post_type'		=> 'participants',
-            'numberposts'	=> -1,
-            'meta_query'	=> array(
-                'relation'		=> 'OR',
-                array(
-                    'key'		=> 'participated_activity_id',
-                    'value'		=> get_the_ID(),
-                    'compare'	=> '='
-                    ),
-                )
-            );
-            
-            $participantsQuery = new WP_Query($args);
+        <?php $args = array(
+        'post_type'		=> 'participants',
+        'numberposts'	=> -1,
+        'meta_query'	=> array(
+            'relation'		=> 'OR',
+            array(
+                'key'		=> 'participated_activity_id',
+                'value'		=> get_the_ID(),
+                'compare'	=> '='
+                ),
+            )
+        );
+        
+        $participantsQuery = new WP_Query($args);
                 while($participantsQuery->have_posts()){
                 $participantsQuery->the_post(); 
                 $participant = get_userdata(get_field("participant_id"));
@@ -218,9 +211,9 @@ get_header();
 
 <div class = "aktivity_area">
     <h3 class="singlePageHeadlines">Das Könnte Dich Auch Interessieren</h3>
-    <?php
-    get_activities("sub");
-    ?>
+<?php
+get_activities("sub");
+?>
 </div>
 
 <?php
