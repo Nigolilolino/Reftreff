@@ -95,8 +95,7 @@ function get_activities($mode){
         $homepageReferate = new WP_Query($args);
 
         while($homepageReferate->have_posts()){
-            $homepageReferate->the_post();  ?>
-            
+            $homepageReferate->the_post();?>
             <a href=" <?php the_permalink(); ?>"><div class = 'activities' style="background-image: url(<?php echo the_field("referat_titelbild") ?>);" ><strong class='activity_title'><?php the_title()?></strong></div></a>
         <?php 
         wp_reset_postdata();
@@ -228,11 +227,10 @@ function get_Filters(){
 
     if( $field )
     {
-        foreach( $field['choices'] as $key => $value )
-            {
-                echo '<div class="filterbox"><input type="checkbox" class="filtercheckboxes" name= '.$value.' value='.$value.' onclick="refreshActivities()">';
-                echo '<label class="filter">' . $value . '</label></div>';
-            };  
+      foreach( $field['choices'] as $key => $value ){
+          echo '<div class="filterbox"><input type="checkbox" class="filtercheckboxes" name= '.$value.' value='.$value.'>';
+          echo '<label class="filter">' . $value . '</label></div>';
+      };  
     };
 }
 

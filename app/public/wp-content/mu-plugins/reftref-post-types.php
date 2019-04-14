@@ -11,7 +11,7 @@ function reftref_post_types(){
         "rewrite"=> array("slug"=> "referate"),
         "has_archive" => true,
         "public" => true,
-        "menu_icon" => "dashicons-groups",
+        "menu_icon" => "dashicons-smiley",
         "labels" => array(
             "name" => "Referate",
             "add_new_item" => "Neues Referat erstellen",
@@ -71,7 +71,7 @@ function reftref_post_types(){
         "supports"=> array("title", "editor"),
         "public" => false,
         "show_ui" => true,
-        "menu_icon" => "dashicons-groups",
+        "menu_icon" => "dashicons-testimonial",
         "labels" => array(
             "name" => "News",
             "add_new_item" => "Neue News erstellen",

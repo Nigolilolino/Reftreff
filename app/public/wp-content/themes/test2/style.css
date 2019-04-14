@@ -809,7 +809,6 @@ h2{
 .singlePageHeadlines{
   font-size: 1.85vw;
   font-weight: 400;
-  text-align: center;
 }
 
 .participant{
@@ -825,9 +824,10 @@ h2{
   width: 60px;
   border-radius: 50%;
   position: relative;
+  left: 30%;
   display: inline-grid;
   float: left;
-  margin-right: 6%;
+  margin-right: 20%;
   margin-top: 3%;
 }
 
@@ -836,8 +836,7 @@ h2{
 }
 
 .participantName{
-  margin-block-end: 1px;
-  line-height: 5px;
+  margin-block-end: 3px;
   font-weight: bolder;
   font-size: larger;
 }
@@ -885,7 +884,7 @@ h2{
 .activityFolower{
   display: inline-grid;
   width: 40%;
-  text-align: left;
+  text-align: center;
   margin-left: 10%;
   max-height: 400px;
   overflow-y: auto;

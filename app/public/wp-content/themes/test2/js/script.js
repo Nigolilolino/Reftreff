@@ -1,80 +1,40 @@
 
 //Funktionen für die Filter..........................................................
 
-function refreshActivities(){
-    var checkboxes = document.getElementsByClassName("filtercheckboxes");
-    var checkboxValues = [];
-    
-    for(var i = 0; i < checkboxes.length; i++){
-        if(checkboxes[i].checked){
-            checkboxValues.push(checkboxes[i].value);
-        }
+class Filter{
+
+    constructor(){
+        this.events();
     }
-    var jsonString = JSON.stringify(checkboxValues);
 
-    $.ajax({
-        beforeSend: (xhr) => {
-            xhr.setRequestHeader("X-WP-Nonce", reftreffData.nonce)
-        },
-        url: "http://test2.local/wp-json/reftreff/v1/manageFilter",
-        type: "POST",
-        data: {"checkboxValues": jsonString},
-        success: (response) => {
-            alert("erfolgreich");
-            console.log(response);
-        },
-        error:(response) => {
-            alert("fail");
-            console.log(response);
-        }
-    });
-
-
-};
-/*
-function prepareArguments(_values){
-    var args = "array('numberposts' => -1, 'post_type' => 'referate','meta_query'	=> array('relation'	=> 'AND',"
-            
-    for(var i = 0; i < _values.length; i++){
-        console.log(_values[i]);
-        args += "array('key' => 'referate_tags','value' => \'"+_values[i]+"\','compare' => 'LIKE'),"
+    events(){
+        
+        
+        $(".filtercheckboxes").on("click", this.clickDispatcher.bind(this));
     }
-    args += "),);";
 
-        var area = document.getElementsByClassName("aktivity_area")[0];
-        while (area.firstChild) {
-            area.removeChild(area.firstChild);
+    clickDispatcher(){
+        var checkedBoxes = [];
+        var inputElements = document.getElementsByClassName("filtercheckboxes");
+        for (var i = 0; i < inputElements.length; i++){
+            if (inputElements[i].checked){
+                checkedBoxes.push(inputElements[i]);
+            }
         }
-            //$( ".activities" ).replaceWith( "<div class='activities'></div>" );
-            $.ajax({
-            url: 'index.php',
-            type: 'post',
-            data: { "callFunc1": args},
-            success: function(response) { alert(response); }
-        });
-            //$(".aktivity_area").load("index.php .aktivity_area");
-            /*
-            jQuery.ajax({
-                type: "Post",
-                url: "index.php",
-                dataType: "html",
-                data: {functionname: "queryNewActivities", arguments: args},
+        console.log(checkedBoxes);
+        console.log(inputElements);
+        
+        checkedBoxes = [];
+    }
 
-                success: function(){
-                    alert(args);
-                }
-            });
-        };
-
-function removeAvtivities(){
-    var activitieArea = document.getElementsByClassName("aktivity_area");
-    while(activitieArea[0].firstChild) 
-    activitieArea[0].removeChild(activitieArea[0].firstChild);
+    filterActivities(_checkedBoxes){
+        
+    }
 }
 
-//....................................................................................
-}
-*/
+var filter = new Filter();
+
+
 // Funktionen für das Dropdownmenü der Startseite....................................
 
 
