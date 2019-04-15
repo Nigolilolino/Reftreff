@@ -88,13 +88,30 @@ function reftref_post_types(){
         "show_ui" => true,
         "menu_icon" => "dashicons-groups",
         "labels" => array(
-            "name" => "Participants",
-            "add_new_item" => "Neuen Participant erstellen",
-            "edit_item" => "Participant bearbeiten",
-            "all_items" => "Alle Participants",
-            "singular_name" => "Participant"
+            "name" => "Teilnehmer",
+            "add_new_item" => "Neuen Teilnehmer erstellen",
+            "edit_item" => "Teilnehmer bearbeiten",
+            "all_items" => "Alle Teilnehmer",
+            "singular_name" => "Teilnehmer"
         )
     ));
+
+    register_post_type("waitingList", array(
+
+        "supports"=> array("title"),
+        "public" => false,
+        "show_ui" => true,
+        "menu_icon" => "dashicons-groups",
+        "labels" => array(
+            "name" => "Warteliste",
+            "add_new_item" => "Neuen Eintag erstellen",
+            "edit_item" => "Einträge bearbeiten",
+            "all_items" => "Alle Einträge",
+            "singular_name" => "Eintrag"
+        )
+    ));
+
+
 }
 
 ?>

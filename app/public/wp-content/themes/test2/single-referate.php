@@ -119,13 +119,17 @@ get_header();
 
         if(is_user_logged_in()){
             $participationQuery = new WP_Query(array(
-                "author" => get_current_user_id(),
                 "post_type" => "participants",
                 "meta_query" => array(
                     array(
                         "key" => "participated_activity_id",
                         "compare" => "=",
                         "value" => get_the_ID()
+                    ),
+                    array(
+                        "key" => "participant_id",
+                        "compare" => "=",
+                        "value" => get_current_user_id()
                     )
                 )
             ));
