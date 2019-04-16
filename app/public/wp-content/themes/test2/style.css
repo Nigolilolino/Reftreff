@@ -355,10 +355,8 @@ h2{
 .aktivity_area{
   height: auto;
   margin: auto;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  padding-left: 13%;
-  padding-right: 10%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 }
 
@@ -368,7 +366,7 @@ h2{
 
 .activities{
   height: 180px;
-  width: 250px;
+  width: 240px;
   background-color: red;
   display: inline-block;
   margin: 15px;
@@ -573,16 +571,13 @@ h2{
 
 .singleSideOverviewArea{
   height: auto;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin: 6% 8%;
 }
 
 .singleSideInfo{
-  width: 45%;
+  width: 40%;
   padding: 5%;
-  display: inline-block;
+  display: inline-grid;
   float: left;
 }
 
@@ -604,7 +599,7 @@ h2{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  width: 80%;
+  width: 100%;
   font-size: 24px;
 }
 
@@ -620,27 +615,27 @@ h2{
   font-size: 30px;
 }
 
-.headOfActivityInfo{
-  display: inline-block;
-  float: left;
-  width: 450px;
-  margin-top: 2vw;
+.headOfActivityAndDownloadArea{
+  display: inline-grid;
+  width: 40%;
+  padding: 5%;
   background-color: #F5F4F0;
 }
 
-.headOfActivityPicture{
 
+
+/*.headOfActivityPicture{
   height: 100px;
   width: 100px;
   border-radius: 50%;
   float: left;
   position: relative;
 }
-
+*/
 .headOfActivityid {
-  float:right;
-  margin-right: 2vw;
-  margin-top: 1vw;
+  display: inline-block;
+  text-align: left;
+  line-height: 15px;
 }
 
 .singleSideDownloadArea h4 {
@@ -650,32 +645,21 @@ h2{
 .headOfActivityPicture img{
   height: 80px;
   width: 80px;
-  margin-left: 30px;
-  margin-top: 3vw;
+  margin-right: 10%;
 }
 
 .headOfActivityInfo h3{
-  text-align: left;
   font-size: 16pt;
-  line-height: 20px;
   margin-bottom: 0;
 }
 
 .headOfActivityInfo p{
   position: relative;
-  text-align: left;
   font-size: 12pt;
-  line-height: 15px;
 }
 
 .singleSideDownloadArea{
   text-align: left;
-  background-color: #F5F4F0;
-  padding: 30px 30px 30px 30px;
-  width: 390px;
-  float: left;
-  margin-bottom: 10%;
-
 }
 
 .singleSideDownloadArea .downloads_label{
@@ -733,15 +717,14 @@ h2{
 /*........................*/
 
 .activitySignInArea{
-  background-color: #fff;
-  height: auto;
+  background-color: #F5F4F0;
+  margin: 6% 8%;
 }
 
 .activityDateArea{
   width: 40%;
   display: inline-grid;
   text-align: center;
-  height: auto;
   padding: 5%;
 }
 
@@ -768,9 +751,7 @@ h2{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  width: 80%;
-  margin-right: 7%;
-  margin-left: 7%;
+  width: 100%;
   margin-bottom: 10%;
   font-size: 30px;
 }
@@ -783,7 +764,7 @@ h2{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  width: 80%;
+  width: 100%;
   font-size: 30px;
 }
 
@@ -795,28 +776,36 @@ h2{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  width: 80%;
+  width: 100%;
   font-size: 30px;
 }
 
 .activityParticipantsArea{
-  width: 49%;
+  width: 40%;
   display: inline-grid;
-  text-align: center;
-  overflow-y: auto;
+  text-align: left;
+  padding-left: 5%;
 }
-
-.singlePageHeadlines{
-  font-size: 1.85vw;
+.singleHeadlineLeft{
+  text-align: left;
   font-weight: 400;
+  text-transform: uppercase;
+  font-size: 20pt;
+}
+.singlePageHeadlines{
+  font-size: 20pt;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .participant{
-  
+  margin-bottom: 25px;
 }
 
 .highlightedComment{
-  background-color: rgba(255, 0, 0, 0.4);
+  border: 1px solid firebrick;
+  padding: 15px;
 }
 
 .participantPicture{
@@ -824,21 +813,24 @@ h2{
   width: 60px;
   border-radius: 50%;
   position: relative;
-  left: 30%;
   display: inline-grid;
   float: left;
-  margin-right: 20%;
+  margin-right: 10%;
   margin-top: 3%;
 }
-
+.participant{
+  
+}
 .participantInfo{
-  display: inline-grid;
+  display: inline-block;
+  padding-top: 15px;
 }
 
 .participantName{
-  margin-block-end: 3px;
   font-weight: bolder;
   font-size: larger;
+  display: inline;
+  padding-right: 30px;
 }
 
 .participantEmail{
@@ -847,23 +839,29 @@ h2{
 
 .activityNewsArea{
   height: auto;
-  padding: 7%;
+  padding: 6% 8%;
   background-color: #F5F4F0;
 }
 
 .postDate{
-
+display: inline;
 }
 
 .postContent{
+}
 
+.aktivity_area {
+  padding: 4% 13%;
+  background-color: #F5F4F0;
 }
 
 .activityBlog{
   width: 40%;
+  float: left;
   display: inline-grid;
-  text-align: center;
-  height: auto;
+  text-align: left;
+  padding: 1% 4%;
+  border-right: 1px solid #888;
 }
 
 .activityBlog input{
@@ -882,17 +880,19 @@ h2{
 }
 
 .activityFolower{
-  display: inline-grid;
+  display: inline-block;
   width: 40%;
-  text-align: center;
-  margin-left: 10%;
+  text-align: left;
   max-height: 400px;
   overflow-y: auto;
+  padding: 1% 4%;
 }
 
 .timetable_area{
   text-align: center;
   height: 450px;
+  width: 90%;
+  margin: auto;
   padding-top: 4vw;
   padding-bottom: 3vw;
 }

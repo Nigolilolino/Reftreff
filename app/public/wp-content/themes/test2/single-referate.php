@@ -143,7 +143,7 @@ get_header();
         <button id="participationBtn" type="button" data-userId="<?php echo get_current_user_id(); ?>" data-participation="<?php echo $participationQuery->posts[0]->ID; ?>" data-activity= <?php the_ID(); ?> data-exists= <?php echo $participationStatus ?>>Teilnehmen</button>
     </div>
     <div class="activityParticipantsArea">
-        <h3 class="singlePageHeadlines">Teilnehmer</h3>
+        <h3 class="singleHeadlineLeft">Teilnehmer</h3>
             <?php $args = array(
             'post_type'		=> 'participants',
             'numberposts'	=> -1,

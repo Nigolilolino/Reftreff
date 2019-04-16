@@ -517,7 +517,6 @@ INSERT INTO `wp_postmeta` VALUES
 (693,210,"follower_id","1"),
 (696,55,"zusatzliche_angaben","Würfel und Charakterbögen gibt es hier. Bitte bringt aber eigene Stifte und Radiergummies mit. Wer Teilnehmen möchte, sollte bitte auch solange am Referat Teilnehmen, bis ein Abenteuer abgeschlossen oder der Charakter gestorben ist."),
 (697,55,"_zusatzliche_angaben","field_5cac7838b3c61"),
-(698,214,"_edit_lock","1554807223:1"),
 (699,215,"_edit_lock","1554905980:1"),
 (700,215,"_edit_last","1"),
 (701,215,"_wp_trash_meta_status","publish"),
