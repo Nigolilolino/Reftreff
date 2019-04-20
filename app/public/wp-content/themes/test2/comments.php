@@ -56,6 +56,7 @@ if ( have_comments() ) :
     $user = wp_get_current_user();
     $GLOBALS['comment'] = $comment;
     $activityLeaderId = get_the_author_id();
+
     ?>  
         <?php if(intval($comment->user_id) == $activityLeaderId){
           ?> <div class="participant highlightedComment"> <?php

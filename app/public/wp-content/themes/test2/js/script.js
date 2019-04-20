@@ -305,3 +305,43 @@ class Ortsbeschreibungsoverlay{
 
 var ObO = new Ortsbeschreibungsoverlay();
 
+//...................................................................................................
+//..................................mail.........................................
+
+class Mail{
+    constructor(){
+        this.events();
+    }
+
+    events(){
+        $("#button-std-submit").on("click", this.clickDispatcher.bind(this));
+    }
+
+    clickDispatcher(e){
+        var submitButton = $(e.target).closest("#button-std-submit");
+        this.sendEmail(submitButton);
+    }
+
+    sendEmail(_submitButton){
+
+     $.ajax({
+        beforeSend: (xhr) => {
+            xhr.setRequestHeader("X-WP-Nonce", reftreffData.nonce)
+        },
+        url: "http://test2.local/wp-json/reftreff/v1/sendNotification",
+        type: "POST",
+        data: {"daten": "test"},
+        success: (response) => {
+            alert("gesendet");
+            console.log(response);
+        },
+        error:(response) => {
+            alert("error");
+            console.log(response);
+            
+        }
+    });
+    }
+}
+
+var mail = new Mail();
