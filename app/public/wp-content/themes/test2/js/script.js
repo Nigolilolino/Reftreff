@@ -1,6 +1,35 @@
 
 //Funktionen für die Filter..........................................................
 
+class Filterbar{
+    
+    constructor(){
+        this.events();
+    }
+
+    events(){
+        $("#filterBtn").on("click", this.clickDispatcher.bind(this));
+    }
+
+    clickDispatcher(e){
+        if(document.getElementById("filter_area").hidden == true){
+            this.showFilterbar();
+        }else{
+            this.removeFilterbar();
+        }
+    }
+
+    showFilterbar(){
+        document.getElementById("filter_area").hidden = false;
+    }
+
+    removeFilterbar(){
+        document.getElementById("filter_area").hidden = true;
+    }
+}
+
+var fb = new Filterbar();
+
 class Filter{
 
     constructor(){
@@ -8,27 +37,43 @@ class Filter{
     }
 
     events(){
-        
-        
+
         $(".filtercheckboxes").on("click", this.clickDispatcher.bind(this));
     }
 
     clickDispatcher(){
         var checkedBoxes = [];
         var inputElements = document.getElementsByClassName("filtercheckboxes");
+
         for (var i = 0; i < inputElements.length; i++){
             if (inputElements[i].checked){
                 checkedBoxes.push(inputElements[i]);
             }
         }
-        console.log(checkedBoxes);
-        console.log(inputElements);
-        
+
+        this.filterActivities(checkedBoxes);
         checkedBoxes = [];
     }
 
     filterActivities(_checkedBoxes){
+        var activityThumbnails = document.getElementsByClassName("activities");
         
+        if(_checkedBoxes.length == 0){
+            $(activityThumbnails).show(1000);
+            return
+        }
+
+        for(var i = 0; i < activityThumbnails.length; i++){
+            for(var j = 0; j < _checkedBoxes.length; j++){
+                if(activityThumbnails[i].getAttribute("data-value").indexOf(_checkedBoxes[j].value) == -1){
+                    $(activityThumbnails[i]).hide(1000);
+                    break;
+                }else{
+                    console.log("false");
+                    $(activityThumbnails[i]).show(1000);
+                }
+            }
+        }
     }
 }
 
@@ -37,23 +82,36 @@ var filter = new Filter();
 
 // Funktionen für das Dropdownmenü der Startseite....................................
 
+class Dropdownmenue{
 
-function myFunction() {
-  document.getElementById("dpMenue").classList.toggle("show");
+    constructor(){
+        this.events();
+    }
+
+    events(){
+        $("#activityDropdownBtn").on("click", this.showMenue.bind(this));
+
+    }
+
+    showMenue(e){
+        document.getElementById("dpMenue").classList.toggle("show");
+    }
 }
 
+var dpdwn = new Dropdownmenue();
+
 window.onclick = function(event) {
-  if (!event.target.matches('.activityBtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+    if (!event.target.matches('#activityDropdownBtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
       }
     }
   }
-}
 
 //............................................................................................
 

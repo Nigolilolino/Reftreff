@@ -401,6 +401,12 @@ This would output:
 
 == Changelog ==
 
+= 2.2.4 =
+* Fix: Warning Resolved on Avatar images.
+
+= 2.2.3 =
+* Fix: Broken Avatar in buddypress resolved.
+
 = 2.2.2 =
 * Fix: Broken avatars on comments section.
 

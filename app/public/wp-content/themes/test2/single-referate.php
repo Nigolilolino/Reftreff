@@ -221,7 +221,6 @@ get_header();
 </div>
 
 <div class = "aktivity_area">
-    <h3 class="singlePageHeadlines">Das Könnte Dich Auch Interessieren</h3>
     <?php
     get_activities("sub");
     ?>

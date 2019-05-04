@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <?php wp_head(); ?>
-        <?php updateTimes(); ?>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    </head>
-    <body>
+
+  <head>
+      <?php wp_head(); ?>
+      <?php updateTimes(); ?>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+
+  <body>
     <header class="site-header">
       <div class="container_header">
 
@@ -18,7 +20,7 @@
 
           <div class = "Referate_Header">
             <div class="dropdown">
-              <button onclick="myFunction()" class="activityBtn">Referate</button>
+              <a href="./activity-overview/"><p class="activityBtn">Referate</p></a>
               <div id="dpMenue" class="dropdown-content">
                 <div class="dpCategories">
                   <p>Sport</p>
@@ -29,7 +31,7 @@
                       'meta_query'	=> array(
                         'relation'		=> 'OR',
                         array(
-                          'key'		=> 'referate_tags',
+                          'key'		=> 'primary_tag',
                           'value'		=> 'sport',
                           'compare'	=> 'LIKE'
                         ),
@@ -54,13 +56,8 @@
                       'meta_query'	=> array(
                         'relation'		=> 'OR',
                         array(
-                          'key'		=> 'referate_tags',
+                          'key'		=> 'primary_tag',
                           'value'		=> 'freizeit',
-                          'compare'	=> 'LIKE'
-                        ),
-                        array(
-                          'key'		=> 'referate_tags',
-                          'value'		=> 'unterhaltung',
                           'compare'	=> 'LIKE'
                         ),
                       )
@@ -77,7 +74,7 @@
                 </div>
               </div>
             </div>
-            <i class="fa fa-angle-down"></i>
+            <i class="fa fa-angle-down" id="activityDropdownBtn"></i>
           </div>
 
           <div class = "Header_Link_Area">

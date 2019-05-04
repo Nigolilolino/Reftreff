@@ -3,7 +3,7 @@
  * Core user functions.
  * 
  * @package WP User Avatar
- * @version 1.9.13
+ * @version 2.2.4
  */
 
 class WP_User_Avatar_Functions {
@@ -28,7 +28,7 @@ class WP_User_Avatar_Functions {
 
 
 
-    function wpua_get_avatar_url($url, $id_or_email, $args){
+  function wpua_get_avatar_url($url, $id_or_email, $args){
 
 
     global $wpua_disable_gravatar;
@@ -49,7 +49,7 @@ class WP_User_Avatar_Functions {
         $user_id = $id_or_email;
       }
     }
-     
+
     // First checking custom avatar.
     if( has_wp_user_avatar( $user_id ) ) {
 
@@ -60,6 +60,7 @@ class WP_User_Avatar_Functions {
       $url = $this->wpua_get_default_avatar_url($url, $id_or_email, $args);
     
     } else {
+
       $has_valid_url = $this->wpua_has_gravatar($id_or_email);
       if(!$has_valid_url){
         $url = $this->wpua_get_default_avatar_url($url, $id_or_email, $args);
@@ -145,13 +146,13 @@ class WP_User_Avatar_Functions {
    * @uses wpua_get_avatar_filter()
   */
   public function wpua_bp_core_fetch_avatar_url_filter($gravatar,$params){
-  global $wpua_functions;
-  if(strpos($gravatar,'gravatar.com',0)>-1){
-    $avatar = $wpua_functions->wpua_get_avatar_filter($gravatar, ($params['object']=='user') ? $params['item_id'] : '', ($params['object']=='user') ? (($params['type']=='thumb') ? 50 :150) : 50, '', '');
-    return $avatar;
-    }
-    else
-    return $gravatar;
+    global $wpua_functions;
+    if(strpos($gravatar,'gravatar.com',0)>-1){
+        $avatar =  $this->wpua_get_avatar_url($gravatar, $params['email'], $params);
+        return $avatar;
+      }
+      else
+      return $gravatar;
   }
  
   /**

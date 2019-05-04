@@ -90,7 +90,16 @@ body{
   background-color: transparent;
   color: white;
   padding: 16px;
+  padding-right: 3px;
   border: none;
+  cursor: pointer;
+}
+
+#activityDropdownBtn{
+  font-size: 20pt;
+  color: white;
+  margin-left: 20px;
+  margin-top: 2%;
   cursor: pointer;
 }
 
@@ -312,7 +321,7 @@ h2{
   padding-top: 30px;
 }
 
-.filter_area{
+#filter_area{
   background-color: #0F1E31;
   padding: 2% 10% 2% 10%;
   
@@ -329,6 +338,10 @@ h2{
   color: white;
   font-size: 17pt;
   padding-left: 1vw;
+}
+
+#filterBtn{
+  cursor: pointer;
 }
 
 
