@@ -70,7 +70,7 @@ get_header();
 
     <div class="userpageNewsAndFollowArea">
         <div class="userpageNewsArea">
-            <p class="userpageNewsAreaHeadline">News</p>
+            <p class="userpageNewsAreaHeadline singlePageHeadlines">News</p>
             <div class="userpageNewsAreaContentArea">
 
                 <?php
@@ -100,7 +100,7 @@ get_header();
             </div>
         </div>
         <div class="userpageFollowerArea">
-            <p class="userpageFollowerAreaHeadline">Gefolgte Refferate</p>
+            <p class="userpageFollowerAreaHeadline singlePageHeadlines">Gefolgte Refferate</p>
             <div class="userpageFollowerAreaContentArea">
                 <?php getFollowedActivities(); ?>
             </div>

@@ -15,11 +15,11 @@ get_header();
 <div class="pageContent">
     <div class="pageActivities">
         <div class="pageActivitiesSports">
-        <p class="pageActivitiesSportsHeadline">Sport</p>
+        <p class="pageActivitiesSportsHeadline singlePageHeadlines">Sport</p>
             <?php getAllActivities("sport"); ?>
         </div>
         <div class="pageActivitiesFreetime">
-            <p class="pageActivitiesFreetimeHeadline">Freizeit</p>
+            <p class="pageActivitiesFreetimeHeadline singlePageHeadlines">Freizeit</p>
             <?php getAllActivities("freizeit"); ?>
         </div>
     </div>

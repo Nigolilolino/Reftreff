@@ -125,6 +125,7 @@ body{
   overflow-y: auto;
 }
 
+
 .dpCategories {
   display: inline-grid;
   width: 35%;
@@ -141,10 +142,10 @@ body{
 
 .dropdown-content a {
   color: white;
-  padding: 12px 16px;
   text-decoration: none;
   display: block;
   font-size: 15pt;
+  font-weight: 300;
 }
 
 .dropdown-content a:hover {background-color: #ddd}
@@ -378,11 +379,11 @@ h2{
 }
 
 .activities{
-  height: 180px;
-  width: 240px;
+  height: 13vw;
+  width: 20vw;
   background-color: red;
   display: inline-block;
-  margin: 15px;
+  margin: 1vw;
 }
 
 .activity_title{
@@ -394,8 +395,7 @@ h2{
 .call_to_action_area{
   font-family: 'Source Sans Pro', sans-serif;
   background-color: #0F1E31;
-  height: 210px;
-  padding: 1% 0 1% 0;
+  padding: 5%;
 }
 
 .timetable_area{
@@ -405,14 +405,15 @@ h2{
 .call_to_action_text{
   font-family: 'Source Sans Pro', sans-serif;
   height: auto;
-  float: left;
-  margin-left: 5%;
-  margin-right: 5%;
+  display: block;
+  width: 90%;
+  margin: 0px auto;
+
   
 }
 
 .call_to_action_text h1{
-  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 0%;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 37pt;
@@ -591,7 +592,6 @@ h2{
   width: 40%;
   padding: 5%;
   display: inline-grid;
-  float: left;
 }
 
 .singleSideInfo h2{
@@ -632,6 +632,7 @@ h2{
   display: inline-grid;
   width: 40%;
   padding: 5%;
+  float: right;
   background-color: #F5F4F0;
 }
 
@@ -801,13 +802,13 @@ h2{
 }
 .singleHeadlineLeft{
   text-align: left;
-  font-weight: 400;
+  font-weight: 600;
   text-transform: uppercase;
   font-size: 20pt;
 }
 .singlePageHeadlines{
-  font-size: 20pt;
-  font-weight: 400;
+  font-size: 18pt;
+  font-weight: 600;
   text-transform: uppercase;
   text-align: center;
 }
@@ -828,14 +829,15 @@ h2{
   position: relative;
   display: inline-grid;
   float: left;
-  margin-right: 10%;
+  margin-right: 5%;
   margin-top: 3%;
 }
 .participant{
-  
+  text-align: left;
 }
 .participantInfo{
   display: inline-block;
+  width: 80%;
   padding-top: 15px;
 }
 
@@ -843,34 +845,45 @@ h2{
   font-weight: bolder;
   font-size: larger;
   display: inline;
-  padding-right: 30px;
+  padding-right: 50%;
 }
 
 .participantEmail{
 
 }
 
+#comment{
+  width: 99%;
+  height: 30px;
+}
 .activityNewsArea{
   height: auto;
-  padding: 6% 8%;
+  padding: 4% 3%;
   background-color: #F5F4F0;
 }
 
 .postDate{
-display: inline;
+display: inline-block;
+font-size: 13px;
+float: right;
 }
 
 .postContent{
 }
 
 .aktivity_area {
-  padding: 4% 13%;
   background-color: #F5F4F0;
+}
+
+.test {
+  display: block;
+  width: 90%;
+  margin: 0px auto;
+  text-align: center;
 }
 
 .activityBlog{
   width: 40%;
-  float: left;
   display: inline-grid;
   text-align: left;
   padding: 1% 4%;
@@ -897,6 +910,7 @@ display: inline;
   width: 40%;
   text-align: left;
   max-height: 400px;
+  float: right;
   overflow-y: auto;
   padding: 1% 4%;
 }
@@ -1144,7 +1158,7 @@ z-index: 2;
 }
 
 .userpageBannerLogoutBtn{
-  margin-left: 35%;
+  
 }
 
 .userpageNewsAndFollowArea{
@@ -1152,6 +1166,7 @@ z-index: 2;
   height: auto;
   align-content: center;
   text-align: center;
+  padding: 2% 2%;
 }
 
 .userpageNewsArea{
@@ -1257,19 +1272,19 @@ z-index: 2;
 .pageContent{
   height: auto;
   width: 100%;
+  margin-top: 7%;
 }
 
 .pageActivities{
   width: 90%;
+  display: block;
+  margin: 0px auto;
   height: auto;
-  margin-left: 5%;
   text-align: center;
 }
 
 .pageActivitiesSports{
-  width: 90%;
-  height: auto;
-  margin-left: 5%;
+
 }
 
 .pageActivitiesSportsHeadline{
@@ -1277,9 +1292,7 @@ z-index: 2;
 }
 
 .pageActivitiesFreetime{
-  width: 90%;
-  height: auto;
-  margin-left: 5%;
+  margin-top: 8%;
 }
 
 .pageActivitiesFreetimeHeadline{
