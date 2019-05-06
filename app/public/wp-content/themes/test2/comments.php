@@ -22,11 +22,11 @@ if ( have_comments() ) :
   
   $comments_args = array(
             // change the title of send button
-            'label_submit' => __( 'Posten' ),
+            'label_submit' => __( '>' ),
             // hide user login
             'logged_in_as' => '',
             // redefine custom textarea field
-            'comment_field' => '<textarea id="comment" name="comment" aria-required="false" placeholder="Was liegt an?"></textarea></div>',
+            'comment_field' => '<textarea id="comment" name="comment" aria-required="false"></textarea></div>',
             // hide reply
             'title_reply' => '',
             // remove "Text or HTML to be displayed before the set of comment fields"

@@ -48,7 +48,7 @@ get_header();
                 <div  class ="userpageBannerAvatarDiv"><?php echo get_avatar(get_current_user_id(), 80) ?>
                     <div id="uploadBtn" class="uploadBtn" data-active="false">upload</div>
                 </div>
-                <a href="<?php echo wp_logout_url( home_url() ); ?>"><p class="userpageBannerLogoutBtn">Logout</p></a>
+                <a href="<?php echo wp_logout_url( home_url() ); ?>"><p class="userpageBannerLogoutBtn">logout</p></a>
             </div>
             <div class="userpageBannerGreetingWrapper">
                 <?php $participant = wp_get_current_user(); ?>

@@ -15,7 +15,7 @@ body{
   .page-banner {
     padding: 10px 5px 60px 0;
     margin: 20px 20px 10px 20px;
-    height: 350px;
+    /*height: 350px;*/
   }
 
   .filler{
@@ -23,23 +23,24 @@ body{
     height: 50px;
     position: relative;
     width: 100%;
-    margin-top: 90px;
+    margin-top: 130px;
   }
 }
 
 /*.......................................................Header.....................................*/
 .container_header {
   z-index: 5;
-  padding: 0 16px;
+  padding: 7px 20px;
   position: relative;
   height: 85px;
+  text-align: center;
   /*background-color: rgba(0,0,0,0.4);*/
 }
 
 .container {
   padding: 0 16px;
   position: relative;
-  height: 100px;
+  height: 80px;
 }
 
 .HFU_Logo_Header_Div{
@@ -52,15 +53,14 @@ body{
 }
 
 .HFU_Logo_Header{
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 65%;
+  max-height: 65%;
 }
 
 .Referate_Header{
   height: 80px;
   width: 15%;
   display: inline-block;
-  margin-left: 40px;
   float: left;
 }
 
@@ -83,23 +83,17 @@ body{
 
 .activityBtn {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   display: inline-block;
-  margin-top: 10%;
-  margin-left: 25%;
   background-color: transparent;
   color: white;
-  padding: 16px;
-  padding-right: 3px;
   border: none;
   cursor: pointer;
 }
 
 #activityDropdownBtn{
-  font-size: 20pt;
+  font-size: 22px;
   color: white;
-  margin-left: 20px;
-  margin-top: 2%;
   cursor: pointer;
 }
 
@@ -163,14 +157,12 @@ body{
 
 .campi_header_link p{
   display: inline-block;
-  margin-top: 10%;
-  font-size: 20px;
-  margin-left: 35%;
+  font-size: 18px;
   color: white;
 }
 
 .campi_header_link i{
-  font-size: 20pt;
+  font-size: 20px;
   color: white;
 }
 /*
@@ -221,12 +213,12 @@ body{
   border: none;
   color: white;
   padding: 4px 22px;
-  margin-top: 1.4vw;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
   border-radius: 5%;
+  margin-left: 5%;
   /* margin: 4px 2px; */
   /* margin-left: 22%; */
   /* margin-top: 6%; */
@@ -235,7 +227,7 @@ body{
 .sprach_auswahl{
   font-family: 'Source Sans Pro', sans-serif;
   height: 80px;
-  width: 32%;
+  width: 25%;
   display: inline-block;
   float: left;
 }
@@ -243,7 +235,7 @@ body{
 .sprach_auswahl p {
   display: inline-block;
   margin-top: 22px;
-  font-size: 16pt;
+  font-size: 18px;
   margin-left: 32%;
   color: white;
 }
@@ -337,7 +329,7 @@ h2{
   display: inline-block;
   height: 40px;
   color: white;
-  font-size: 17pt;
+  font-size: 14pt;
   padding-left: 1vw;
 }
 
@@ -348,8 +340,8 @@ h2{
 
 .filterbox input {
   cursor: pointer;
-  height: 20px;
-  width: 20px;
+  height: 14px;
+  width: 14px;
 }
 
 .cta-button {
@@ -379,8 +371,8 @@ h2{
 }
 
 .activities{
-  height: 13vw;
-  width: 20vw;
+  height: 11vw;
+  width: 16vw;
   background-color: red;
   display: inline-block;
   margin: 1vw;
@@ -389,7 +381,10 @@ h2{
 .activity_title{
   font-size: 20px;
   float: left;
-  margin: 30% 34%;
+  text-align: center;
+  margin-top: 25%;
+  width: 100%;
+  color: white;
 }
 
 .call_to_action_area{
@@ -585,7 +580,7 @@ h2{
 
 .singleSideOverviewArea{
   height: auto;
-  margin: 6% 8%;
+  margin: 12% 8%;
 }
 
 .singleSideInfo{
@@ -692,6 +687,7 @@ h2{
 .locationWindow{
   display: none;
   width: 60%;
+  padding: 4%;
   height: auto;
   background-color: #fff;
   margin: auto;
@@ -703,20 +699,20 @@ h2{
 .locationMapArea{
   background-color: green;
   height: 350px;
-  width: 270px;
+  width: 40%;
   float: left;
-  margin: 7%;
+  padding: 5%;
 }
 
 .locationInfoArea{
   background-color: #fff;
-  float: right;
-  height: 30%;
-  width: 45%;
-  margin-top: 12%;
+  float: left;
+  width: 40%;
+  padding: 5%;
 }
 
 .locationBuilding{
+font-size: 20pt;
 
 }
 
@@ -808,7 +804,7 @@ h2{
 }
 .singlePageHeadlines{
   font-size: 18pt;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: uppercase;
   text-align: center;
 }
@@ -845,7 +841,8 @@ h2{
   font-weight: bolder;
   font-size: larger;
   display: inline;
-  padding-right: 50%;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .participantEmail{
@@ -892,12 +889,10 @@ float: right;
 
 .activityBlog input{
   margin-top: 20px;
-  width: 40%;
-  margin-left: 31%;
+  width: 8%;
   background-color: #89BA22;
-  padding: 8px;
   color: white;
-  font-size: 16px;
+  font-size: 26px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -917,17 +912,18 @@ float: right;
 
 .timetable_area{
   text-align: center;
-  height: 450px;
-  width: 90%;
+  height: 420px;
+  width: 95%;
   margin: auto;
   padding-top: 4vw;
-  padding-bottom: 3vw;
+  padding-bottom: 4vw;
 }
 
 .timetable{
-  width: 95%;
+  width: 100%;
   height: auto;
-  margin-left: 2.5%;
+  display: block;
+  margin: 0 auto;
 }
 
 .timetableDays{
@@ -986,14 +982,14 @@ float: right;
   bottom: 0;
   left: 0;
   right: 0;
-  max-height: 450px;
+  max-height: 420px;
 }
 /*................................................................................................... */
 
 /*..................................Referate-Seite...................................................*/
 .avatar{
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   position: relative;
   display: inline-grid;
@@ -1002,6 +998,11 @@ float: right;
   margin-top: 3%;
 }
 
+.login_button_user_avatar .avatar {
+  height: 35px;
+  width: 35px;
+  margin-top: 20px;
+}
 .comment{
   
 }
@@ -1078,19 +1079,23 @@ float: right;
 /*..........................................Landingpage...............................................*/
 
 .landingpage_headline{
-  text-align: center;
-  font-size: 20pt;
   background-color: #11171E;
+  text-align: center;
   color: white;
+  padding: 15px;
+  font-family: 'Source Sans Pro', sans-serif; 
 }
 
 .landingpage_headline h1{
-  margin: 0;
-  background-color: #11171E;
+  margin: 10px;
+  font-weight: 600;
+  font-size: 32pt;
 }
 
 .landingpage_headline h3{
-
+  font-size: 16pt;
+  font-weight: 200;
+  margin: 15px;
 }
 
 .landingpage_wrapper{
@@ -1099,8 +1104,9 @@ float: right;
   
   .campi_area{
     height: 100%;
-    width: 33%;
+    width: 33.333%;
     display: inline-block;
+    float: left;
     background-color: #11171E;
   }
   
@@ -1120,7 +1126,7 @@ float: right;
   /*......................................Userpage....................................................*/
 
 .userpageBannerContent{
-  width: 70%;
+  width: 90%;
 }
 
 .userpageBannerGreetingWrapper{
@@ -1130,6 +1136,8 @@ float: right;
 
 .userpageBannerGreeting{
   display: inline-block;
+  font-size: 38px;
+  font-weight: 400;
 }
 
 .userpageBannerGreetingAddition{
@@ -1139,6 +1147,8 @@ float: right;
 .userpageBannerIconWrapper{
   display: inline-block;
   width: 20%;
+  text-align: center;
+  float: left;
 }
 
 .userpageBannerAvatarDiv{
@@ -1149,6 +1159,7 @@ float: right;
 
 .uploadBtn{
 z-index: 2;
+text-align: center;
 }
 
 .userpageBannerAvatarDiv img{
@@ -1158,7 +1169,8 @@ z-index: 2;
 }
 
 .userpageBannerLogoutBtn{
-  
+  color: white;
+  font-size: 18px;
 }
 
 .userpageNewsAndFollowArea{
@@ -1166,14 +1178,15 @@ z-index: 2;
   height: auto;
   align-content: center;
   text-align: center;
-  padding: 2% 2%;
+  padding: 0% 2%;
 }
 
 .userpageNewsArea{
-  width: 45%;
+  width: 40%;
   display: inline-grid;
   align-content: center;
   height: auto;
+  padding: 2%;
 }
 
 .userpageNewsAreaHeadline{
@@ -1189,9 +1202,10 @@ z-index: 2;
 }
 
 .userpageFollowerArea{
-  width: 45%;
+  width: 40%;
   display: inline-grid;
   align-content: center;
+  padding: 2%;
 }
 
 .userpageFollowerAreaHeadline{
@@ -1203,10 +1217,10 @@ z-index: 2;
 }
 
 .activitiesUserpages{
-  height: 80px;
-  width: 150px;
+  height: 70px;
+  width: 140px;
   display: inline-block;
-  margin: 15px;
+  margin: 10px;
   background-size: 150px 80px;
 }
 
@@ -1253,9 +1267,10 @@ z-index: 2;
 /*.................................................................................................*/
 /*...............................Activities Overview Page..........................................*/
 .pageBannerActivityOverview{
-  padding: 10px 5px 60px 0;
-  margin: 20px 20px 10px 20px;
-  height: 100px;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  padding: 2% 0%;
 }
 
 .pageBannerImageActivityOverview{
@@ -1283,6 +1298,11 @@ z-index: 2;
   text-align: center;
 }
 
+.page-banner__title{
+  color: white;
+  font-weight: 400;
+  font-size: 38px;
+}
 .pageActivitiesSports{
 
 }
@@ -1292,7 +1312,7 @@ z-index: 2;
 }
 
 .pageActivitiesFreetime{
-  margin-top: 8%;
+  margin: 5% auto;
 }
 
 .pageActivitiesFreetimeHeadline{

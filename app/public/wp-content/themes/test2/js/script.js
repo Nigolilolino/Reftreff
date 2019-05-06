@@ -66,11 +66,11 @@ class Filter{
         for(var i = 0; i < activityThumbnails.length; i++){
             for(var j = 0; j < _checkedBoxes.length; j++){
                 if(activityThumbnails[i].getAttribute("data-value").indexOf(_checkedBoxes[j].value) == -1){
-                    $(activityThumbnails[i]).hide(1000);
+                    $(activityThumbnails[i]).hide(500);
                     break;
                 }else{
                     console.log("false");
-                    $(activityThumbnails[i]).show(1000);
+                    $(activityThumbnails[i]).show(500);
                 }
             }
         }
